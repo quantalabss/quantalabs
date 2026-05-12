@@ -12,30 +12,30 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "Quantalabs — Sovereign Blockchain, AI & Post-Quantum Engineering",
+  title: "Quantalabs — Post-Quantum Migration & Blockchain",
   description:
-    "Quantalabs is the enterprise protocol engineering lab behind Quantachain. We build sovereign L2 AppChains, autonomous AI agent networks, and NIST-standardized post-quantum cryptography migrations for institutions worldwide.",
+    "Quantalabs is an institutional protocol engineering lab specializing in PQC migration for banks and government agencies. We leverage QuantaChain, a live production blockchain implementing NIST-standardized Falcon-512 and Kyber-1024.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Quantalabs — Sovereign Blockchain, AI & Post-Quantum Engineering",
+    title: "Quantalabs — Post-Quantum Migration & Blockchain",
     description:
-      "The enterprise protocol lab behind Quantachain. Sovereign L2 AppChains, autonomous AI agents, and PQC migrations for institutions worldwide.",
+      "Institutional protocol lab specializing in PQC migration for banks and government. Battle-tested on QuantaChain with Falcon-512 and Kyber-1024.",
     url: siteUrl,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Quantalabs — Sovereign Blockchain & Post-Quantum Engineering",
+        alt: "Quantalabs — Post-Quantum Migration & Blockchain",
       },
     ],
   },
   twitter: {
-    title: "Quantalabs — Sovereign Blockchain, AI & Post-Quantum Engineering",
+    title: "Quantalabs — Post-Quantum Migration & Blockchain",
     description:
-      "The enterprise protocol lab behind Quantachain. L2 AppChains, AI agent networks, and PQC migrations for institutions.",
+      "Institutional protocol lab specializing in PQC migration for banks and government. Battle-tested on QuantaChain.",
     images: [ogImage],
   },
 };
@@ -47,7 +47,7 @@ const jsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/logo/quanta-transparent-bg-logo.svg`,
   description:
-    "Quantalabs is the enterprise protocol engineering lab behind Quantachain, specializing in sovereign L2 AppChains, AI-driven node architectures, and NIST post-quantum cryptography migrations.",
+    "Quantalabs is an institutional protocol engineering lab specializing in NIST-standardized post-quantum cryptography (PQC) migration for banks, government agencies, and enterprises.",
   sameAs: [
     "https://quantachain.org",
     "https://github.com/quantachain",

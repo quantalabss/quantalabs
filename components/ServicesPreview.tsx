@@ -6,18 +6,18 @@ import Link from "next/link";
 export default function ServicesPreview() {
   const services = [
     {
-      icon: Layers,
-      title: "L1/L2 AppChains",
-      desc: "Sovereign Layer 2 rollups on Quantachain's Rust/WASM VM — 124K TPS, ZK sequencers, trustless bridges.",
-      href: "/services/appchains",
-      badge: "Live",
-    },
-    {
       icon: ShieldCheck,
       title: "PQC Migrations",
-      desc: "Zero-downtime migrations from ECDSA to NIST-standardized Falcon-512 & Kyber KEM for production networks.",
+      desc: "Zero-downtime migrations from legacy ECDSA to NIST-standardized Falcon-512 & Kyber for institutional production networks.",
       href: "/services/pqc-migrations",
-      badge: null,
+      badge: "Primary",
+    },
+    {
+      icon: Layers,
+      title: "L1/L2 AppChains",
+      desc: "Sovereign Layer 2 rollups on Quantachain's Rust/WASM VM — 124K TPS, ZK sequencers, and trustless bridges.",
+      href: "/services/appchains",
+      badge: "Live",
     },
     {
       icon: BrainCircuit,
@@ -39,7 +39,7 @@ export default function ServicesPreview() {
             </h2>
             <p className="text-lg text-gray-500 font-medium mb-8">
               We don&apos;t build generic smart contracts. We architect sovereign infrastructure
-              at the frontier of blockchain, AI, and post-quantum cryptography.
+              at the frontier of institutional cryptography, blockchain security, and PQC migration.
             </p>
             <Link
               href="/services"

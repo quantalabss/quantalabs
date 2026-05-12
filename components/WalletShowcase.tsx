@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export default function WalletShowcase() {
   const features = [
-    { icon: Shield, title: "Falcon-512 signatures", desc: "Lattice-based, quantum-resistant transaction signing baked into a Rust/WASM core." },
-    { icon: Key, title: "Raw key export/import", desc: "Exports a combined sk|pk blob for direct backup. Falcon's public key can't always be re-derived from the secret key." },
-    { icon: Fingerprint, title: "Deterministic Recovery", desc: "24-word mnemonic recovery deterministically derives your Falcon-512 keypair." },
-    { icon: Lock, title: "Multi-account Support", desc: "Up to 10 accounts independently encrypted with AES-256-GCM + PBKDF2 (250k iterations)." },
+    { icon: Shield, title: "Falcon-512 PQC Core", desc: "Native Falcon-512 lattice signatures via WASM. Protects against 'harvest now, decrypt later' quantum attacks.", tag: "NIST Standard" },
+    { icon: Fingerprint, title: "Deterministic Security", desc: "24-word BIP-39 mnemonic for deterministic Falcon-512 key derivation across 10+ independent accounts.", tag: "BIP-39 Seed" },
+    { icon: Lock, title: "Institutional Encryption", desc: "AES-256-GCM + PBKDF2 (250,000 iterations) secures your secret keys in local encrypted storage.", tag: "Military Grade" },
+    { icon: Key, title: "Raw Vault Export", desc: "Exportable JSON vaults for secure offline storage. Full state restoration via raw key or mnemonic seed.", tag: "Self-Sovereign" },
   ];
 
   return (
@@ -24,12 +24,17 @@ export default function WalletShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Copy */}
-          <div className="flex flex-col animate-fade-in">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex flex-col animate-fade-in">
+            <div className="flex items-center space-x-3 mb-4">
               <ShieldCheck className="w-5 h-5 text-[#00E599]" />
               <span className="font-bold tracking-widest text-xs uppercase text-gray-400">First-Party Products</span>
             </div>
             
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/20 w-fit mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E599] animate-pulse"></span>
+              <span className="text-[10px] font-black text-[#00E599] uppercase tracking-wider">PQC Wallet</span>
+            </div>
+
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-tight text-black">
               Quanta Wallet
             </h2>
@@ -59,10 +64,15 @@ export default function WalletShowcase() {
                  const Icon = opt.icon;
                  return (
                    <div key={i} className="flex flex-col space-y-3">
-                     <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center group hover:bg-[#00E599] hover:border-[#00E599] transition-all">
-                       <Icon className="w-5 h-5 text-black" />
+                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#00E599]/5 border-2 border-[#00E599] text-[#00E599] transition-all">
+                       <Icon className="w-5 h-5" />
                      </div>
-                     <h4 className="font-bold text-black text-sm">{opt.title}</h4>
+                     <div className="flex items-center space-x-2">
+                        <h4 className="font-bold text-black text-sm">{opt.title}</h4>
+                        {opt.tag && (
+                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#00E599] text-black uppercase tracking-tighter">{opt.tag}</span>
+                        )}
+                     </div>
                      <p className="text-xs text-gray-500 font-medium leading-relaxed">{opt.desc}</p>
                    </div>
                  )
