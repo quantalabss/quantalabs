@@ -7,21 +7,22 @@ import DeveloperShowcase from "@/components/DeveloperShowcase";
 import NetworkMetrics from "@/components/NetworkMetrics";
 import EcosystemShowcase from "@/components/EcosystemShowcase";
 import ResearchTeaser from "@/components/ResearchTeaser";
+import PqcStandardBanner from "@/components/PqcStandardBanner";
 
 const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "Quantalabs — Post-Quantum Migration & Blockchain",
+  title: "Quantalabs — The Leading Standard for Post-Quantum Cryptography Migration",
   description:
-    "Quantalabs is an institutional protocol engineering lab specializing in PQC migration for banks and government agencies. We leverage QuantaChain, a live production blockchain implementing NIST-standardized Falcon-512 and Kyber-1024.",
+    "Quantalabs is the premier institutional protocol engineering lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure for global financial systems.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Quantalabs — Post-Quantum Migration & Blockchain",
+    title: "Quantalabs — The Leading Standard for Post-Quantum Cryptography Migration",
     description:
-      "Institutional protocol lab specializing in PQC migration for banks and government. Battle-tested on QuantaChain with Falcon-512 and Kyber-1024.",
+      "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
     url: siteUrl,
     images: [
       {
@@ -33,9 +34,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Quantalabs — Post-Quantum Migration & Blockchain",
+    title: "Quantalabs — The Leading Standard for Post-Quantum Cryptography Migration",
     description:
-      "Institutional protocol lab specializing in PQC migration for banks and government. Battle-tested on QuantaChain.",
+      "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
     images: [ogImage],
   },
 };
@@ -69,12 +70,12 @@ export default function Home() {
       />
       <Hero />
       <LogoTicker />
+      <ResearchTeaser />
+      <PqcStandardBanner />
       <ServicesPreview />
       <WalletShowcase />
-      <DeveloperShowcase />
-      <NetworkMetrics />
       <EcosystemShowcase />
-      <ResearchTeaser />
+      <DeveloperShowcase />
     </>
   );
 }

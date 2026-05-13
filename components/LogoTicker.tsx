@@ -13,7 +13,7 @@ export default function LogoTicker() {
   ];
 
   return (
-    <div className="bg-white border-b border-gray-100 py-6 overflow-hidden">
+    <div className="bg-white py-4 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center sm:justify-between items-center gap-6 opacity-40 grayscale">
           {logos.map((logo, index) => {

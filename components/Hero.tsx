@@ -15,32 +15,37 @@ export default function Hero() {
             className="flex flex-col justify-center max-w-2xl mt-4 md:mt-0 animate-fade-in"
           >
             <h1
-              className="text-[3.25rem] sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 md:mb-8 leading-tight md:leading-[1.05]"
+              className="text-[3.25rem] sm:text-6xl lg:text-7xl font-black tracking-tighter text-black mb-4 md:mb-6 leading-tight md:leading-[1.05]"
             >
-              Post-Quantum Migration <br className="hidden md:block" />
-              <span className="text-[#00E599]">& Blockchain.</span>
+              Leading the <br className="hidden md:block" />
+              <span className="text-[#00E599]">Post-Quantum Migration.</span>
             </h1>
 
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="h-px w-8 bg-gray-400"></div>
+              <span className="text-gray-400 font-black tracking-[0.2em] text-xs uppercase">Securing tomorrow&apos;s data today</span>
+            </div>
+
             <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl">
-              We provide NIST-standardized PQC migration services for banks, government agencies, and global enterprises. Our infrastructure is battle-tested on QuantaChain, a live production blockchain natively implementing Falcon-512 and Kyber-1024.
+              We provide NIST-standardized PQC migration services and blockchain infrastructure for banks, government agencies, and global enterprises.
             </p>
 
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Link
-                href="/services"
-                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+                href="/services/pqc-audit"
+                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
               >
-                <span>Explore Solutions</span>
+                <span>PQC Audit</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 
               <Link
                 href="/contact"
-                className="group flex items-center justify-center space-x-2 px-6 py-4 bg-transparent text-gray-600 rounded-full font-medium hover:text-black hover:bg-gray-50 transition-all w-full sm:w-auto"
+                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-white text-black border border-gray-200 rounded-full font-medium hover:border-black transition-all w-full sm:w-auto"
               >
-                <PlayCircle className="w-5 h-5 text-gray-400 group-hover:text-[#00E599] transition-colors" />
-                <span>Contact Partnerships</span>
+                <span>Schedule Migration</span>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black" />
               </Link>
             </div>
           </div>

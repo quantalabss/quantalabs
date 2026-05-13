@@ -66,7 +66,7 @@ const footerColumns = [
   {
     heading: "Company",
     links: [
-      { label: "Ecosystem", href: "/ecosystem", badge: null },
+      { label: "Company", href: "/company", badge: "Reg" },
       { label: "Research", href: "/research", badge: null },
       { label: "Blog", href: "/blog", badge: "New" },
       { label: "Careers", href: "/careers", badge: "Hiring" },
@@ -137,7 +137,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
-              The enterprise protocol engineering lab behind Quantachain — building sovereign
+              QuantaLabs Private Limited — A Deep-Tech Innovation Lab building sovereign
               infrastructure at the frontier of blockchain, AI, and post-quantum cryptography.
             </p>
             {/* Social links */}
@@ -196,8 +196,8 @@ export default function Footer() {
       {/* ── BOTTOM BAR ──────────────────────────────────────────── */}
       <div className="border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-xs text-gray-400">
-            © {new Date().getFullYear()} Quantalabs Pvt Ltd. All rights reserved.
+          <p className="font-mono text-[10px] text-gray-400">
+            © {new Date().getFullYear()} QuantaLabs Private Limited. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-gray-400">
             <Link href="#" className="hover:text-black transition-colors">Privacy Policy</Link>
