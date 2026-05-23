@@ -8,6 +8,7 @@ import NetworkMetrics from "@/components/NetworkMetrics";
 import EcosystemShowcase from "@/components/EcosystemShowcase";
 import ResearchTeaser from "@/components/ResearchTeaser";
 import PqcStandardBanner from "@/components/PqcStandardBanner";
+import QuantaCipherShowcase from "@/components/QuantaCipherShowcase";
 
 const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
@@ -74,6 +75,7 @@ export default function Home() {
       <PqcStandardBanner />
       <ServicesPreview />
       <WalletShowcase />
+      <QuantaCipherShowcase />
       <EcosystemShowcase />
       <DeveloperShowcase />
     </>

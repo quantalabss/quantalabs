@@ -71,6 +71,14 @@ const navGroups: NavGroup[] = [
         description: "Deterministic on-chain LLM agent frameworks",
         icon: BrainCircuit,
       },
+      {
+        name: "QuantaCipher",
+        href: "http://localhost:3000",
+        external: true,
+        description: "Zero-Trust Enterprise API Gateway",
+        icon: ShieldCheck,
+        badge: "New",
+      },
     ],
   },
   {
