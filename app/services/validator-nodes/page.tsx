@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Validator & RPC Node Infrastructure — Enterprise Bare-Metal | Quantalabs",
   description:
-    "Enterprise-grade dedicated RPC infrastructure and bare-metal validator clusters for Quantachain and L2 networks. High-availability active/passive failover, 99.99% uptime SLA.",
+    "Enterprise-grade dedicated RPC infrastructure and bare-metal validator clusters for Quantachain. High-availability active/passive failover, 99.99% uptime SLA.",
   alternates: { canonical: "https://quantalabs.cc/services/validator-nodes" },
   openGraph: {
     title: "Validator & RPC Node Infrastructure | Quantalabs",
@@ -97,7 +97,7 @@ export default function ValidatorNodesPage() {
               </h1>
               <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-xl">
                 Enterprise-grade bare-metal validator clusters and globally distributed RPC infrastructure
-                for Quantachain and its L2 networks. Built for institutions that cannot afford downtime.
+                for Quantachain. Built for institutions that cannot afford downtime.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

@@ -13,22 +13,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug);
   if (!post) return {};
   return {
-    title: post.title,
-    description: post.excerpt,
-    alternates: { canonical: `https://quantalabs.cc/blog/${slug}` },
+    title: `${post.title} | QuantaLabs Blog`,
+    description: post.excerpt, // 150-160 characters
+    alternates: {
+      canonical: `https://quantalabs.cc/blog/${slug}`,
+    },
     openGraph: {
-      title: `${post.title} | Quantalabs`,
+      title: post.title,
       description: post.excerpt,
       url: `https://quantalabs.cc/blog/${slug}`,
-      type: "article",
-      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['Kishore K, QuantaLabs'],
+      tags: post.tags,
     },
-    twitter: { title: post.title, description: post.excerpt, images: [ogImage] },
-  };
+  }
 }
 
 export function generateStaticParams() {
-  return [{ slug: "ecdsa-liability-2026" }];
+  return [
+    { slug: "ecdsa-liability-2026" },
+    { slug: "cbom-india-compliance-guide" },
+  ];
 }
 
 // ── ECDSA BLOG POST CONTENT ──────────────────────────────────────────────────
@@ -225,6 +231,302 @@ function ECDSAPost() {
   );
 }
 
+// ── CBOM BLOG POST CONTENT ──────────────────────────────────────────────────
+
+function CBOMPost() {
+  return (
+    <article className="prose-custom">
+      <p className="lead">
+        In February 2026, India&apos;s Department of Science and Technology published the <em>Implementation of Quantum Safe Ecosystem in India</em> — a phased, time-bound migration roadmap with hard deadlines for Critical Information Infrastructure, government bodies, and private enterprises.
+      </p>
+      <p>
+        Buried inside that document is a mandate that will affect every Indian company handling sensitive data:
+      </p>
+      <p>
+        <strong>Cryptographic Bill of Materials (CBOM) submissions are mandatory from FY 2027-28.</strong>
+      </p>
+      <p>
+        Most Indian CTOs don&apos;t know what a CBOM is. Most compliance teams have never heard the term. And most companies that need one have no idea where to start.
+      </p>
+      <p>
+        This guide explains exactly what a CBOM is, why it matters, what the India DST mandate requires, and what your organisation needs to do before the deadline hits.
+      </p>
+
+      <hr />
+
+      <h2>What Is a Cryptographic Bill of Materials (CBOM)?</h2>
+      <p>
+        A Cryptographic Bill of Materials is a structured inventory of every cryptographic asset your organisation uses — across every system, library, API, and third-party dependency.
+      </p>
+      <p>
+        Think of it like a BOM in manufacturing. Before you can upgrade a component in a product, you need to know every part, where it&apos;s used, and what it connects to. The same logic applies to cryptography.
+      </p>
+      <p>A complete CBOM captures:</p>
+      <ul>
+        <li><strong>Every algorithm in use</strong> — RSA-2048, ECDSA, AES-128, SHA-256, and so on</li>
+        <li><strong>Where each algorithm is deployed</strong> — TLS layer, database encryption, API request signing, JWT tokens, code signing, certificate infrastructure</li>
+        <li><strong>Which libraries implement them</strong> — OpenSSL version, BouncyCastle, libsodium, native platform APIs</li>
+        <li><strong>Key sizes and certificate details</strong> — expiry dates, key lengths, rotation policies</li>
+        <li><strong>Third-party dependencies</strong> — every vendor SDK, cloud provider service, or payment gateway that uses cryptography under the hood</li>
+        <li><strong>Quantum vulnerability status</strong> — which algorithms are broken by a Cryptographically Relevant Quantum Computer (CRQC) and which are safe</li>
+      </ul>
+
+      <hr />
+
+      <h2>Why Does CBOM Matter Right Now?</h2>
+      
+      <h3>The Harvest Now, Decrypt Later Threat</h3>
+      <p>
+        Nation-state actors are not waiting for quantum computers to arrive before they act.
+      </p>
+      <p>
+        They are harvesting encrypted data today — your transaction records, KYC documents, API payloads, internal communications — and storing it. The moment a sufficiently powerful quantum computer exists, that stored data becomes readable. Retroactively. All of it.
+      </p>
+      <p>
+        This is called the <strong>Harvest Now, Decrypt Later (HNDL)</strong> attack vector. It is not theoretical. The US NSA, CISA, and now India&apos;s DST have all acknowledged it as a present-day threat.
+      </p>
+      <p>
+        The implication is stark: your data that is encrypted today, using RSA or ECDSA, is already at risk.
+      </p>
+
+      <h3>Quantum Computers Break Most Encryption in Use Today</h3>
+      <p>
+        The algorithms protecting most of the world&apos;s data — RSA, ECDSA, ECDH, Diffie-Hellman — are all based on mathematical problems that quantum computers can solve efficiently using Shor&apos;s algorithm.
+      </p>
+      <p>
+        When a Cryptographically Relevant Quantum Computer arrives (estimated between 2028 and 2035 by various intelligence agencies), these algorithms offer zero protection.
+      </p>
+      <p>
+        Symmetric algorithms like AES-256 are less affected — Grover&apos;s algorithm halves their effective key length, making AES-256 equivalent to AES-128 against a quantum adversary. Manageable, but worth noting.
+      </p>
+      <p>The algorithms you need to migrate to are NIST-standardised post-quantum algorithms:</p>
+      <ul>
+        <li><strong>ML-KEM (Kyber-1024)</strong> — for key encapsulation and encryption</li>
+        <li><strong>ML-DSA (Dilithium)</strong> — for digital signatures</li>
+        <li><strong>SLH-DSA (SPHINCS+)</strong> — for hash-based signatures</li>
+      </ul>
+      <p>None of these are broken by known quantum attacks.</p>
+
+      <h3>The Migration Takes Years — Not Months</h3>
+      <p>This is the most important thing most organisations underestimate.</p>
+      <p>A full PQC migration for a complex financial system is not a library swap. It involves:</p>
+      <ul>
+        <li>Identifying every cryptographic touchpoint (the CBOM)</li>
+        <li>Assessing which systems are highest risk</li>
+        <li>Testing PQC algorithms for performance and compatibility</li>
+        <li>Updating certificate infrastructure</li>
+        <li>Coordinating with third-party vendors</li>
+        <li>Regulatory validation and audit</li>
+      </ul>
+      <p>
+        For a mid-sized Indian exchange or NBFC, this process realistically takes 18-36 months end to end.
+      </p>
+      <p>
+        FY 2027-28 starts in April 2027. That is less than 12 months away. Organisations that have not started the CBOM process today are already behind.
+      </p>
+
+      <hr />
+
+      <h2>India&apos;s DST PQC Mandate — What It Actually Says</h2>
+      <p>
+        India&apos;s <em>Implementation of Quantum Safe Ecosystem</em> roadmap published in February 2026 establishes a phased migration timeline:
+      </p>
+      
+      <p><strong>Phase 1 (Current — FY 2026-27)</strong></p>
+      <ul>
+        <li>Awareness and inventory</li>
+        <li>Organisations begin identifying their cryptographic assets</li>
+        <li>TEC, STQC, and BIS begin establishing testing laboratories</li>
+      </ul>
+
+      <p><strong>Phase 2 (FY 2027-28)</strong></p>
+      <ul>
+        <li>CBOM submissions become mandatory for Critical Information Infrastructure</li>
+        <li>Dedicated Tier-1 and Tier-2 quantum-safe testing laboratories become operational</li>
+        <li>Private enterprises in financial services and data-sensitive sectors required to submit initial cryptographic inventories</li>
+      </ul>
+
+      <p><strong>Phase 3 (FY 2028-30)</strong></p>
+      <ul>
+        <li>Active migration begins</li>
+        <li>PQC-compliant systems required for new infrastructure</li>
+        <li>Full audit and certification regime operational</li>
+      </ul>
+
+      <p><strong>Who Is Affected</strong></p>
+      <p>The mandate explicitly covers:</p>
+      <ul>
+        <li>Banks and NBFCs</li>
+        <li>Payment processors and fintech platforms</li>
+        <li>Cryptocurrency exchanges</li>
+        <li>Healthcare data platforms</li>
+        <li>Telecom infrastructure</li>
+        <li>Government contractors and vendors</li>
+      </ul>
+      <p>If your organisation handles sensitive financial or personal data at scale, you are in scope.</p>
+
+      <hr />
+
+      <h2>What Does a CBOM Actually Look Like?</h2>
+      <p>
+        A CBOM is a structured document — not a spreadsheet, not a vague audit report. It is a machine-readable, versioned inventory that maps every cryptographic dependency in your stack.
+      </p>
+      <p>Here is a simplified example of what a CBOM entry looks like:</p>
+
+      <pre className="bg-gray-50 p-4 rounded-xl text-sm text-gray-800 overflow-x-auto border border-gray-100 my-6 font-mono">
+{`{
+  "asset_id": "QLA-001",
+  "name": "User Authentication Service",
+  "algorithm": "ECDSA",
+  "curve": "secp256k1",
+  "key_size": 256,
+  "library": "OpenSSL 1.1.1",
+  "location": "auth-service/src/signing.js",
+  "deployment": "API request signing",
+  "quantum_vulnerable": true,
+  "migration_priority": "Critical",
+  "recommended_replacement": "ML-DSA (Dilithium-3)"
+}`}
+      </pre>
+
+      <p>
+        A complete enterprise CBOM may contain hundreds or thousands of such entries, covering every service, microservice, third-party integration, and infrastructure component.
+      </p>
+      <p>The CBOM is not a one-time document. It is a living inventory that must be maintained as your stack evolves.</p>
+
+      <hr />
+
+      <h2>The Five Phases of a CBOM Audit</h2>
+      
+      <h3>Phase 1 — Discovery</h3>
+      <p>Identify every system that uses cryptography. This includes:</p>
+      <ul>
+        <li>Application layer (APIs, authentication, session management)</li>
+        <li>Data layer (database encryption, field-level encryption, backup encryption)</li>
+        <li>Transport layer (TLS certificates, mTLS configurations)</li>
+        <li>Infrastructure layer (cloud KMS, HSMs, secrets managers)</li>
+        <li>Third-party layer (payment gateways, identity providers, vendor SDKs)</li>
+      </ul>
+      <p>Discovery is typically the most time-consuming phase. Most organisations discover 30-50% more cryptographic touchpoints than they initially expected.</p>
+
+      <h3>Phase 2 — Classification</h3>
+      <p>For each discovered asset, classify:</p>
+      <ul>
+        <li><strong>Algorithm type</strong> — asymmetric, symmetric, hash, MAC</li>
+        <li><strong>Quantum vulnerability</strong> — broken by Shor&apos;s, weakened by Grover&apos;s, or quantum-safe</li>
+        <li><strong>Data sensitivity</strong> — what data does this algorithm protect and for how long must it remain confidential?</li>
+        <li><strong>Operational criticality</strong> — what breaks if this algorithm is compromised?</li>
+      </ul>
+
+      <h3>Phase 3 — Risk Scoring</h3>
+      <p>Assign a quantum risk score to each asset based on:</p>
+      <ul>
+        <li>Algorithm vulnerability</li>
+        <li>Data longevity (data encrypted today that must remain confidential for 10+ years is highest risk)</li>
+        <li>System criticality</li>
+        <li>Migration complexity</li>
+      </ul>
+      <p>This produces a prioritised migration queue — not everything needs to move at once, but the highest-risk assets need to move first.</p>
+
+      <h3>Phase 4 — CBOM Document Generation</h3>
+      <p>Compile the structured CBOM document in a format compatible with regulatory submission. Include:</p>
+      <ul>
+        <li>Executive summary of quantum exposure</li>
+        <li>Full cryptographic inventory</li>
+        <li>Risk-scored migration priority list</li>
+        <li>Recommended replacement algorithms</li>
+        <li>Estimated migration timeline and effort</li>
+      </ul>
+
+      <h3>Phase 5 — Ongoing Maintenance</h3>
+      <p>The CBOM must be updated when:</p>
+      <ul>
+        <li>New services are added</li>
+        <li>Libraries are upgraded</li>
+        <li>Third-party vendors change their cryptographic implementations</li>
+        <li>NIST or India DST publish updated algorithm recommendations</li>
+      </ul>
+
+      <hr />
+
+      <h2>Common Mistakes Indian Companies Make</h2>
+      <p><strong>Mistake 1 — Assuming only their own code matters</strong></p>
+      <p>Most organisations audit their own codebase and stop there. But your cryptographic exposure includes every third-party library, every vendor SDK, every cloud service you use. A payment gateway using RSA-2048 is your problem, not just theirs.</p>
+
+      <p><strong>Mistake 2 — Treating it as a one-time exercise</strong></p>
+      <p>A CBOM done in 2026 and forgotten is worthless by 2028. Cryptographic inventories must be maintained continuously.</p>
+
+      <p><strong>Mistake 3 — Waiting for a vendor to solve it</strong></p>
+      <p>Your cloud provider will eventually offer PQC-compatible services. Your payment gateway will eventually upgrade. But waiting for vendors to migrate for you means you have no visibility into your risk exposure in the meantime — and you miss the regulatory deadline regardless.</p>
+
+      <p><strong>Mistake 4 — Underestimating discovery complexity</strong></p>
+      <p>The average enterprise has 3-5x more cryptographic dependencies than their engineering team initially estimates. Starting discovery late means running out of time before the migration even begins.</p>
+
+      <p><strong>Mistake 5 — Confusing TLS migration with full PQC migration</strong></p>
+      <p>Upgrading your TLS layer to support post-quantum key exchange is one step. It does not address application-layer signing keys, database encryption, backup encryption, or code signing. Full PQC compliance requires addressing all layers.</p>
+
+      <hr />
+
+      <h2>How QuantaLabs Helps</h2>
+      <p>
+        QuantaLabs is India&apos;s first dedicated post-quantum cryptography migration company, incorporated in Coimbatore, Tamil Nadu in May 2026.
+      </p>
+      <p>
+        We built QuantaChain — a live 131,000-block blockchain using Falcon-512 post-quantum signatures from genesis. We published peer-reviewed research on new lattice-based hardness assumptions. We shipped QuantaCipher — a developer API for Kyber-1024 encryption. We did not read about post-quantum cryptography. We built with it.
+      </p>
+      <p>Our CBOM Audit service covers all five phases described above and delivers:</p>
+      <ul>
+        <li>A complete, structured CBOM document ready for regulatory submission</li>
+        <li>A risk-scored migration priority report</li>
+        <li>A phased migration roadmap mapped to India DST deadlines</li>
+        <li>An executive summary for board and compliance reporting</li>
+      </ul>
+      <p><strong>Who this is for:</strong></p>
+      <ul>
+        <li>Indian crypto exchanges and Web3 platforms</li>
+        <li>NBFCs and fintech companies</li>
+        <li>Payment processors handling sensitive financial data</li>
+        <li>Any organisation that must comply with India&apos;s DST PQC mandate</li>
+      </ul>
+      <p><strong>Timeline:</strong> A standard CBOM audit engagement takes 3-4 weeks for a mid-sized organisation.</p>
+      <p><strong>Starting price:</strong> ₹1.5L for the initial CBOM audit and risk assessment.</p>
+
+      <hr />
+
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Is my company affected if we&apos;re not a bank?</strong></p>
+      <p>If you handle sensitive financial data, personal data, or operate Critical Information Infrastructure, yes. Cryptocurrency exchanges, payment processors, lending platforms, and insurtech companies are all explicitly in scope under India&apos;s DST framework.</p>
+
+      <p><strong>We use AWS/Azure/GCP — doesn&apos;t that handle encryption for us?</strong></p>
+      <p>Cloud providers handle infrastructure-layer encryption. Your application-layer cryptography — API signing keys, JWT tokens, database field encryption, user authentication — is your responsibility. Cloud providers are also in the process of migrating their own services; their timelines may not align with your regulatory deadlines.</p>
+
+      <p><strong>How long does a CBOM audit take?</strong></p>
+      <p>For a mid-sized Indian fintech or exchange, 3-4 weeks for discovery and classification. Larger organisations with complex microservice architectures may require 6-8 weeks.</p>
+
+      <p><strong>What happens if we miss the FY 2027-28 deadline?</strong></p>
+      <p>India&apos;s DST framework is moving toward an enforcement regime similar to GDPR in Europe. Early indications suggest penalties for Critical Information Infrastructure operators who fail to submit CBOM documentation. Beyond regulatory risk, any organisation that has not inventoried its cryptographic assets by 2028 will face a rushed, expensive migration under deadline pressure.</p>
+
+      <p><strong>Can we do the CBOM internally?</strong></p>
+      <p>Yes — but most engineering teams underestimate the scope of discovery, lack familiarity with quantum vulnerability classification, and don&apos;t have experience producing regulator-ready documentation. An external CBOM audit also provides independence that internal audits cannot.</p>
+
+      <hr />
+
+      <h2>Start Before the Deadline</h2>
+      <p>FY 2027-28 starts in April 2027. A CBOM audit for a mid-sized organisation takes 3-4 weeks minimum. The migration that follows takes 18-36 months.</p>
+      <p>The organisations that start today will migrate calmly, on their own timeline, with full visibility into their risk exposure.</p>
+      <p>The organisations that wait until 2027 will be scrambling.</p>
+      <p><strong>Book a free 30-minute CBOM consultation with QuantaLabs.</strong></p>
+      <p>We will walk through your current stack, estimate your quantum exposure, and tell you exactly what a full CBOM audit would involve for your organisation — no obligation.</p>
+      <p>
+        <a href="https://quantalabs.cc" target="_blank" rel="noopener noreferrer">
+          <strong>Schedule a Free Consultation → quantalabs.cc</strong>
+        </a>
+      </p>
+
+    </article>
+  );
+}
+
 // ── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default async function BlogPostPage({ params }: Props) {
@@ -237,7 +539,15 @@ export default async function BlogPostPage({ params }: Props) {
     "ECDSA": "bg-red-50 text-red-700 border-red-100",
     "Falcon-512": "bg-blue-50 text-blue-700 border-blue-100",
     "Security": "bg-gray-100 text-gray-700 border-gray-200",
+    "CBOM": "bg-purple-50 text-purple-700 border-purple-100",
   };
+
+  const components: Record<string, React.FC> = {
+    "ecdsa-liability-2026": ECDSAPost,
+    "cbom-india-compliance-guide": CBOMPost,
+  };
+  const PostContent = components[slug];
+  if (!PostContent) notFound();
 
   return (
     <div className="pt-24 min-h-screen pb-32 bg-white">
@@ -312,8 +622,9 @@ export default async function BlogPostPage({ params }: Props) {
           .prose-custom th { background: #f3f4f6; font-weight: 800; text-align: left; padding: 0.6rem 1rem; border: 1px solid #e5e7eb; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #374151; }
           .prose-custom td { padding: 0.6rem 1rem; border: 1px solid #e5e7eb; color: #1f2937; }
           .prose-custom tr:hover td { background: #f9fafb; }
+          .prose-custom pre { margin: 1.5rem 0; }
         `}</style>
-        <ECDSAPost />
+        <PostContent />
       </div>
 
       {/* ── REFERENCES ────────────────────────────────────────────── */}

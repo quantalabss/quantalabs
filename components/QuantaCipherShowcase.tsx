@@ -13,7 +13,7 @@ export default function QuantaCipherShowcase() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-gray-50 text-black relative border-t border-gray-100 overflow-hidden">
+    <section id="quantacipher" className="py-24 md:py-32 bg-white text-black relative border-t border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -43,7 +43,7 @@ export default function QuantaCipherShowcase() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
-                href="http://localhost:3000" 
+                href="https://quantacipher.com" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"

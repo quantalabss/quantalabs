@@ -43,24 +43,65 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Quantalabs",
-  url: siteUrl,
-  logo: `${siteUrl}/logo/quanta-transparent-bg-logo.svg`,
-  description:
-    "Quantalabs is an institutional protocol engineering lab specializing in NIST-standardized post-quantum cryptography (PQC) migration for banks, government agencies, and enterprises.",
-  sameAs: [
-    "https://quantachain.org",
-    "https://github.com/quantachain",
-    "https://medium.com/@quantachain",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "contact@quantalabs.cc",
-    contactType: "Customer Support",
-  },
-};
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://quantalabs.cc/#organization',
+        name: 'QuantaLabs Private Limited',
+        url: 'https://quantalabs.cc',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://quantalabs.cc/logo.png',
+        },
+        description: 'India\'s first post-quantum cryptography migration company. CBOM audits, NIST PQC migration services, and QuantaCipher encryption API.',
+        foundingDate: '2026',
+        foundingLocation: {
+          '@type': 'Place',
+          name: 'Coimbatore, Tamil Nadu, India',
+        },
+        areaServed: ['IN', 'Worldwide'],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'quanta@quantachain.org',
+          contactType: 'sales',
+        },
+        sameAs: [
+          'https://quantachain.org',
+          'https://quantacipher.com',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://quantalabs.cc/#website',
+        url: 'https://quantalabs.cc',
+        name: 'QuantaLabs',
+        publisher: {
+          '@id': 'https://quantalabs.cc/#organization',
+        },
+      },
+      {
+        '@type': 'Service',
+        name: 'CBOM Audit',
+        provider: {
+          '@id': 'https://quantalabs.cc/#organization',
+        },
+        description: 'Cryptographic Bill of Materials audit for Indian enterprises — identifying quantum-vulnerable algorithms and delivering a regulatory-ready CBOM document for India DST FY 2027-28 compliance.',
+        areaServed: 'IN',
+        serviceType: 'Cryptographic Security Audit',
+      },
+      {
+        '@type': 'Service',
+        name: 'PQC Migration',
+        provider: {
+          '@id': 'https://quantalabs.cc/#organization',
+        },
+        description: 'End-to-end post-quantum cryptography migration to NIST ML-KEM and ML-DSA standards for fintech and crypto companies in India.',
+        areaServed: 'IN',
+        serviceType: 'Cryptographic Migration Consulting',
+      },
+    ],
+  };
 
 export default function Home() {
   return (
@@ -71,13 +112,13 @@ export default function Home() {
       />
       <Hero />
       <LogoTicker />
-      <ResearchTeaser />
-      <PqcStandardBanner />
-      <ServicesPreview />
-      <WalletShowcase />
-      <QuantaCipherShowcase />
       <EcosystemShowcase />
+      <QuantaCipherShowcase />
+      <WalletShowcase />
+      <ServicesPreview />
+      <PqcStandardBanner />
       <DeveloperShowcase />
+      <ResearchTeaser />
     </>
   );
 }

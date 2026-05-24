@@ -17,16 +17,16 @@ import Link from "next/link";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "Services — L2 AppChains, PQC Migrations & AI Agents",
+  title: "Services — PQC Migrations & AI Agents",
   description:
-    "Quantalabs engineers sovereign L2 rollups, executes mainnet post-quantum cryptography migrations (Falcon-512, Kyber KEM), and deploys autonomous AI agent frameworks for institutional blockchain networks.",
+    "Quantalabs executes mainnet post-quantum cryptography migrations (Falcon-512, Kyber KEM) and deploys autonomous AI agent frameworks for institutional blockchain networks.",
   alternates: {
     canonical: "https://quantalabs.cc/services",
   },
   openGraph: {
-    title: "Services — L2 AppChains, PQC Migrations & AI Agents | Quantalabs",
+    title: "Services — PQC Migrations & AI Agents | Quantalabs",
     description:
-      "Sovereign L2 AppChains, mainnet PQC migrations (Falcon-512 / Kyber KEM), and autonomous on-chain AI agents. Enterprise-grade protocol engineering by Quantalabs.",
+      "Mainnet PQC migrations (Falcon-512 / Kyber KEM) and autonomous on-chain AI agents. Enterprise-grade protocol engineering by Quantalabs.",
     url: "https://quantalabs.cc/services",
     images: [
       {
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Services — L2 AppChains, PQC Migrations & AI Agents | Quantalabs",
+    title: "Services — PQC Migrations & AI Agents | Quantalabs",
     description:
-      "Sovereign L2 rollups, mainnet post-quantum migrations, and AI agent frameworks. By Quantalabs.",
+      "Mainnet post-quantum migrations and AI agent frameworks. By Quantalabs.",
     images: [ogImage],
   },
 };
@@ -139,7 +139,6 @@ export default function ServicesPage() {
           {/* Quick-jump pills */}
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { label: "L1/L2 AppChains", href: "#appchains", icon: Blocks },
               { label: "PQC Migrations", href: "#pqc-migrations", icon: ShieldCheck },
               { label: "AI Agents", href: "#ai-agents", icon: BrainCircuit },
             ].map(({ label, href, icon: Icon }) => (
@@ -155,94 +154,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── DEEP DIVE 1: L2 APPCHAINS ──────────────────────────── */}
-      <section id="appchains" className="py-24 border-y border-gray-100 bg-gray-50/50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="w-full lg:w-1/2 animate-fade-in">
-              <div className="bg-white border border-gray-200 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-                <Blocks className="w-8 h-8 text-black" />
-              </div>
-              <h2 className="text-4xl font-extrabold text-black mb-6 tracking-tight">
-                Sovereign L2 AppChains
-              </h2>
-              <p className="text-lg text-gray-500 font-medium leading-relaxed mb-8">
-                We construct specialized Layer 2 rollups that leverage Quantachain&apos;s native
-                Rust/WASM execution environment. Designed for institutional throughput, our AppChains
-                guarantee high execution speed and instant deterministic finality.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Custom Gas & Tokenomics Modules",
-                  "Zero-Knowledge (zK) Sequencer Integration",
-                  "Trustless Interoperability Bridges",
-                  "120K+ Peak TPS Architecture",
-                ].map((feat, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center text-black font-bold text-sm bg-white border border-gray-100 px-4 py-3 rounded-xl shadow-sm w-max"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-3" /> {feat}
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            <div className="w-full lg:w-1/2 animate-fade-in">
-              <div className="bg-white rounded-[2rem] border border-gray-200 shadow-xl p-8 aspect-square md:aspect-auto md:h-[450px] flex flex-col justify-between relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-100 rounded-full blur-[100px] -mr-40 -mt-40 transition-transform group-hover:scale-110" />
-
-                <div className="relative z-10 flex justify-between items-start mb-12">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                      Network Status
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono font-bold text-black border border-gray-200 bg-gray-50 px-3 py-1 rounded-full">
-                    MAINNET-BETA
-                  </span>
-                </div>
-
-                <div className="relative z-10 grid grid-cols-2 gap-4 flex-grow">
-                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col justify-center">
-                    <span className="text-gray-400 font-mono text-xs mb-2">BLOCK_TIME</span>
-                    <span className="text-4xl font-extrabold text-black">
-                      &lt;400<span className="text-xl text-gray-400 ml-1">ms</span>
-                    </span>
-                  </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col justify-center">
-                    <span className="text-gray-400 font-mono text-xs mb-2">ACTIVE_NODES</span>
-                    <span className="text-4xl font-extrabold text-black">12,480</span>
-                  </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col justify-center col-span-2">
-                    <span className="text-gray-400 font-mono text-xs mb-2">THROUGHPUT_MAX</span>
-                    <span className="text-5xl font-extrabold text-black tracking-tighter">
-                      124,000<span className="text-2xl text-gray-400 ml-2">TPS</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── CTA for AppChains ── */}
-          {/* Link to dedicated page */}
-          <div className="mt-6 flex justify-center">
-            <Link href="/services/appchains" className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#00E599] transition-colors border-b-2 border-black hover:border-[#00E599] pb-0.5">
-              Deep Dive: L2 AppChains <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <ServiceCTA
-            headline="Ready to launch your sovereign AppChain?"
-            subline="Our team handles architecture, deployment, and ongoing infrastructure — from genesis block to mainnet."
-            primaryLabel="Start L2 Project"
-            primaryHref="/contact"
-            secondaryLabel="Explore Ecosystem"
-            secondaryHref="/ecosystem"
-          />
-        </div>
-      </section>
 
       {/* ── DEEP DIVE 2: PQC MIGRATIONS ────────────────────────── */}
       <section id="pqc-migrations" className="py-24 border-y border-gray-100 overflow-hidden">
@@ -420,8 +332,6 @@ export default function ServicesPage() {
             subline="Schedule a technical call with our AI integration team to scope your agent deployment timeline."
             primaryLabel="Schedule a Call"
             primaryHref="/contact"
-            secondaryLabel="View Ecosystem"
-            secondaryHref="/ecosystem"
             dark
           />
         </div>

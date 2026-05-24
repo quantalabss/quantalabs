@@ -6,14 +6,14 @@ const ogImage = "/seo/image.png";
 export const metadata: Metadata = {
   title: "Contact Us — Enterprise Blockchain Consulting",
   description:
-    "Get in touch with Quantalabs to discuss enterprise blockchain development, sovereign L2 AppChains, post-quantum cryptography migrations, and institutional AI agent frameworks.",
+    "Get in touch with Quantalabs to discuss enterprise blockchain development, post-quantum cryptography migrations, and institutional AI agent frameworks.",
   alternates: {
     canonical: "https://quantalabs.cc/contact",
   },
   openGraph: {
     title: "Contact Us — Enterprise Blockchain Consulting | Quantalabs",
     description:
-      "Reach the Quantalabs protocol engineering team to discuss sovereign L2 builds, PQC migrations, AI agent deployments, and institutional blockchain infrastructure.",
+      "Reach the Quantalabs protocol engineering team to discuss PQC migrations, AI agent deployments, and institutional blockchain infrastructure.",
     url: "https://quantalabs.cc/contact",
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Contact Us — Enterprise Blockchain Consulting | Quantalabs",
     description:
-      "Discuss sovereign L2 builds, PQC migrations, and AI blockchain solutions with the Quantalabs team.",
+      "Discuss PQC migrations and AI blockchain solutions with the Quantalabs team.",
     images: [ogImage],
   },
 };

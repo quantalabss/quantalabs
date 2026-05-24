@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function DeveloperShowcase() {
   const [copied, setCopied] = useState(false);
 
-  const codeSnippet = `// Bootstrap a Post-Quantum Autonomous L2 Node
+  const codeSnippet = `// Bootstrap a Post-Quantum Autonomous Node
 use quanta_core::consensus::PqcConsensus;
 use quanta_ai::agents::ValidatorAgent;
 
@@ -50,7 +50,7 @@ fn main() -> Result<(), CoreError> {
               Secured for the Quantum Era.
             </h2>
             <p className="text-lg text-gray-500 font-medium mb-8">
-              We specialize in custom L1/L2 blockchain engineering, seamless mainnet Post-Quantum Cryptography (PQC) migrations, and native AI validator integration. Build sovereign infrastructure that outlives modern encryption.
+              We specialize in custom blockchain engineering, seamless mainnet Post-Quantum Cryptography (PQC) migrations, and native AI validator integration. Build sovereign infrastructure that outlives modern encryption.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/services" className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 text-center">
@@ -85,7 +85,7 @@ fn main() -> Result<(), CoreError> {
               <div className="p-4 sm:p-6 overflow-x-auto">
                 <pre className="text-[10px] sm:text-xs md:text-sm font-mono leading-relaxed">
                   <code className="text-gray-300">
-                    <span className="text-gray-500">// Bootstrap a Post-Quantum Autonomous L2 Node</span><br />
+                    <span className="text-gray-500">// Bootstrap a Post-Quantum Autonomous Node</span><br />
                     <span className="text-blue-400">use</span> quanta_core::consensus::PqcConsensus;<br />
                     <span className="text-blue-400">use</span> quanta_ai::agents::ValidatorAgent;<br />
                     <br />

@@ -49,7 +49,7 @@ export default function ResearchTeaser() {
             href="/research"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg text-sm shrink-0"
           >
-            Read All Whitepapers
+            Read All Publications
             <ArrowRight className="w-5 h-5 ml-2" />
           </Link>
         </div>

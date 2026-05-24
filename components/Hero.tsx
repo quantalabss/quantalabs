@@ -14,38 +14,50 @@ export default function Hero() {
           <div
             className="flex flex-col justify-center max-w-2xl mt-4 md:mt-0 animate-fade-in"
           >
-            <h1
-              className="text-[3.25rem] sm:text-6xl lg:text-7xl font-black tracking-tighter text-black mb-4 md:mb-6 leading-tight md:leading-[1.05]"
-            >
-              Leading the <br className="hidden md:block" />
-              <span className="text-[#00E599]">Post-Quantum Migration.</span>
-            </h1>
-
-            <div className="flex items-center space-x-2 mb-6">
+            <div className="flex items-center space-x-3 mb-5">
               <div className="h-px w-8 bg-gray-400"></div>
-              <span className="text-gray-400 font-black tracking-[0.2em] text-xs uppercase">Securing tomorrow&apos;s data today</span>
+              <span className="text-gray-400 font-black tracking-[0.15em] text-[10px] sm:text-[11px] uppercase">
+                India DST mandates CBOM submissions by FY 2027-28
+              </span>
             </div>
 
-            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl">
-              We provide NIST-standardized PQC migration services and blockchain infrastructure for banks, government agencies, and global enterprises.
+            <h1
+              className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tighter text-black mb-5 leading-[1.05]"
+            >
+              Post Quantum <br />
+              Cryptography. <br />
+              <span className="text-[#00E599] whitespace-nowrap">Built and Deployed.</span>
+            </h1>
+
+            <p className="text-lg md:text-[1.125rem] text-gray-600 mb-6 leading-relaxed font-medium max-w-xl">
+              QuantaLabs helps Indian fintechs and crypto companies audit their cryptographic stack and migrate to NIST post-quantum standards — before the deadline hits.
             </p>
 
+            <p className="text-[13px] md:text-[14px] font-bold text-gray-400 mb-9 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span>131,000+ blocks on our live Falcon-512 blockchain</span>
+              <span className="hidden md:inline">&middot;</span>
+              <span>3 published research papers</span>
+              <span className="hidden md:inline">&middot;</span>
+              <span>QuantaCipher API in production</span>
+            </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Link
-                href="/services/pqc-audit"
-                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
+                href="/contact"
+                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
               >
-                <span>PQC Audit</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <span>Get Free Risk Assessment</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
 
               <Link
-                href="/contact"
-                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-white text-black border border-gray-200 rounded-full font-medium hover:border-black transition-all w-full sm:w-auto"
+                href="https://quantacipher.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-white text-black border border-gray-200 rounded-full font-medium hover:border-black transition-all w-full sm:w-auto"
               >
-                <span>Schedule Migration</span>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black" />
+                <span>Try QuantaCipher Free</span>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
               </Link>
             </div>
           </div>
@@ -54,7 +66,7 @@ export default function Hero() {
           <div
             className="relative lg:h-[600px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0 animate-fade-in"
           >
-            <div className="relative w-full max-w-lg aspect-square lg:aspect-auto lg:h-[90%] flex items-center justify-center">
+            <div className="relative w-full max-w-[400px] lg:max-w-[440px] aspect-square lg:aspect-auto lg:h-[80%] flex items-center justify-center lg:origin-right">
               <svg viewBox="0 0 600 600" className="w-full h-full overflow-visible">
                 <defs>
                   <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">

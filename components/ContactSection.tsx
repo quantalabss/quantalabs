@@ -4,6 +4,7 @@ import { Mail, MapPin, ArrowUpRight, MessageSquare, Building2, Phone, CheckCircl
 import { useState } from "react";
 
 const TOPICS = [
+  "Free Risk Assessment",
   "Custom Blockchain",
   "AI Infrastructure",
   "PQC Migration",
@@ -82,13 +83,13 @@ export default function ContactSection() {
             <div>
               <h2 className="text-2xl font-extrabold text-black tracking-tight mb-6">Contact Points</h2>
               <div className="flex flex-col gap-6">
-                <a href="mailto:hello@quantalabs.cc" className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-black hover:bg-white transition-all shadow-sm hover:shadow-lg">
+                <a href="mailto:info@quantalabs.cc" className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-black hover:bg-white transition-all shadow-sm hover:shadow-lg">
                   <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-black group-hover:border-black transition-colors">
                     <Mail className="w-4 h-4 text-black group-hover:text-white transition-colors" />
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">General Inquiries</p>
-                    <p className="text-black font-bold text-sm">hello@quantalabs.cc</p>
+                    <p className="text-black font-bold text-sm">info@quantalabs.cc</p>
                   </div>
                 </a>
                 <a href="mailto:contact@quantalabs.cc" className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-black hover:bg-white transition-all shadow-sm hover:shadow-lg">
@@ -96,7 +97,7 @@ export default function ContactSection() {
                     <Building2 className="w-4 h-4 text-black group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise & L2 Projects</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise Projects</p>
                     <p className="text-black font-bold text-sm">contact@quantalabs.cc</p>
                   </div>
                 </a>

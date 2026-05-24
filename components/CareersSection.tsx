@@ -260,7 +260,7 @@ export default function CareersSection() {
                   </div>
 
                   <a
-                    href={`mailto:careers@quantalabs.cc?subject=Application: ${role.title}`}
+                    href={`mailto:hr@quantalabs.cc?subject=Application: ${role.title}`}
                     className={`inline-flex items-center gap-2 text-sm font-bold transition-colors ${
                       role.highlight
                         ? "text-[#00E599] hover:text-white"
@@ -297,7 +297,7 @@ export default function CareersSection() {
 
             <div className="relative z-10 shrink-0 flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:careers@quantalabs.cc"
+                href="mailto:hr@quantalabs.cc"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-xl text-sm uppercase tracking-wider"
               >
                 Send Your Resume <ArrowUpRight className="w-4 h-4" />

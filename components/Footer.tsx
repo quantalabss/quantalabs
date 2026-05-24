@@ -45,8 +45,9 @@ const footerColumns = [
   {
     heading: "Solutions",
     links: [
-      { label: "L2 AppChains", href: "/services/appchains", badge: null },
-      { label: "PQC Migrations", href: "/services/pqc-migrations", badge: null },
+      { label: "CBOM Audit", href: "/services", badge: null },
+      { label: "PQC Migration", href: "/services/pqc-migrations", badge: null },
+      { label: "QuantaCipher", href: "https://quantacipher.com", badge: "New", external: true },
       { label: "AI Agents", href: "/services/ai-agents", badge: null },
     ],
   },
@@ -71,7 +72,7 @@ const footerColumns = [
       { label: "Blog", href: "/blog", badge: "New" },
       { label: "Careers", href: "/careers", badge: "Hiring" },
       { label: "Contact", href: "/contact", badge: null },
-      { label: "Partnerships", href: "mailto:hello@quantalabs.cc", badge: null },
+      { label: "Partnerships", href: "mailto:info@quantalabs.cc", badge: null },
     ],
   },
   {
@@ -79,7 +80,6 @@ const footerColumns = [
     links: [
       { label: "GitHub", href: "https://github.com/quantachain", badge: null, external: true },
       { label: "Documentation", href: "https://quantachain.gitbook.io/quantachain-docs", badge: null, external: true },
-      { label: "Whitepaper", href: "/docs/WHITEPAPER.docx", badge: null },
       { label: "Publications", href: "/research", badge: null },
       { label: "Open Source", href: "https://github.com/quantachain", badge: null, external: true },
     ],
@@ -177,8 +177,8 @@ export default function Footer() {
                       </Link>
                       {link.badge && (
                         <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full leading-none ${link.badge === "Hiring"
-                            ? "bg-blue-50 text-blue-600 border border-blue-100"
-                            : "bg-green-50 text-green-700 border border-green-100"
+                          ? "bg-blue-50 text-blue-600 border border-blue-100"
+                          : "bg-green-50 text-green-700 border border-green-100"
                           }`}>
                           {link.badge}
                         </span>

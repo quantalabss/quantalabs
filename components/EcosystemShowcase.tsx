@@ -42,10 +42,12 @@ export default async function EcosystemShowcase() {
 
             <div className="mt-8">
               <a 
-                href="/ecosystem" 
+                href="https://quantachain.org" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3.5 border border-gray-200 shadow-sm bg-white text-black font-bold text-sm uppercase tracking-wider rounded-xl hover:bg-gray-50 hover:border-[#00E599] hover:text-[#00E599] transition-all group"
               >
-                <span>Explore Ecosystem Product Suite</span>
+                <span>Explore Quantachain</span>
                 <ArrowUpRight className="ml-2 w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
               </a>
             </div>

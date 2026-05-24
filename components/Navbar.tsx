@@ -53,17 +53,24 @@ const navGroups: NavGroup[] = [
     footer: { label: "View all services →", href: "/services" },
     items: [
       {
-        name: "L2 AppChains",
-        href: "/services/appchains",
-        description: "Sovereign Layer 2 rollups with 124K TPS",
-        icon: Layers,
-        badge: "Live",
+        name: "CBOM Audit",
+        href: "/services",
+        description: "Cryptographic inventory and quantum risk assessment",
+        icon: BookOpen,
       },
       {
-        name: "PQC Migrations",
+        name: "PQC Migration",
         href: "/services/pqc-migrations",
-        description: "NIST Falcon-512 & Kyber KEM migrations",
+        description: "NIST-standard migration planning and implementation",
         icon: ShieldCheck,
+      },
+      {
+        name: "QuantaCipher",
+        href: "https://quantacipher.com",
+        external: true,
+        description: "Zero-trust PQC encryption API",
+        icon: ShieldCheck,
+        badge: "New",
       },
       {
         name: "AI Agents",
@@ -71,19 +78,10 @@ const navGroups: NavGroup[] = [
         description: "Deterministic on-chain LLM agent frameworks",
         icon: BrainCircuit,
       },
-      {
-        name: "QuantaCipher",
-        href: "http://localhost:3000",
-        external: true,
-        description: "Zero-Trust Enterprise API Gateway",
-        icon: ShieldCheck,
-        badge: "New",
-      },
     ],
   },
   {
     name: "Ecosystem",
-    footer: { label: "Explore the ecosystem →", href: "/ecosystem" },
     items: [
       {
         name: "Quantachain L1",
@@ -159,12 +157,6 @@ const navGroups: NavGroup[] = [
         description: "Technical insights & threat intelligence",
         icon: Newspaper,
         badge: "New",
-      },
-      {
-        name: "Whitepaper",
-        href: "/docs/WHITEPAPER.docx",
-        description: "Protocol architecture & technical specs",
-        icon: BookOpen,
       },
       {
         name: "Open Source",

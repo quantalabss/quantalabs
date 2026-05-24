@@ -1,6 +1,6 @@
 "use client";
 
-import { Layers, BrainCircuit, ShieldCheck, ArrowRight, ArrowUpRight } from "lucide-react";
+import { BookOpen, BrainCircuit, ShieldCheck, ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ServicesPreview() {
@@ -13,11 +13,11 @@ export default function ServicesPreview() {
       badge: "Standardized",
     },
     {
-      icon: Layers,
-      title: "Lattice-Enabled L2s",
-      desc: "Deploying sovereign, high-throughput rollups utilizing Falcon-512 signatures for transaction integrity and ZK-STARKs for verifiable state transitions.",
-      href: "/services/appchains",
-      badge: "Production",
+      icon: BookOpen,
+      title: "CBOM Audit",
+      desc: "Cryptographic inventory and quantum risk assessment to identify vulnerable cryptographic assets across enterprise networks.",
+      href: "/services",
+      badge: "Standardized",
     },
     {
       icon: BrainCircuit,
@@ -29,7 +29,7 @@ export default function ServicesPreview() {
   ];
 
   return (
-    <section className="py-24 bg-[#fafafa] border-y border-gray-100">
+    <section className="py-24 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12 mb-16">

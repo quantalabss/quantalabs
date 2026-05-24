@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   },
 };
 
-const tagColors: Record<string, string> = {
-  "Post-Quantum": "bg-emerald-50 text-emerald-700 border-emerald-100",
-  "ECDSA": "bg-red-50 text-red-700 border-red-100",
-  "Falcon-512": "bg-blue-50 text-blue-700 border-blue-100",
-  "Security": "bg-gray-100 text-gray-700 border-gray-200",
-};
-
-function tagClass(tag: string) {
-  return tagColors[tag] ?? "bg-gray-100 text-gray-600 border-gray-200";
-}
-
 export default function BlogPage() {
   const featured = blogPosts.find((p) => p.featured);
   const rest = blogPosts.filter((p) => !p.featured);
@@ -127,8 +116,8 @@ export default function BlogPage() {
       {rest.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
           <div className="flex items-center space-x-3 mb-8">
-            <div className="bg-gray-100 w-9 h-9 rounded-xl flex items-center justify-center">
-              <Tag className="w-4 h-4 text-black" />
+            <div className="bg-black w-9 h-9 rounded-xl flex items-center justify-center">
+              <Tag className="w-4 h-4 text-[#00E599]" />
             </div>
             <span className="text-sm font-extrabold text-black uppercase tracking-widest">
               All Articles
@@ -139,32 +128,38 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block border border-gray-100 rounded-2xl p-7 bg-white hover:border-black hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300"
+                className="group flex flex-col bg-black rounded-2xl p-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#00E599]/10"
               >
-                <div className="flex justify-between items-start mb-3">
-                  <span className="text-[10px] font-black tracking-[0.15em] text-gray-400 uppercase group-hover:text-black transition-colors">
+                {/* Subtle glow on hover */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00E599] opacity-0 group-hover:opacity-[0.05] rounded-full blur-[40px] -mr-10 -mt-10 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="flex justify-between items-start mb-3 relative z-10">
+                  <span className="text-[10px] font-black tracking-[0.15em] text-gray-500 uppercase group-hover:text-[#00E599] transition-colors">
                     {post.date}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-[#00E599] transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-                <h3 className="text-base font-bold text-black leading-snug mb-3 pr-2">
+                
+                <h3 className="text-lg font-bold text-white leading-snug mb-3 pr-2 relative z-10">
                   {post.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
+                
+                <p className="text-sm text-gray-400 leading-relaxed mb-6 line-clamp-3 relative z-10">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-800 relative z-10">
                   <div className="flex gap-2 flex-wrap">
                     {post.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${tagClass(tag)}`}
+                        className="text-[10px] font-black px-2.5 py-1 rounded-full border bg-white/5 border-white/10 text-gray-400"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="text-xs font-bold text-gray-400 flex items-center gap-1">
+                  <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
                     <Clock className="w-3 h-3" />{post.readTime}
                   </span>
                 </div>
