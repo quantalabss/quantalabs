@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'QuantaLabs Private Limited' }],
   creator: 'QuantaLabs Private Limited',
   publisher: 'QuantaLabs Private Limited',
-  metadataBase: new URL('https://quantalabs.cc'),
+  metadataBase: new URL('https://www.quantalabs.cc'),
   alternates: {
-    canonical: 'https://quantalabs.cc',
+    canonical: 'https://www.quantalabs.cc',
   },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://quantalabs.cc',
+    url: 'https://www.quantalabs.cc',
     siteName: 'QuantaLabs',
     title: 'QuantaLabs — Post-Quantum Cryptography Migration Company India',
     description: 'India\'s first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.',

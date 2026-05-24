@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | QuantaLabs Blog`,
     description: post.excerpt, // 150-160 characters
     alternates: {
-      canonical: `https://quantalabs.cc/blog/${slug}`,
+      canonical: `https://www.quantalabs.cc/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://quantalabs.cc/blog/${slug}`,
+      url: `https://www.quantalabs.cc/blog/${slug}`,
       type: 'article',
       publishedTime: post.date,
       authors: ['Kishore K, QuantaLabs'],

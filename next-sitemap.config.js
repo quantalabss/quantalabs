@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://quantalabs.cc',
+  siteUrl: 'https://www.quantalabs.cc',
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://quantalabs.cc
+Host: https://www.quantalabs.cc
 
 # Sitemaps
-Sitemap: https://quantalabs.cc/sitemap.xml
+Sitemap: https://www.quantalabs.cc/sitemap.xml

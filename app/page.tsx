@@ -47,12 +47,12 @@ const jsonLd = {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://quantalabs.cc/#organization',
+        '@id': 'https://www.quantalabs.cc/#organization',
         name: 'QuantaLabs Private Limited',
-        url: 'https://quantalabs.cc',
+        url: 'https://www.quantalabs.cc',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://quantalabs.cc/logo.png',
+          url: 'https://www.quantalabs.cc/logo.png',
         },
         description: 'India\'s first post-quantum cryptography migration company. CBOM audits, NIST PQC migration services, and QuantaCipher encryption API.',
         foundingDate: '2026',
@@ -73,18 +73,18 @@ const jsonLd = {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://quantalabs.cc/#website',
-        url: 'https://quantalabs.cc',
+        '@id': 'https://www.quantalabs.cc/#website',
+        url: 'https://www.quantalabs.cc',
         name: 'QuantaLabs',
         publisher: {
-          '@id': 'https://quantalabs.cc/#organization',
+          '@id': 'https://www.quantalabs.cc/#organization',
         },
       },
       {
         '@type': 'Service',
         name: 'CBOM Audit',
         provider: {
-          '@id': 'https://quantalabs.cc/#organization',
+          '@id': 'https://www.quantalabs.cc/#organization',
         },
         description: 'Cryptographic Bill of Materials audit for Indian enterprises — identifying quantum-vulnerable algorithms and delivering a regulatory-ready CBOM document for India DST FY 2027-28 compliance.',
         areaServed: 'IN',
@@ -94,7 +94,7 @@ const jsonLd = {
         '@type': 'Service',
         name: 'PQC Migration',
         provider: {
-          '@id': 'https://quantalabs.cc/#organization',
+          '@id': 'https://www.quantalabs.cc/#organization',
         },
         description: 'End-to-end post-quantum cryptography migration to NIST ML-KEM and ML-DSA standards for fintech and crypto companies in India.',
         areaServed: 'IN',
