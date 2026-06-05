@@ -9,11 +9,11 @@ export default function PqcStandardBanner() {
 
         <div className="mb-16 animate-fade-in">
           <div className="flex items-center space-x-2 mb-4">
-            <span className="w-12 h-0.5 bg-[#00E599]"></span>
+            <span className="w-12 h-0.5 bg-[#C4ED5F]"></span>
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-gray-400">Standardization Protocol</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter">
-            Architected for <span className="text-[#00E599]"> Maximum Performance.</span>
+            Architected for <span className="text-[#C4ED5F]"> Maximum Performance.</span>
           </h2>
         </div>
 
@@ -22,26 +22,26 @@ export default function PqcStandardBanner() {
 
           {/* 1. NIST (Large) */}
           <div className="lg:col-span-8 group relative bg-black rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden shadow-2xl min-h-[380px]">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#00E599] opacity-10 blur-[100px] -mr-48 -mt-48"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#C4ED5F] opacity-10 blur-[100px] -mr-48 -mt-48"></div>
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-[#00E599]/20 flex items-center justify-center mb-10">
-                <ShieldCheck className="w-10 h-10 text-[#00E599]" />
+              <div className="w-16 h-16 rounded-2xl bg-[#C4ED5F]/20 flex items-center justify-center mb-10">
+                <ShieldCheck className="w-10 h-10 text-[#C4ED5F]" />
               </div>
               <h3 className="text-white font-black text-4xl mb-6 tracking-tight">NIST FIPS 203/204 Standards</h3>
               <p className="text-gray-400 text-xl font-medium leading-relaxed max-w-2xl">
                 Full production-ready implementation of ML-KEM and ML-DSA standards for key encapsulation and digital signatures across global financial infrastructure.
               </p>
             </div>
-            <div className="relative z-10 flex items-center space-x-4 text-[10px] font-mono text-[#00E599]">
-              <span className="px-3 py-1.5 border border-[#00E599]/30 rounded-full bg-[#00E599]/5">COMPLIANT</span>
-              <span className="px-3 py-1.5 border border-[#00E599]/30 rounded-full bg-[#00E599]/5">PRODUCTION-READY</span>
+            <div className="relative z-10 flex items-center space-x-4 text-[10px] font-mono text-[#C4ED5F]">
+              <span className="px-3 py-1.5 border border-[#C4ED5F]/30 rounded-full bg-[#C4ED5F]/5">COMPLIANT</span>
+              <span className="px-3 py-1.5 border border-[#C4ED5F]/30 rounded-full bg-[#C4ED5F]/5">PRODUCTION-READY</span>
             </div>
           </div>
 
           {/* 2. Lattice Hardness (Medium) */}
-          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#00E599]/50 transition-all flex flex-col justify-center">
+          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#C4ED5F]/50 transition-all flex flex-col justify-center">
             <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm group-hover:bg-black transition-all">
-              <Cpu className="w-6 h-6 text-black group-hover:text-[#00E599]" />
+              <Cpu className="w-6 h-6 text-black group-hover:text-[#C4ED5F]" />
             </div>
             <h3 className="text-black font-black text-2xl mb-4 tracking-tight">Lattice Hardness</h3>
             <p className="text-gray-500 text-base font-medium leading-relaxed">
@@ -50,9 +50,9 @@ export default function PqcStandardBanner() {
           </div>
 
           {/* 3. Backward Compatible (Medium) */}
-          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#00E599]/50 transition-all">
+          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#C4ED5F]/50 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm group-hover:bg-black transition-all">
-              <History className="w-6 h-6 text-black group-hover:text-[#00E599]" />
+              <History className="w-6 h-6 text-black group-hover:text-[#C4ED5F]" />
             </div>
             <h3 className="text-black font-black text-2xl mb-4 tracking-tight">Backward Compatible</h3>
             <p className="text-gray-500 text-base font-medium leading-relaxed">
@@ -61,9 +61,9 @@ export default function PqcStandardBanner() {
           </div>
 
           {/* 4. Optimized Integration (Medium) */}
-          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#00E599]/50 transition-all">
+          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#C4ED5F]/50 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm group-hover:bg-black transition-all">
-              <Zap className="w-6 h-6 text-black group-hover:text-[#00E599]" />
+              <Zap className="w-6 h-6 text-black group-hover:text-[#C4ED5F]" />
             </div>
             <h3 className="text-black font-black text-2xl mb-4 tracking-tight">Optimized Integration</h3>
             <p className="text-gray-500 text-base font-medium leading-relaxed">
@@ -72,9 +72,9 @@ export default function PqcStandardBanner() {
           </div>
 
           {/* 5. Zero-Downtime (Medium) */}
-          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#00E599]/50 transition-all">
+          <div className="lg:col-span-4 group relative bg-[#fafafa] rounded-[2.5rem] p-10 border border-gray-100 hover:border-[#C4ED5F]/50 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm group-hover:bg-black transition-all">
-              <Database className="w-6 h-6 text-black group-hover:text-[#00E599]" />
+              <Database className="w-6 h-6 text-black group-hover:text-[#C4ED5F]" />
             </div>
             <h3 className="text-black font-black text-2xl mb-4 tracking-tight">Zero-Downtime</h3>
             <p className="text-gray-500 text-base font-medium leading-relaxed">

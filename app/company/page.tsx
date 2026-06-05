@@ -10,8 +10,8 @@ export default function CompanyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="h-px w-8 bg-[#00E599]"></div>
-              <span className="text-[#00E599] font-black tracking-[0.2em] text-xs uppercase">Corporate Identity</span>
+              <div className="h-px w-8 bg-[#C4ED5F]"></div>
+              <span className="text-[#C4ED5F] font-black tracking-[0.2em] text-xs uppercase">Corporate Identity</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-black tracking-tighter mb-8 leading-tight">
               QuantaLabs <br />
@@ -67,8 +67,8 @@ export default function CompanyPage() {
               <h2 className="text-3xl font-black text-black tracking-tight mb-8">Our Core Mission</h2>
               <div className="space-y-12">
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#00E599]/10 flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-[#00E599]" />
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#C4ED5F]/10 flex items-center justify-center">
+                    <ShieldCheck className="w-6 h-6 text-[#C4ED5F]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-xl text-black mb-2 tracking-tight">Securing Systemic Infrastructure</h4>
@@ -79,8 +79,8 @@ export default function CompanyPage() {
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#00E599]/10 flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-[#00E599]" />
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#C4ED5F]/10 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-[#C4ED5F]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-xl text-black mb-2 tracking-tight">Zero-Latency Security</h4>
@@ -91,8 +91,8 @@ export default function CompanyPage() {
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#00E599]/10 flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-[#00E599]" />
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#C4ED5F]/10 flex items-center justify-center">
+                    <Globe className="w-6 h-6 text-[#C4ED5F]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-xl text-black mb-2 tracking-tight">Global Interoperability</h4>
@@ -109,30 +109,30 @@ export default function CompanyPage() {
 
       {/* Global Section */}
       <section className="py-24 bg-black text-white rounded-[3rem] mx-4 mb-8 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00E599] opacity-10 blur-[100px] -mr-48 -mt-48"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C4ED5F] opacity-10 blur-[100px] -mr-48 -mt-48"></div>
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
             <div className="max-w-xl">
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">
-                Global by <span className="text-[#00E599]">Design.</span>
+                Global by <span className="text-[#C4ED5F]">Design.</span>
               </h2>
               <p className="text-gray-400 text-lg font-medium leading-relaxed mb-10">
                 Operating as a remote-first protocol lab, QuantaLabs serves a global client base of financial institutions, government agencies, and research bodies from across the world.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start items-center gap-8">
                 <div>
-                  <p className="text-[10px] font-mono text-[#00E599] uppercase tracking-widest mb-1">Architecture</p>
+                  <p className="text-[10px] font-mono text-[#C4ED5F] uppercase tracking-widest mb-1">Architecture</p>
                   <p className="text-sm font-bold">Remote-First</p>
                 </div>
                 <div className="h-10 w-px bg-white/10 hidden md:block"></div>
                 <div>
-                  <p className="text-[10px] font-mono text-[#00E599] uppercase tracking-widest mb-1">Operations</p>
+                  <p className="text-[10px] font-mono text-[#C4ED5F] uppercase tracking-widest mb-1">Operations</p>
                   <p className="text-sm font-bold">Global / 24-7</p>
                 </div>
                 <div className="h-10 w-px bg-white/10 hidden md:block"></div>
                 <div>
-                  <p className="text-[10px] font-mono text-[#00E599] uppercase tracking-widest mb-1">Support</p>
-                  <p className="text-sm font-bold text-white hover:text-[#00E599] transition-colors">
+                  <p className="text-[10px] font-mono text-[#C4ED5F] uppercase tracking-widest mb-1">Support</p>
+                  <p className="text-sm font-bold text-white hover:text-[#C4ED5F] transition-colors">
                     <a href="mailto:contact@quantalabs.cc">contact@quantalabs.cc</a>
                   </p>
                 </div>
@@ -140,9 +140,9 @@ export default function CompanyPage() {
             </div>
             
             <div className="relative group">
-                <div className="absolute inset-0 bg-[#00E599]/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-32 h-32 md:w-48 md:h-48 rounded-full border border-[#00E599]/30 flex items-center justify-center relative">
-                    <Globe className="w-12 h-12 md:w-20 md:h-20 text-[#00E599] animate-pulse" />
+                <div className="absolute inset-0 bg-[#C4ED5F]/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-32 h-32 md:w-48 md:h-48 rounded-full border border-[#C4ED5F]/30 flex items-center justify-center relative">
+                    <Globe className="w-12 h-12 md:w-20 md:h-20 text-[#C4ED5F] animate-pulse" />
                 </div>
             </div>
           </div>

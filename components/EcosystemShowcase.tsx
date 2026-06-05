@@ -21,7 +21,7 @@ export default async function EcosystemShowcase() {
               Ecosystem Guardian
             </span>
             <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 text-black leading-[1.05]">
-              Backing the <span className="text-[#00E599]">Quantachain</span> Mission.
+              Backing the <span className="text-[#C4ED5F]">Quantachain</span> Mission.
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium">
               As the primary development entity, Quantalabs is responsible for the ongoing architecture and expansion of the Quantachain open-source ecosystem.
@@ -45,7 +45,7 @@ export default async function EcosystemShowcase() {
                 href="https://quantachain.org" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3.5 border border-gray-200 shadow-sm bg-white text-black font-bold text-sm uppercase tracking-wider rounded-xl hover:bg-gray-50 hover:border-[#00E599] hover:text-[#00E599] transition-all group"
+                className="inline-flex items-center justify-center px-8 py-3.5 border border-gray-200 shadow-sm bg-white text-black font-bold text-sm uppercase tracking-wider rounded-xl hover:bg-gray-50 hover:border-[#C4ED5F] hover:text-[#C4ED5F] transition-all group"
               >
                 <span>Explore Quantachain</span>
                 <ArrowUpRight className="ml-2 w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
@@ -93,7 +93,7 @@ export default async function EcosystemShowcase() {
                       href={`https://scan.quantachain.org/block/${block.index}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-full bg-white rounded-xl p-4 sm:p-5 grid grid-cols-[auto_1fr_auto] gap-4 items-center border border-gray-200 shadow-sm hover:border-[#00E599] transition-all"
+                      className="group w-full bg-white rounded-xl p-4 sm:p-5 grid grid-cols-[auto_1fr_auto] gap-4 items-center border border-gray-200 shadow-sm hover:border-[#C4ED5F] transition-all"
                     >
                       <div className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-sm text-black font-extrabold font-mono group-hover:bg-black group-hover:text-white transition-colors shrink-0">
                         {block.index}

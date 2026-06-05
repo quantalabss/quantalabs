@@ -189,7 +189,7 @@ export default function CareersSection() {
                   }`}
                 >
                   {role.highlight && (
-                    <span className="absolute top-6 right-6 text-[10px] font-black tracking-[0.15em] text-black bg-[#00E599] px-3 py-1 rounded-full uppercase">
+                    <span className="absolute top-6 right-6 text-[10px] font-black tracking-[0.15em] text-black bg-[#C4ED5F] px-3 py-1 rounded-full uppercase">
                       Featured
                     </span>
                   )}
@@ -263,8 +263,8 @@ export default function CareersSection() {
                     href={`mailto:hr@quantalabs.cc?subject=Application: ${role.title}`}
                     className={`inline-flex items-center gap-2 text-sm font-bold transition-colors ${
                       role.highlight
-                        ? "text-[#00E599] hover:text-white"
-                        : "text-black hover:text-[#00E599]"
+                        ? "text-[#C4ED5F] hover:text-white"
+                        : "text-black hover:text-[#C4ED5F]"
                     }`}
                   >
                     Apply Now <ArrowUpRight className="w-4 h-4" />

@@ -129,7 +129,7 @@ export default function ValidatorNodesPage() {
               <div className="absolute bottom-6 left-6 right-6 flex gap-3">
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Uptime SLA</p>
-                  <p className="text-[#00E599] font-extrabold text-2xl">99.99%</p>
+                  <p className="text-[#C4ED5F] font-extrabold text-2xl">99.99%</p>
                 </div>
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Failover</p>
@@ -148,7 +148,7 @@ export default function ValidatorNodesPage() {
             {slaMetrics.map((s, i) => (
               <div key={i} className="text-center">
                 <p className="text-gray-600 font-mono text-[10px] uppercase tracking-widest mb-1">{s.label}</p>
-                <p className={`text-2xl font-extrabold ${s.green ? "text-[#00E599]" : "text-white"}`}>{s.value}</p>
+                <p className={`text-2xl font-extrabold ${s.green ? "text-[#C4ED5F]" : "text-white"}`}>{s.value}</p>
               </div>
             ))}
           </div>
@@ -238,8 +238,8 @@ export default function ValidatorNodesPage() {
                   "Full observability stack (Prometheus / Grafana)",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm font-bold text-black">
-                    <div className="w-5 h-5 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 flex items-center justify-center shrink-0">
-                      <div className="w-1.5 h-1.5 bg-[#00E599] rounded-full" />
+                    <div className="w-5 h-5 rounded-full bg-[#C4ED5F]/10 border border-[#C4ED5F]/30 flex items-center justify-center shrink-0">
+                      <div className="w-1.5 h-1.5 bg-[#C4ED5F] rounded-full" />
                     </div>
                     {item}
                   </div>

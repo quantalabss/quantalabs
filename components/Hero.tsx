@@ -26,7 +26,7 @@ export default function Hero() {
             >
               Post Quantum <br />
               Cryptography. <br />
-              <span className="text-[#00E599] whitespace-nowrap">Built and Deployed.</span>
+              <span className="text-[#C4ED5F] whitespace-nowrap">Built and Deployed.</span>
             </h1>
 
             <p className="text-lg md:text-[1.125rem] text-gray-600 mb-6 leading-relaxed font-medium max-w-xl">
@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
+                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
               >
                 <span>Get Free Risk Assessment</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -74,7 +74,7 @@ export default function Hero() {
                     <stop offset="100%" stopColor="#eeeeee" />
                   </linearGradient>
                   <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(0,229,153,0.08)" />
+                    <stop offset="0%" stopColor="rgba(196,237,95,0.08)" />
                     <stop offset="100%" stopColor="rgba(0,0,0,0)" />
                   </radialGradient>
                   <filter id="shadowC" x="-20%" y="-20%" width="140%" height="140%">
@@ -175,7 +175,7 @@ export default function Hero() {
 
                 {/* QBIT Core Node */}
                 <circle cx="300" cy="300" r="12" fill="#ffffff" />
-                <circle cx="300" cy="300" r="5" fill="#00E599">
+                <circle cx="300" cy="300" r="5" fill="#C4ED5F">
                   <animate attributeName="r" values="3.5; 5; 3.5" dur="2s" repeatCount="indefinite" />
                 </circle>
 

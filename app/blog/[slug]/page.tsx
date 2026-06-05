@@ -613,7 +613,7 @@ export default async function BlogPostPage({ params }: Props) {
           .prose-custom strong { color: #111; font-weight: 700; }
           .prose-custom em { color: #374151; font-style: italic; }
           .prose-custom hr { border: none; border-top: 1px solid #e5e7eb; margin: 2.5rem 0; }
-          .prose-custom blockquote { border-left: 3px solid #00E599; padding: 1rem 1.5rem; margin: 2rem 0; background: #f9fafb; border-radius: 0 0.75rem 0.75rem 0; }
+          .prose-custom blockquote { border-left: 3px solid #C4ED5F; padding: 1rem 1.5rem; margin: 2rem 0; background: #f9fafb; border-radius: 0 0.75rem 0.75rem 0; }
           .prose-custom blockquote p { color: #111; font-size: 1.1rem; font-style: italic; font-weight: 600; margin: 0 0 0.5rem; }
           .prose-custom blockquote footer { font-size: 0.8rem; color: #6b7280; font-style: normal; font-weight: 700; }
           .prose-custom ul { list-style: disc; padding-left: 1.75rem; margin: 1.25rem 0; }
@@ -660,9 +660,9 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── FOOTER CTA ────────────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-black rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00E599] opacity-[0.04] rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C4ED5F] opacity-[0.04] rounded-full blur-[100px] pointer-events-none" />
           <div className="relative z-10">
-            <div className="w-12 h-12 bg-[#00E599]/10 border border-[#00E599]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#00E599] font-extrabold text-xl">Q</div>
+            <div className="w-12 h-12 bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#C4ED5F] font-extrabold text-xl">Q</div>
             <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
               QuantaLabs — Building the Post-Quantum Future
             </h3>
@@ -674,7 +674,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href="https://quantachain.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00E599] text-black font-bold rounded-xl hover:bg-white transition-all text-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#C4ED5F] text-black font-bold rounded-xl hover:bg-white transition-all text-sm"
               >
                 Visit Quantachain <ArrowUpRight className="w-4 h-4" />
               </a>

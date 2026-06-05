@@ -62,9 +62,9 @@ const features = [
 ];
 
 const agentTypes = [
-  { name: "ARBITRAGE_AGENT", model: "Qwen-3-72B", status: "RUNNING", color: "text-[#00E599]" },
+  { name: "ARBITRAGE_AGENT", model: "Qwen-3-72B", status: "RUNNING", color: "text-[#C4ED5F]" },
   { name: "RISK_SENTINEL", model: "Quantalabs-7B", status: "MONITORING", color: "text-blue-400" },
-  { name: "GAS_OPTIMIZER", model: "Quantalabs-1B", status: "ACTIVE", color: "text-[#00E599]" },
+  { name: "GAS_OPTIMIZER", model: "Quantalabs-1B", status: "ACTIVE", color: "text-[#C4ED5F]" },
   { name: "LIQUIDITY_REBAL", model: "Qwen-3-72B", status: "QUEUED", color: "text-yellow-400" },
 ];
 
@@ -130,7 +130,7 @@ export default function AiAgentsPage() {
               <div className="absolute bottom-6 left-6 right-6 flex gap-3">
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Base Model</p>
-                  <p className="text-[#00E599] font-extrabold text-sm font-mono">Qwen-3-72B</p>
+                  <p className="text-[#C4ED5F] font-extrabold text-sm font-mono">Qwen-3-72B</p>
                 </div>
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Execution</p>
@@ -151,8 +151,8 @@ export default function AiAgentsPage() {
               <div className="flex items-center justify-between mb-8 border-b border-gray-800 pb-4">
                 <span className="text-gray-500 text-xs uppercase tracking-widest font-bold">Agent Runtime — Node 4821</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#00E599] rounded-full animate-pulse" />
-                  <span className="text-[#00E599] text-xs font-bold">LIVE</span>
+                  <div className="w-2 h-2 bg-[#C4ED5F] rounded-full animate-pulse" />
+                  <span className="text-[#C4ED5F] text-xs font-bold">LIVE</span>
                 </div>
               </div>
 
@@ -191,7 +191,7 @@ export default function AiAgentsPage() {
               <ul className="space-y-3">
                 {["No external API dependencies", "Sub-10ms inference latency on validator hardware", "Auditable decision logs for every action", "Slashing-resistant agent isolation sandboxes"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm font-bold text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-[#00E599] shrink-0" /> {item}
+                    <ArrowRight className="w-4 h-4 text-[#C4ED5F] shrink-0" /> {item}
                   </li>
                 ))}
               </ul>

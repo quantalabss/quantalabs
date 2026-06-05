@@ -15,7 +15,7 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: 'QuantaLabs — Post-Quantum Cryptography Migration Company India',
+  title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
   description: 'QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards before India\'s DST FY 2027-28 deadline. Falcon-512 blockchain. QuantaCipher API.',
   keywords: [
     'PQC migration India',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://www.quantalabs.cc',
     siteName: 'QuantaLabs',
-    title: 'QuantaLabs — Post-Quantum Cryptography Migration Company India',
+    title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
     description: 'India\'s first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.',
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QuantaLabs — Post-Quantum Cryptography Migration Company India',
+    title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
     description: 'CBOM audits and NIST PQC migration for Indian fintechs and crypto companies. India DST FY 2027-28 deadline compliance.',
     images: ['/seo/image.png'],
     creator: '@quantalabs',
@@ -97,6 +97,22 @@ export default function RootLayout({
         </main>
         <BlogNotification />
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "QuantaLabs Private Limited",
+              "alternateName": "QuantaLabs Pvt Ltd",
+              "url": "https://www.quantalabs.cc",
+              "logo": "https://www.quantalabs.cc/seo/image.png",
+              "sameAs": [
+                "https://github.com/quantachain"
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   );

@@ -155,7 +155,7 @@ export default function WasmCryptoPage() {
               <div className="absolute bottom-6 left-6 right-6 flex gap-3">
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Runtime</p>
-                  <p className="text-[#00E599] font-extrabold text-sm font-mono">WebAssembly</p>
+                  <p className="text-[#C4ED5F] font-extrabold text-sm font-mono">WebAssembly</p>
                 </div>
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Core Language</p>
@@ -188,8 +188,8 @@ export default function WasmCryptoPage() {
                   "Works in Node.js, Bun, browsers & React Native",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm font-bold text-black">
-                    <div className="w-5 h-5 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 flex items-center justify-center shrink-0">
-                      <div className="w-1.5 h-1.5 bg-[#00E599] rounded-full" />
+                    <div className="w-5 h-5 rounded-full bg-[#C4ED5F]/10 border border-[#C4ED5F]/30 flex items-center justify-center shrink-0">
+                      <div className="w-1.5 h-1.5 bg-[#C4ED5F] rounded-full" />
                     </div>
                     {item}
                   </div>

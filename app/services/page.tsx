@@ -240,7 +240,7 @@ export default function ServicesPage() {
 
           {/* ── CTA for PQC ── */}
           <div className="mt-6 flex justify-center">
-            <Link href="/services/pqc-migrations" className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#00E599] transition-colors border-b-2 border-black hover:border-[#00E599] pb-0.5">
+            <Link href="/services/pqc-migrations" className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#C4ED5F] transition-colors border-b-2 border-black hover:border-[#C4ED5F] pb-0.5">
               Deep Dive: PQC Migrations <ExternalLink className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
 
           {/* ── CTA for AI Agents (dark variant) ── */}
           <div className="mt-6 flex justify-center">
-            <Link href="/services/ai-agents" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#00E599] transition-colors border-b-2 border-white hover:border-[#00E599] pb-0.5">
+            <Link href="/services/ai-agents" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#C4ED5F] transition-colors border-b-2 border-white hover:border-[#C4ED5F] pb-0.5">
               Deep Dive: AI Agents <ExternalLink className="w-3.5 h-3.5" />
             </Link>
           </div>

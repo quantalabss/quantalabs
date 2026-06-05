@@ -17,7 +17,7 @@ export default function WalletShowcase() {
       
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-[#00E599]/5 opacity-50 blur-[100px] rounded-full"></div>
+        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-[#C4ED5F]/5 opacity-50 blur-[100px] rounded-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -26,13 +26,13 @@ export default function WalletShowcase() {
           {/* Left Column: Copy */}
             <div className="flex flex-col animate-fade-in">
             <div className="flex items-center space-x-3 mb-4">
-              <ShieldCheck className="w-5 h-5 text-[#00E599]" />
+              <ShieldCheck className="w-5 h-5 text-[#C4ED5F]" />
               <span className="font-bold tracking-widest text-xs uppercase text-gray-400">First-Party Products</span>
             </div>
             
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/20 w-fit mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00E599] animate-pulse"></span>
-              <span className="text-[10px] font-black text-[#00E599] uppercase tracking-wider">PQC Wallet</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 w-fit mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C4ED5F] animate-pulse"></span>
+              <span className="text-[10px] font-black text-[#C4ED5F] uppercase tracking-wider">PQC Wallet</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-tight text-black">
@@ -52,7 +52,7 @@ export default function WalletShowcase() {
                 href="https://chromewebstore.google.com/detail/quanta-wallet/glofbcgdmodmaohealombcgoapdbdaff?pli=1" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
               >
                 <Download className="w-5 h-5" />
                 <span>Download on Chrome</span>
@@ -64,13 +64,13 @@ export default function WalletShowcase() {
                  const Icon = opt.icon;
                  return (
                    <div key={i} className="flex flex-col space-y-3">
-                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#00E599]/5 border-2 border-[#00E599] text-[#00E599] transition-all">
+                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#C4ED5F]/5 border-2 border-[#C4ED5F] text-[#C4ED5F] transition-all">
                        <Icon className="w-5 h-5" />
                      </div>
                      <div className="flex items-center space-x-2">
                         <h4 className="font-bold text-black text-sm">{opt.title}</h4>
                         {opt.tag && (
-                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#00E599] text-black uppercase tracking-tighter">{opt.tag}</span>
+                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#C4ED5F] text-black uppercase tracking-tighter">{opt.tag}</span>
                         )}
                      </div>
                      <p className="text-xs text-gray-500 font-medium leading-relaxed">{opt.desc}</p>
@@ -91,7 +91,7 @@ export default function WalletShowcase() {
                      </div>
                      <span className="font-bold text-black text-sm">Quanta Account 1</span>
                    </div>
-                   <div className="w-2 h-2 rounded-full bg-[#00E599] shadow-[0_0_8px_#00E599]"></div>
+                   <div className="w-2 h-2 rounded-full bg-[#C4ED5F] shadow-[0_0_8px_#C4ED5F]"></div>
                 </div>
 
                 <div className="pt-20 pb-8 flex flex-col items-center justify-start h-full relative z-10 space-y-6">
@@ -103,13 +103,13 @@ export default function WalletShowcase() {
                    </div>
 
                    <div className="flex items-center space-x-3 w-full px-2">
-                     <div className="flex-1 bg-black text-white py-3.5 rounded-xl font-bold text-sm text-center shadow-md hover:bg-[#00E599] hover:text-black transition-colors cursor-pointer">Send</div>
-                     <div className="flex-1 bg-white text-black py-3.5 rounded-xl font-bold text-sm text-center border border-gray-200 shadow-sm hover:border-[#00E599] hover:text-[#00E599] transition-colors cursor-pointer">Receive</div>
+                     <div className="flex-1 bg-black text-white py-3.5 rounded-xl font-bold text-sm text-center shadow-md hover:bg-[#C4ED5F] hover:text-black transition-colors cursor-pointer">Send</div>
+                     <div className="flex-1 bg-white text-black py-3.5 rounded-xl font-bold text-sm text-center border border-gray-200 shadow-sm hover:border-[#C4ED5F] hover:text-[#C4ED5F] transition-colors cursor-pointer">Receive</div>
                    </div>
 
                    <div className="w-full bg-gray-50 rounded-xl border border-gray-200 p-4">
                      <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 block">Signature Scheme</span>
-                     <span className="text-[#00E599] text-xs font-mono font-bold flex items-center">
+                     <span className="text-[#C4ED5F] text-xs font-mono font-bold flex items-center">
                         <Shield className="w-3.5 h-3.5 mr-1.5" />
                         FALCON-512 SECURE
                      </span>

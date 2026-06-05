@@ -20,13 +20,13 @@ export default function QuantaCipherShowcase() {
           {/* Left Column: Copy */}
           <div className="flex flex-col animate-fade-in order-2 lg:order-1">
             <div className="flex items-center space-x-3 mb-4">
-              <ShieldCheck className="w-5 h-5 text-[#00E599]" />
+              <ShieldCheck className="w-5 h-5 text-[#C4ED5F]" />
               <span className="font-bold tracking-widest text-xs uppercase text-gray-400">First-Party Products</span>
             </div>
             
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/20 w-fit mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00E599] animate-pulse"></span>
-              <span className="text-[10px] font-black text-[#00E599] uppercase tracking-wider">Enterprise API Gateway</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 w-fit mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C4ED5F] animate-pulse"></span>
+              <span className="text-[10px] font-black text-[#C4ED5F] uppercase tracking-wider">Enterprise API Gateway</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-tight text-black">
@@ -46,7 +46,7 @@ export default function QuantaCipherShowcase() {
                 href="https://quantacipher.com" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
               >
                 <span>Visit QuantaCipher</span>
                 <ArrowUpRight className="w-5 h-5" />
@@ -58,13 +58,13 @@ export default function QuantaCipherShowcase() {
                  const Icon = opt.icon;
                  return (
                    <div key={i} className="flex flex-col space-y-3">
-                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#00E599]/5 border-2 border-[#00E599] text-[#00E599] transition-all">
+                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#C4ED5F]/5 border-2 border-[#C4ED5F] text-[#C4ED5F] transition-all">
                        <Icon className="w-5 h-5" />
                      </div>
                      <div className="flex items-center space-x-2">
                         <h4 className="font-bold text-black text-sm">{opt.title}</h4>
                         {opt.tag && (
-                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#00E599] text-black uppercase tracking-tighter">{opt.tag}</span>
+                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#C4ED5F] text-black uppercase tracking-tighter">{opt.tag}</span>
                         )}
                      </div>
                      <p className="text-xs text-gray-500 font-medium leading-relaxed">{opt.desc}</p>
@@ -77,7 +77,7 @@ export default function QuantaCipherShowcase() {
           {/* Right Column: Visual Showcase */}
           <div className="relative lg:h-[700px] w-full flex items-center justify-center animate-fade-in order-1 lg:order-2">
              <div className="relative w-full max-w-md bg-white rounded-2xl border border-gray-200 shadow-2xl p-8 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#00E599]"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#C4ED5F]"></div>
                 
                 <div className="flex items-center justify-between mb-8">
                     <div className="font-bold text-xl tracking-tighter">QuantaCipher</div>
@@ -100,12 +100,12 @@ export default function QuantaCipherShowcase() {
                             <span className="text-xs font-bold text-gray-400 uppercase">Requests</span>
                         </div>
                         <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                            <div className="bg-[#00E599] h-1.5 rounded-full w-3/4"></div>
+                            <div className="bg-[#C4ED5F] h-1.5 rounded-full w-3/4"></div>
                         </div>
                     </div>
 
                     <div className="bg-gray-900 text-gray-300 p-4 rounded-xl font-mono text-xs overflow-x-auto shadow-inner">
-                        <div className="text-[#00E599] mb-2">// Secure payload</div>
+                        <div className="text-[#C4ED5F] mb-2">// Secure payload</div>
                         <div><span className="text-pink-400">const</span> encrypted <span className="text-pink-400">=</span> <span className="text-blue-400">await</span> qc.encrypt(&#123;</div>
                         <div className="pl-4">data: <span className="text-yellow-300">&apos;sensitive_record&apos;</span></div>
                         <div>&#125;);</div>

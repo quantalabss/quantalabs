@@ -33,7 +33,7 @@ export default function BlogNotification() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 animate-fade-in w-[calc(100%-2rem)] sm:w-auto max-w-[280px]">
+    <div className="fixed bottom-24 md:bottom-4 right-4 z-50 animate-fade-in w-[calc(100%-2rem)] sm:w-auto max-w-[280px]">
       <Link
         href="/blog/cbom-india-compliance-guide"
         onClick={handleLinkClick}
@@ -57,7 +57,7 @@ export default function BlogNotification() {
             <div className="text-xs font-bold leading-snug mb-1.5 text-gray-800">
               Why Indian Fintechs Need a CBOM Before FY 2027
             </div>
-            <div className="text-[10px] font-bold text-black flex items-center gap-1 group-hover:text-[#00E599] transition-colors">
+            <div className="text-[10px] font-bold text-black flex items-center gap-1 group-hover:text-[#C4ED5F] transition-colors">
               Read Article <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
             </div>
           </div>

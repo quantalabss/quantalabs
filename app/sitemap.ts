@@ -1,56 +1,50 @@
-import type { MetadataRoute } from "next";
-
-const siteUrl = "https://quantalabs.cc";
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://quantalabs.cc'
+
   return [
     {
-      url: siteUrl,
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
+      changeFrequency: 'weekly',
+      priority: 1,
     },
     {
-      url: `${siteUrl}/services`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/ecosystem`,
+      url: `${baseUrl}/company`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${siteUrl}/research`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/blog`,
+      url: `${baseUrl}/research`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/blog/ecdsa-liability-2026`,
-      lastModified: new Date("2026-04-30"),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${siteUrl}/careers`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/contact`,
+      url: `${baseUrl}/careers`,
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: 'monthly',
       priority: 0.6,
     },
-  ];
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+  ]
 }

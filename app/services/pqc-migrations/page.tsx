@@ -131,7 +131,7 @@ export default function PqcMigrationsPage() {
               <div className="absolute bottom-6 left-6 right-6 flex gap-3">
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Algorithm</p>
-                  <p className="text-[#00E599] font-extrabold text-lg font-mono">Falcon-512</p>
+                  <p className="text-[#C4ED5F] font-extrabold text-lg font-mono">Falcon-512</p>
                 </div>
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
                   <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">NIST Status</p>
@@ -150,7 +150,7 @@ export default function PqcMigrationsPage() {
             {threatStats.map((s, i) => (
               <div key={i} className="text-center">
                 <p className="text-gray-600 font-mono text-[10px] uppercase tracking-widest mb-1">{s.label}</p>
-                <p className={`text-lg font-extrabold ${s.red ? "text-red-400" : s.warning ? "text-yellow-400" : s.green ? "text-[#00E599]" : "text-white"}`}>
+                <p className={`text-lg font-extrabold ${s.red ? "text-red-400" : s.warning ? "text-yellow-400" : s.green ? "text-[#C4ED5F]" : "text-white"}`}>
                   {s.value}
                 </p>
               </div>

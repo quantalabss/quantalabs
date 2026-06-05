@@ -243,7 +243,7 @@ export default function Navbar() {
               priority
             />
             <span className="text-xl font-bold tracking-tighter text-black">
-              Quantalabs<span className="text-[#00E599]">.</span>
+              Quantalabs<span className="text-[#C4ED5F]">.</span>
             </span>
           </Link>
 
@@ -264,7 +264,7 @@ export default function Navbar() {
                 >
                   {group.name}
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === group.name ? "rotate-180 text-[#00E599]" : ""
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === group.name ? "rotate-180 text-[#C4ED5F]" : ""
                       }`}
                   />
                 </button>
@@ -295,10 +295,7 @@ export default function Navbar() {
                               <div className="flex items-center gap-2 mb-0.5">
                                 <span className="text-sm font-bold text-gray-900">{item.name}</span>
                                 {item.badge && (
-                                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${item.badge === "Hiring"
-                                      ? "bg-blue-50 text-blue-600 border border-blue-100"
-                                      : "bg-green-50 text-green-700 border border-green-100"
-                                    }`}>
+                                  <span className="text-[9px] font-black tracking-widest uppercase px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 bg-gray-50/50">
                                     {item.badge}
                                   </span>
                                 )}
@@ -319,7 +316,7 @@ export default function Navbar() {
                         <div className="px-4 py-3 border-t border-gray-50 bg-gray-50/50">
                           <Link
                             href={group.footer.href}
-                            className="text-xs font-bold text-gray-400 hover:text-[#00E599] transition-colors"
+                            className="text-xs font-bold text-gray-400 hover:text-[#C4ED5F] transition-colors"
                             onClick={() => setActiveDropdown(null)}
                           >
                             {group.footer.label}
@@ -346,7 +343,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 bg-black text-white rounded-full font-semibold text-sm hover:bg-[#00E599] hover:text-black transition-all"
+              className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 bg-black text-white rounded-full font-semibold text-sm hover:bg-[#C4ED5F] hover:text-black transition-all"
             >
               Contact Us
             </Link>
@@ -404,10 +401,7 @@ export default function Navbar() {
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-gray-900">{item.name}</span>
                             {item.badge && (
-                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full ${item.badge === "Hiring"
-                                  ? "bg-blue-50 text-blue-600"
-                                  : "bg-green-50 text-green-700"
-                                }`}>
+                              <span className="text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-full border border-gray-200 text-gray-500 bg-gray-50/50">
                                 {item.badge}
                               </span>
                             )}
@@ -425,7 +419,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="mt-2 block px-6 py-4 text-sm font-bold text-white bg-black rounded-2xl text-center hover:bg-[#00E599] hover:text-black transition-all uppercase tracking-wider"
+              className="mt-2 block px-6 py-4 text-sm font-bold text-white bg-black rounded-2xl text-center hover:bg-[#C4ED5F] hover:text-black transition-all uppercase tracking-wider"
             >
               Contact Us
             </Link>

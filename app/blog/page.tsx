@@ -67,12 +67,12 @@ export default function BlogPage() {
             className="group block bg-black rounded-[2rem] p-10 md:p-16 relative overflow-hidden transition-all hover:shadow-2xl hover:shadow-black/20"
           >
             {/* Subtle glow */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00E599] opacity-[0.04] rounded-full blur-[140px] -mr-40 -mt-40 pointer-events-none group-hover:opacity-[0.08] transition-opacity" />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C4ED5F] opacity-[0.04] rounded-full blur-[140px] -mr-40 -mt-40 pointer-events-none group-hover:opacity-[0.08] transition-opacity" />
 
             <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start">
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="text-[10px] font-black tracking-[0.2em] text-[#00E599] uppercase bg-[#00E599]/10 border border-[#00E599]/20 px-3 py-1 rounded-full">
+                  <span className="text-[10px] font-black tracking-[0.2em] text-[#C4ED5F] uppercase bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 px-3 py-1 rounded-full">
                     Featured Post
                   </span>
                   <span className="text-[10px] font-mono text-gray-500">{featured.date}</span>
@@ -102,7 +102,7 @@ export default function BlogPage() {
               </div>
 
               <div className="shrink-0 flex flex-col items-end gap-4">
-                <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center group-hover:bg-[#00E599] group-hover:border-[#00E599] transition-colors">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center group-hover:bg-[#C4ED5F] group-hover:border-[#C4ED5F] transition-colors">
                   <ArrowUpRight className="w-6 h-6 text-white group-hover:text-black transition-colors" />
                 </div>
                 <span className="text-gray-600 font-bold text-sm">{featured.author}</span>
@@ -117,7 +117,7 @@ export default function BlogPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
           <div className="flex items-center space-x-3 mb-8">
             <div className="bg-black w-9 h-9 rounded-xl flex items-center justify-center">
-              <Tag className="w-4 h-4 text-[#00E599]" />
+              <Tag className="w-4 h-4 text-[#C4ED5F]" />
             </div>
             <span className="text-sm font-extrabold text-black uppercase tracking-widest">
               All Articles
@@ -128,16 +128,16 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col bg-black rounded-2xl p-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#00E599]/10"
+                className="group flex flex-col bg-black rounded-2xl p-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#C4ED5F]/10"
               >
                 {/* Subtle glow on hover */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00E599] opacity-0 group-hover:opacity-[0.05] rounded-full blur-[40px] -mr-10 -mt-10 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4ED5F] opacity-0 group-hover:opacity-[0.05] rounded-full blur-[40px] -mr-10 -mt-10 transition-opacity duration-500 pointer-events-none" />
 
                 <div className="flex justify-between items-start mb-3 relative z-10">
-                  <span className="text-[10px] font-black tracking-[0.15em] text-gray-500 uppercase group-hover:text-[#00E599] transition-colors">
+                  <span className="text-[10px] font-black tracking-[0.15em] text-gray-500 uppercase group-hover:text-[#C4ED5F] transition-colors">
                     {post.date}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-[#00E599] transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-[#C4ED5F] transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
                 
                 <h3 className="text-lg font-bold text-white leading-snug mb-3 pr-2 relative z-10">
@@ -188,7 +188,7 @@ export default function BlogPage() {
                 QuantaLabs offers cryptographic readiness assessments and Falcon-512 migration engineering for enterprise protocols.
               </p>
             </div>
-            <div className="shrink-0 flex items-center px-8 py-4 border border-gray-700 text-white font-bold rounded-xl group-hover:bg-[#00E599] group-hover:text-black group-hover:border-[#00E599] transition-all duration-300">
+            <div className="shrink-0 flex items-center px-8 py-4 border border-gray-700 text-white font-bold rounded-xl group-hover:bg-[#C4ED5F] group-hover:text-black group-hover:border-[#C4ED5F] transition-all duration-300">
               Contact Us
               <ArrowUpRight className="w-4 h-4 ml-2" />
             </div>
