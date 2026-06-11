@@ -1,9 +1,5 @@
-# *
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.quantalabs.cc
-
-# Sitemaps
-Sitemap: https://www.quantalabs.cc/sitemap.xml
+Sitemap: https://quantalabs.cc/sitemap.xml
