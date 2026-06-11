@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://quantalabs.cc/sitemap.xml',
+    sitemap: 'https://www.quantalabs.cc/sitemap.xml',
   }
 }
