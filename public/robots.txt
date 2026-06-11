@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.quantalabs.cc/sitemap.xml
+Sitemap: https://quantalabs.cc/sitemap.xml
