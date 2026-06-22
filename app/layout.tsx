@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BlogNotification from "@/components/BlogNotification";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -15,7 +14,7 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
+  title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
   description: 'QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards before India\'s DST FY 2027-28 deadline. Falcon-512 blockchain. QuantaCipher API.',
   keywords: [
     'PQC migration India',
@@ -46,20 +45,20 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://www.quantalabs.cc',
     siteName: 'QuantaLabs',
-    title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
+    title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
     description: 'India\'s first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.',
     images: [
       {
         url: '/seo/image.png',
         width: 1200,
         height: 630,
-        alt: 'QuantaLabs — Post-Quantum Cryptography Built and Deployed',
+        alt: 'QuantaLabs | Post-Quantum Cryptography Built and Deployed',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QuantaLabs Private Limited — Post-Quantum Cryptography Migration Company India',
+    title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
     description: 'CBOM audits and NIST PQC migration for Indian fintechs and crypto companies. India DST FY 2027-28 deadline compliance.',
     images: ['/seo/image.png'],
     creator: '@quantalabs',
@@ -90,12 +89,11 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} h-full scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-white text-black font-sans antialiased">
+      <body className="min-h-full flex flex-col bg-black text-white font-sans antialiased">
         <Navbar />
         <main className="flex-1">
           {children}
         </main>
-        <BlogNotification />
         <Footer />
         <script
           type="application/ld+json"

@@ -2,7 +2,7 @@ import { ShieldCheck, Download, FileText } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "PQC Readiness Audit — QuantaLabs",
+  title: "PQC Readiness Audit | QuantaLabs",
   description: "Download the QuantaLabs Post-Quantum Cryptography Readiness Assessment template to prepare your organization for the PQC migration.",
 };
 
@@ -24,7 +24,7 @@ export default function PQCAuditPage() {
             <span className="font-bold tracking-widest text-sm uppercase text-gray-500">Service</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tighter mb-6 leading-tight">
-            PQC Readiness Audit
+            <span className="text-[#C4ED5F]">Identify vulnerabilities</span><br />before they materialize.
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             The transition to post-quantum cryptography is the largest infrastructure upgrade in history. 
@@ -45,7 +45,7 @@ export default function PQCAuditPage() {
             <a 
               href="/QuantaLabs_PQC_Readiness_Assessment_Template.docx" 
               download
-              className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-[#C4ED5F] hover:text-black transition-all shadow-lg hover:scale-105 active:scale-95 w-full sm:w-auto"
+              className="group flex items-center justify-center space-x-3 px-8 py-4 bg-[#C4ED5F] text-black rounded-full font-bold hover:bg-black hover:text-white transition-all shadow-lg hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               <Download className="w-5 h-5" />
               <span>Download Template (.docx)</span>

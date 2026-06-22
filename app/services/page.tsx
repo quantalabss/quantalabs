@@ -17,14 +17,14 @@ import Link from "next/link";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "Services — PQC Migrations & AI Agents",
+  title: "Services | PQC Migrations & AI Agents",
   description:
     "Quantalabs executes mainnet post-quantum cryptography migrations (Falcon-512, Kyber KEM) and deploys autonomous AI agent frameworks for institutional blockchain networks.",
   alternates: {
     canonical: "https://quantalabs.cc/services",
   },
   openGraph: {
-    title: "Services — PQC Migrations & AI Agents | Quantalabs",
+    title: "Services | PQC Migrations & AI Agents | Quantalabs",
     description:
       "Mainnet PQC migrations (Falcon-512 / Kyber KEM) and autonomous on-chain AI agents. Enterprise-grade protocol engineering by Quantalabs.",
     url: "https://quantalabs.cc/services",
@@ -33,12 +33,12 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Quantalabs Services — Blockchain, PQC & AI Engineering",
+        alt: "Quantalabs Services | Blockchain, PQC & AI Engineering",
       },
     ],
   },
   twitter: {
-    title: "Services — PQC Migrations & AI Agents | Quantalabs",
+    title: "Services | PQC Migrations & AI Agents | Quantalabs",
     description:
       "Mainnet post-quantum migrations and AI agent frameworks. By Quantalabs.",
     images: [ogImage],
@@ -96,7 +96,7 @@ function ServiceCTA({
           className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-lg ${
             dark
               ? "bg-white text-black hover:bg-gray-100 shadow-white/10"
-              : "bg-black text-white hover:bg-gray-800 shadow-black/10"
+              : "bg-black text-white hover:bg-[#C4ED5F] hover:text-black shadow-black/10 transition-colors"
           }`}
         >
           {primaryLabel} <ArrowUpRight className="w-4 h-4" />
@@ -129,6 +129,7 @@ export default function ServicesPage() {
             Capabilities &amp; R&amp;D
           </span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-black mb-8 leading-[1.05]">
+            <span className="text-[#C4ED5F]">Enterprise</span><br />
             Engineering the <br />
             <span className="text-gray-300">Decentralized Future</span>.
           </h1>

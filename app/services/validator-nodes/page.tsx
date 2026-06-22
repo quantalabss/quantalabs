@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Validator & RPC Node Infrastructure — Enterprise Bare-Metal | Quantalabs",
+  title: "Validator & RPC Node Infrastructure | Enterprise Bare-Metal | Quantalabs",
   description:
     "Enterprise-grade dedicated RPC infrastructure and bare-metal validator clusters for Quantachain. High-availability active/passive failover, 99.99% uptime SLA.",
   alternates: { canonical: "https://quantalabs.cc/services/validator-nodes" },
@@ -92,8 +92,8 @@ export default function ValidatorNodesPage() {
                 <span className="text-xs font-black uppercase tracking-widest text-gray-600">Infrastructure</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 leading-[1.0]">
-                Validator &amp;<br />
-                <span className="text-gray-300">RPC Nodes.</span>
+                <span className="text-[#C4ED5F]">Institutional</span><br />
+                <span className="text-gray-300">Validator Nodes.</span>
               </h1>
               <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-xl">
                 Enterprise-grade bare-metal validator clusters and globally distributed RPC infrastructure
@@ -102,7 +102,7 @@ export default function ValidatorNodesPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-xl hover:bg-gray-800 transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C4ED5F] text-black font-bold rounded-xl hover:bg-black hover:text-white transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
                 >
                   Get Infrastructure <ArrowUpRight className="w-4 h-4" />
                 </Link>
@@ -263,7 +263,7 @@ export default function ValidatorNodesPage() {
               hardware specs, geographic distribution, and SLA requirements.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-5 bg-black text-white font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-gray-800 transition-all shadow-xl shadow-black/10 hover:-translate-y-1">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-5 bg-black text-white font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-[#C4ED5F] hover:text-black transition-all shadow-xl shadow-black/10 hover:-translate-y-1">
                 Get Infrastructure Quote <ArrowUpRight className="w-5 h-5" />
               </Link>
               <Link href="/services" className="inline-flex items-center gap-2 px-10 py-5 border border-gray-200 text-gray-700 font-bold uppercase tracking-wider text-sm rounded-xl hover:border-black hover:text-black transition-all">

@@ -1,189 +1,121 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowUpRight, PlayCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-export default function Hero() {
+const RPC_URL = "https://rpc.quantachain.org";
+
+async function fetchStats() {
+  try {
+    const res = await fetch(`${RPC_URL}/api/stats`, { next: { revalidate: 30 } });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+export default async function Hero() {
+  const stats = await fetchStats();
+  const chainLength = stats?.chain_length ?? null;
 
   return (
-    <section className="relative pt-24 pb-8 md:pt-28 md:pb-12 overflow-hidden bg-white text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative bg-white text-black pt-28 pb-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col border border-gray-200 shadow-sm overflow-hidden">
 
-          {/* Left Column: Typography & CTAs */}
-          <div
-            className="flex flex-col justify-center max-w-2xl mt-4 md:mt-0 animate-fade-in"
-          >
-            <div className="flex items-center space-x-3 mb-5">
-              <div className="h-px w-8 bg-gray-400"></div>
-              <span className="text-gray-400 font-black tracking-[0.15em] text-[10px] sm:text-[11px] uppercase">
-                India DST mandates CBOM submissions by FY 2027-28
-              </span>
+          {/* HEADLINE + VISUAL ROW */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200">
+            
+            {/* Left: Headline */}
+            <div className="lg:col-span-8 px-8 py-10 md:py-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-200 bg-white">
+              <h1 className="text-[2.8rem] sm:text-[3.8rem] md:text-[4.8rem] font-extrabold tracking-tighter leading-[0.93] text-black mb-4">
+                Cryptography<br />
+                the quantum<br />
+                <span className="relative inline-block mt-1">
+                  era demands.
+                  <span className="absolute bottom-1 left-0 w-full h-[5px] bg-[#C4ED5F] -z-10"></span>
+                </span>
+              </h1>
+              <p className="text-sm text-gray-500 leading-relaxed font-medium max-w-lg">
+                We audit your cryptographic stack and migrate it to{" "}
+                <strong className="text-black">NIST-finalized ML-KEM & ML-DSA</strong>{" "}
+                before India DST&apos;s FY 2027-28 mandate.
+              </p>
             </div>
 
-            <h1
-              className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tighter text-black mb-5 leading-[1.05]"
-            >
-              Post Quantum <br />
-              Cryptography. <br />
-              <span className="text-[#C4ED5F] whitespace-nowrap">Built and Deployed.</span>
-            </h1>
-
-            <p className="text-lg md:text-[1.125rem] text-gray-600 mb-6 leading-relaxed font-medium max-w-xl">
-              QuantaLabs helps Indian fintechs and crypto companies audit their cryptographic stack and migrate to NIST post-quantum standards — before the deadline hits.
-            </p>
-
-            <p className="text-[13px] md:text-[14px] font-bold text-gray-400 mb-9 flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span>131,000+ blocks on our live Falcon-512 blockchain</span>
-              <span className="hidden md:inline">&middot;</span>
-              <span>3 published research papers</span>
-              <span className="hidden md:inline">&middot;</span>
-              <span>QuantaCipher API in production</span>
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-              <Link
-                href="/contact"
-                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-xl"
-              >
-                <span>Get Free Risk Assessment</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </Link>
-
-              <Link
-                href="https://quantacipher.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center space-x-2 px-7 py-3.5 bg-white text-black border border-gray-200 rounded-full font-medium hover:border-black transition-all w-full sm:w-auto"
-              >
-                <span>Try QuantaCipher Free</span>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
-              </Link>
+            {/* Right: Accent Visual — compact */}
+            <div className="lg:col-span-4 relative bg-[#C4ED5F] flex flex-col items-center justify-center p-6 overflow-hidden min-h-[220px]">
+              <div
+                className="absolute inset-0 opacity-40 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px",
+                }}
+              ></div>
+              <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+                <span className="text-[7rem] font-black text-black leading-none select-none mb-8 tracking-tighter">
+                  ∑
+                </span>
+                <div className="w-full bg-white/90 border border-gray-200 p-3 font-mono text-[10px] text-gray-500">
+                  <div className="flex justify-between border-b border-gray-100 pb-1.5 mb-1.5">
+                    <span>Algorithm</span>
+                    <span className="text-black font-bold">ML-KEM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Target</span>
+                    <span className="text-black font-bold">FIPS 203</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Premium Abstract Shape (Static) */}
-          <div
-            className="relative lg:h-[600px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0 animate-fade-in"
-          >
-            <div className="relative w-full max-w-[400px] lg:max-w-[440px] aspect-square lg:aspect-auto lg:h-[80%] flex items-center justify-center lg:origin-right">
-              <svg viewBox="0 0 600 600" className="w-full h-full overflow-visible">
-                <defs>
-                  <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#fafafa" />
-                    <stop offset="100%" stopColor="#eeeeee" />
-                  </linearGradient>
-                  <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(196,237,95,0.08)" />
-                    <stop offset="100%" stopColor="rgba(0,0,0,0)" />
-                  </radialGradient>
-                  <filter id="shadowC" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="15" stdDeviation="25" floodOpacity="0.05" />
-                  </filter>
-                </defs>
-
-                {/* Thick Revolving Ring System */}
-                <g fill="none">
-                  <circle cx="300" cy="300" r="235" stroke="#e5e7eb" strokeWidth="6" strokeDasharray="50 15 10 15">
-                    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="25s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="248" stroke="#f3f4f6" strokeWidth="12" strokeDasharray="80 20 20 20">
-                    <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="35s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="264" stroke="#e5e7eb" strokeWidth="10" strokeDasharray="120 30">
-                    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="45s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="278" stroke="#f9fafb" strokeWidth="8" strokeDasharray="40 10 10 10">
-                    <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="20s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="290" stroke="#f3f4f6" strokeWidth="14" strokeDasharray="200 40">
-                    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="50s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="306" stroke="#e5e7eb" strokeWidth="6" strokeDasharray="15 15">
-                    <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="60s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="320" stroke="#f3f4f6" strokeWidth="18" strokeDasharray="100 50">
-                    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="40s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="338" stroke="#f9fafb" strokeWidth="8" strokeDasharray="300 100">
-                    <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="70s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="360" stroke="#f3f4f6" strokeWidth="20" strokeDasharray="400 200">
-                    <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="90s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="300" r="380" stroke="#e5e7eb" strokeWidth="8" strokeDasharray="5 20">
-                    <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="120s" repeatCount="indefinite" />
-                  </circle>
-                </g>
-
-                {/* Network Traces */}
-                <g className="stroke-gray-200 fill-none" strokeWidth="1">
-                  <path d="M 300 20 L 300 180" strokeDasharray="4 6" />
-                  <path d="M 300 420 L 300 580" strokeDasharray="4 6" />
-                  <path d="M 20 300 L 180 300" strokeDasharray="4 6" />
-                  <path d="M 420 300 L 580 300" strokeDasharray="4 6" />
-                  <path d="M 100 100 L 210 210" strokeDasharray="4 6" />
-                  <path d="M 500 500 L 390 390" strokeDasharray="4 6" />
-                  <path d="M 500 100 L 390 210" strokeDasharray="4 6" />
-                  <path d="M 100 500 L 210 390" strokeDasharray="4 6" />
-                </g>
-
-                {/* Main Processor Base */}
-                <rect x="180" y="180" width="240" height="240" rx="36" fill="url(#chipGrad)" stroke="#e5e7eb" strokeWidth="2" filter="url(#shadowC)" />
-
-                {/* High Density Pins Around Chip Border */}
-                <g fill="#d1d5db">
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <rect key={`t-${i}`} x={212 + i * 16} y="168" width="4" height="12" rx="1.5" />
-                  ))}
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <rect key={`b-${i}`} x={212 + i * 16} y="420" width="4" height="12" rx="1.5" />
-                  ))}
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <rect key={`l-${i}`} x="168" y={212 + i * 16} width="12" height="4" rx="1.5" />
-                  ))}
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <rect key={`r-${i}`} x="420" y={212 + i * 16} width="12" height="4" rx="1.5" />
-                  ))}
-                </g>
-
-                {/* Inner Logic Gates Pattern */}
-                <rect x="200" y="200" width="200" height="200" rx="20" fill="none" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4 4" />
-                <rect x="215" y="215" width="170" height="170" rx="16" fill="#ffffff" stroke="#f3f4f6" strokeWidth="2" className="shadow-[inset_0_0_20px_rgba(0,0,0,0.02)]" />
-
-                {/* Decorative Circuit Lines on Chip */}
-                <path d="M 215 250 L 235 250 L 255 270" stroke="#e5e7eb" fill="none" strokeWidth="2" />
-                <path d="M 385 350 L 365 350 L 345 330" stroke="#e5e7eb" fill="none" strokeWidth="2" />
-                <path d="M 250 385 L 250 365 L 270 345" stroke="#e5e7eb" fill="none" strokeWidth="2" />
-                <path d="M 350 215 L 350 235 L 330 255" stroke="#e5e7eb" fill="none" strokeWidth="2" />
-                <circle cx="215" cy="250" r="2" fill="#d1d5db" />
-                <circle cx="385" cy="350" r="2" fill="#d1d5db" />
-                <circle cx="250" cy="385" r="2" fill="#d1d5db" />
-                <circle cx="350" cy="215" r="2" fill="#d1d5db" />
-
-                {/* Central Quantum Core Base */}
-                <circle cx="300" cy="300" r="60" fill="url(#coreGlow)" />
-                <rect x="255" y="255" width="90" height="90" rx="16" fill="#000000" className="shadow-xl" />
-
-                {/* QBIT Internal Animation Rings */}
-                <circle cx="300" cy="300" r="24" fill="none" stroke="#222" strokeWidth="1" strokeDasharray="4 6">
-                  <animateTransform attributeName="transform" type="rotate" from="0 300 300" to="360 300 300" dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="300" cy="300" r="18" fill="none" stroke="#333" strokeWidth="1.5" strokeDasharray="3 3">
-                  <animateTransform attributeName="transform" type="rotate" from="360 300 300" to="0 300 300" dur="4s" repeatCount="indefinite" />
-                </circle>
-
-                {/* QBIT Core Node */}
-                <circle cx="300" cy="300" r="12" fill="#ffffff" />
-                <circle cx="300" cy="300" r="5" fill="#C4ED5F">
-                  <animate attributeName="r" values="3.5; 5; 3.5" dur="2s" repeatCount="indefinite" />
-                </circle>
-
-                {/* QBIT Text Branding */}
-                <text x="300" y="380" textAnchor="middle" className="font-sans text-[11px] fill-black tracking-[0.25em]" style={{ fontWeight: 800 }}>QBIT</text>
-                <text x="300" y="394" textAnchor="middle" className="font-mono text-[7px] fill-gray-400 tracking-widest font-bold">NPU COMPUTE CACHE</text>
-              </svg>
+          {/* BOTTOM ROW: Live Stats + CTAs */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 bg-white">
+            {/* Live chain stats */}
+            <div className="lg:col-span-8 px-8 py-4 border-b lg:border-b-0 lg:border-r border-gray-200 flex items-center gap-6 md:gap-8">
+              <div>
+                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
+                  {chainLength !== null ? chainLength.toLocaleString() : "—"}
+                </div>
+                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">Chain Height</div>
+              </div>
+              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
+              <div>
+                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
+                  15+
+                </div>
+                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">Active Projects</div>
+              </div>
+              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
+              <div>
+                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">10+</div>
+                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">Published Packages</div>
+              </div>
+              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
+              <div>
+                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">3</div>
+                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">Published Papers</div>
+              </div>
             </div>
+
+            {/* CTAs */}
+            <div className="lg:col-span-4 p-3 flex flex-col gap-2 bg-white justify-center">
+              <Link
+                href="/contact"
+                className="group flex items-center justify-between w-full px-6 py-3.5 bg-[#C4ED5F] text-black font-bold hover:bg-black hover:text-white transition-colors text-xs uppercase tracking-widest"
+              >
+                <span>Get CBOM Audit</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                href="/solutions"
+                className="group flex items-center justify-between w-full px-6 py-3.5 border border-gray-200 text-black font-bold hover:border-black hover:bg-gray-50 transition-colors text-xs uppercase tracking-widest"
+              >
+                <span>Explore Solutions</span>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>

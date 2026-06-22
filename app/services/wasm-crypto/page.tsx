@@ -15,12 +15,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "WASM Cryptography — Browser & Mobile PQC Libraries | Quantalabs",
+  title: "WASM Cryptography | Browser & Mobile PQC Libraries | Quantalabs",
   description:
     "Quantalabs' proprietary Rust-to-WASM post-quantum cryptographic libraries power secure browser wallets, mobile apps, and enterprise integrations with Falcon-512 and Kyber KEM.",
   alternates: { canonical: "https://quantalabs.cc/services/wasm-crypto" },
   openGraph: {
-    title: "WASM Cryptography — Browser & Mobile PQC Libraries | Quantalabs",
+    title: "WASM Cryptography | Browser & Mobile PQC Libraries | Quantalabs",
     description:
       "Rust-to-WASM post-quantum cryptographic libraries for browser wallets and mobile apps. Falcon-512 and Kyber KEM in pure WebAssembly.",
     url: "https://quantalabs.cc/services/wasm-crypto",
@@ -116,7 +116,7 @@ export default function WasmCryptoPage() {
                   href="https://www.npmjs.com/package/quanta-sdk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-xl hover:bg-gray-800 transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C4ED5F] text-black font-bold rounded-xl hover:bg-black hover:text-white transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
                 >
                   Install SDK <ArrowUpRight className="w-4 h-4" />
                 </a>

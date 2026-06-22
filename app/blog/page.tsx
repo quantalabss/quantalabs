@@ -1,201 +1,98 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Clock, Tag } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { blogPosts } from "@/lib/blog";
 
-const ogImage = "/seo/image.png";
-
 export const metadata: Metadata = {
-  title: "Blog — Post-Quantum Cryptography & Blockchain Engineering",
-  description:
-    "Technical insights, research breakdowns, and engineering deep-dives from the QuantaLabs team. Covering post-quantum cryptography, Falcon-512, ECDSA vulnerabilities, and the future of blockchain security.",
-  alternates: {
-    canonical: "https://quantalabs.cc/blog",
-  },
-  openGraph: {
-    title: "Blog — Post-Quantum Cryptography & Blockchain Engineering | Quantalabs",
-    description:
-      "Technical insights and research from QuantaLabs. ECDSA vulnerabilities, Falcon-512 benchmarks, and quantum threat timelines.",
-    url: "https://quantalabs.cc/blog",
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Quantalabs Blog — Post-Quantum Cryptography & Blockchain Engineering",
-      },
-    ],
-  },
-  twitter: {
-    title: "Blog | Quantalabs",
-    description:
-      "Technical insights from QuantaLabs on PQC, Falcon-512, and the quantum threat to ECDSA.",
-    images: [ogImage],
-  },
+  title: "Blog | QuantaLabs",
+  description: "Latest insights on post-quantum cryptography, CBOMs, and sovereign infrastructure.",
 };
 
 export default function BlogPage() {
-  const featured = blogPosts.find((p) => p.featured);
-  const rest = blogPosts.filter((p) => !p.featured);
-
   return (
-    <div className="pt-24 min-h-screen pb-32 bg-white selection:bg-gray-200">
+    <div className="bg-white min-h-screen pt-28 pb-24 text-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      {/* ── PAGE HEADER ─────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 mb-20">
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-100 pb-12 gap-6">
-          <div>
-            <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-5 block">
-              Technical Insights
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black leading-[1.0]">
-              Blog &amp; <br />
-              <span className="text-gray-300">Insights</span>
-            </h1>
+        {/* Page Header */}
+        <div className="border border-gray-200 shadow-sm bg-white mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-black/10 bg-[#C4ED5F] relative">
+              <div 
+                className="absolute inset-0 opacity-30 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px"
+                }}
+              ></div>
+              <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="w-2 h-2 bg-black"></div>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
+                  QuantaLabs Intelligence
+                </span>
+              </div>
+              <h1 className="text-[3rem] md:text-[5rem] font-black tracking-tighter leading-[0.95] text-black relative z-10">
+                The Protocol<br/>Blog.
+              </h1>
+            </div>
+            <div className="lg:col-span-4 p-10 flex flex-col justify-end bg-[#C4ED5F] relative overflow-hidden border-l border-black/10">
+              <div
+                className="absolute inset-0 opacity-[0.15] pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)`,
+                  backgroundSize: "20px 20px"
+                }}
+              ></div>
+              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none">λ</span>
+              <p className="text-sm text-black font-medium relative z-10">
+                Analysis, engineering updates, and regulatory insights from the frontier of post-quantum cryptography.
+              </p>
+            </div>
           </div>
-          <p className="text-gray-400 font-medium text-base max-w-sm leading-relaxed md:text-right">
-            Engineering analysis, research breakdowns, and threat intelligence from the QuantaLabs team.
-          </p>
         </div>
-      </section>
 
-      {/* ── FEATURED POST ───────────────────────────────────────── */}
-      {featured && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <Link
-            href={`/blog/${featured.slug}`}
-            className="group block bg-black rounded-[2rem] p-10 md:p-16 relative overflow-hidden transition-all hover:shadow-2xl hover:shadow-black/20"
-          >
-            {/* Subtle glow */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C4ED5F] opacity-[0.04] rounded-full blur-[140px] -mr-40 -mt-40 pointer-events-none group-hover:opacity-[0.08] transition-opacity" />
-
-            <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start">
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="text-[10px] font-black tracking-[0.2em] text-[#C4ED5F] uppercase bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 px-3 py-1 rounded-full">
-                    Featured Post
-                  </span>
-                  <span className="text-[10px] font-mono text-gray-500">{featured.date}</span>
-                  <span className="text-[10px] font-mono text-gray-600 flex items-center gap-1">
-                    <Clock className="w-3 h-3" />{featured.readTime}
-                  </span>
-                </div>
-
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                  {featured.title}
-                </h2>
-
-                <p className="text-gray-400 font-medium leading-relaxed text-base max-w-2xl mb-6">
-                  {featured.excerpt}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {featured.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] font-black px-2.5 py-1 rounded-full border bg-white/5 border-white/10 text-gray-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="shrink-0 flex flex-col items-end gap-4">
-                <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center group-hover:bg-[#C4ED5F] group-hover:border-[#C4ED5F] transition-colors">
-                  <ArrowUpRight className="w-6 h-6 text-white group-hover:text-black transition-colors" />
-                </div>
-                <span className="text-gray-600 font-bold text-sm">{featured.author}</span>
-              </div>
-            </div>
-          </Link>
-        </section>
-      )}
-
-      {/* ── ALL POSTS (remaining) ────────────────────────────────── */}
-      {rest.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-          <div className="flex items-center space-x-3 mb-8">
-            <div className="bg-black w-9 h-9 rounded-xl flex items-center justify-center">
-              <Tag className="w-4 h-4 text-[#C4ED5F]" />
-            </div>
-            <span className="text-sm font-extrabold text-black uppercase tracking-widest">
-              All Articles
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((post) => (
+        {/* Blog Grid */}
+        <div className="border border-gray-200 shadow-sm bg-white overflow-hidden">
+          <div className="grid grid-cols-1">
+            {blogPosts.map((post, index) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col bg-black rounded-2xl p-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#C4ED5F]/10"
+                className={`group flex flex-col md:flex-row md:items-stretch hover:bg-gray-50 transition-colors ${index !== blogPosts.length - 1 ? 'border-b border-gray-200' : ''}`}
               >
-                {/* Subtle glow on hover */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4ED5F] opacity-0 group-hover:opacity-[0.05] rounded-full blur-[40px] -mr-10 -mt-10 transition-opacity duration-500 pointer-events-none" />
-
-                <div className="flex justify-between items-start mb-3 relative z-10">
-                  <span className="text-[10px] font-black tracking-[0.15em] text-gray-500 uppercase group-hover:text-[#C4ED5F] transition-colors">
+                {/* Meta Column */}
+                <div className="w-full md:w-64 p-8 border-b md:border-b-0 md:border-r border-gray-200 flex flex-row md:flex-col justify-between md:justify-start items-center md:items-start bg-gray-50/30 group-hover:bg-white transition-colors">
+                  <span className="font-mono text-[10px] font-bold text-gray-400">
                     {post.date}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-[#C4ED5F] transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-                
-                <h3 className="text-lg font-bold text-white leading-snug mb-3 pr-2 relative z-10">
-                  {post.title}
-                </h3>
-                
-                <p className="text-sm text-gray-400 leading-relaxed mb-6 line-clamp-3 relative z-10">
-                  {post.excerpt}
-                </p>
-                
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-800 relative z-10">
-                  <div className="flex gap-2 flex-wrap">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-black px-2.5 py-1 rounded-full border bg-white/5 border-white/10 text-gray-400"
-                      >
+                  <div className="flex flex-col gap-2 mt-0 md:mt-4">
+                    {post.tags.slice(0, 2).map(tag => (
+                      <span key={tag} className="font-mono text-[9px] font-bold uppercase tracking-widest text-black bg-[#C4ED5F] px-2 py-1">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-                    <Clock className="w-3 h-3" />{post.readTime}
-                  </span>
+                </div>
+
+                {/* Content Column */}
+                <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
+                  <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 group-hover:text-[#8ab329] transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-sm text-gray-600 font-medium leading-relaxed max-w-3xl">
+                    {post.excerpt}
+                  </p>
+                </div>
+
+                {/* Action Column */}
+                <div className="w-full md:w-24 p-6 border-t md:border-t-0 md:border-l border-gray-200 flex items-center justify-center bg-white group-hover:bg-[#C4ED5F] transition-colors">
+                  <ArrowUpRight className="w-6 h-6 text-gray-300 group-hover:text-black transition-colors" />
                 </div>
               </Link>
             ))}
           </div>
-        </section>
-      )}
+        </div>
 
-      {/* ── CTA STRIP ────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link
-          href="/contact"
-          className="group block relative overflow-hidden rounded-[2.5rem] bg-black p-10 md:p-14 border border-gray-900 hover:border-gray-700 transition-all"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-80 pointer-events-none" />
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
-            <div>
-              <span className="text-gray-500 font-bold tracking-widest uppercase text-xs mb-4 block">
-                Enterprise Advisory
-              </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
-                Need a PQC Readiness Audit?
-              </h2>
-              <p className="text-gray-400 font-medium text-lg max-w-xl leading-relaxed">
-                QuantaLabs offers cryptographic readiness assessments and Falcon-512 migration engineering for enterprise protocols.
-              </p>
-            </div>
-            <div className="shrink-0 flex items-center px-8 py-4 border border-gray-700 text-white font-bold rounded-xl group-hover:bg-[#C4ED5F] group-hover:text-black group-hover:border-[#C4ED5F] transition-all duration-300">
-              Contact Us
-              <ArrowUpRight className="w-4 h-4 ml-2" />
-            </div>
-          </div>
-        </Link>
-      </section>
-
+      </div>
     </div>
   );
 }

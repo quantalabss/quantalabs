@@ -1,87 +1,114 @@
 "use client";
 
-import { BookOpen, BrainCircuit, ShieldCheck, ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { ArrowUpRight, SearchCheck, ArrowRightLeft, Code2 } from "lucide-react";
 
 export default function ServicesPreview() {
-  const services = [
-    {
-      icon: ShieldCheck,
-      title: "PQC Migration Framework",
-      desc: "Architecting the transition from Shor-vulnerable ECDSA to NIST-finalized lattice-based cryptography (ML-DSA/ML-KEM) for systemic financial infrastructure.",
-      href: "/services/pqc-migrations",
-      badge: "Standardized",
-    },
-    {
-      icon: BookOpen,
-      title: "CBOM Audit",
-      desc: "Cryptographic inventory and quantum risk assessment to identify vulnerable cryptographic assets across enterprise networks.",
-      href: "/services",
-      badge: "Standardized",
-    },
-    {
-      icon: BrainCircuit,
-      title: "Deterministic AI Agents",
-      desc: "Securing LLM-driven autonomous agents through consensus-level validation, ensuring non-deterministic AI outputs meet institutional safety standards.",
-      href: "/services/ai-agents",
-      badge: "Experimental",
-    },
-  ];
-
   return (
-    <section className="py-24 bg-white border-y border-gray-100">
+    <section className="py-24 bg-gray-50 text-black border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12 mb-16">
-          <div className="max-w-2xl animate-fade-in">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-black tracking-tighter mb-8 leading-tight">
-              Deep-Tech Solutions <br className="hidden md:block" />for the Vanguard.
-            </h2>
-            <p className="text-lg md:text-xl text-gray-500 font-medium mb-10 leading-relaxed">
-              We specialize in the engineering of sovereign infrastructure at the frontier of institutional cryptography. Our work ensures that the world&apos;s most critical data remains secure through the quantum transition.
-            </p>
-            <Link
-              href="/services"
-              className="inline-flex items-center text-sm font-bold text-black border-b-[3px] border-[#C4ED5F] pb-1 hover:text-[#C4ED5F] transition-colors uppercase tracking-widest"
-            >
-              Explore Protocol Services <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
+        
+        {/* Header */}
+        <div className="flex flex-col border border-gray-200 shadow-sm bg-white overflow-hidden mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200 bg-gray-50/50">
+            <div className="lg:col-span-8 px-8 py-10 md:py-16 border-b lg:border-b-0 lg:border-r border-black/10 bg-[#C4ED5F] relative">
+               <div 
+                className="absolute inset-0 opacity-30 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px"
+                }}
+              ></div>
+               <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="w-2 h-2 bg-black"></div>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
+                  Enterprise Solutions
+                </span>
+              </div>
+              <h2 className="text-[2.5rem] md:text-[4rem] font-black tracking-tighter leading-[0.95] text-black max-w-2xl relative z-10">
+                Securing the<br />
+                future.
+              </h2>
+            </div>
+            <div className="lg:col-span-4 px-8 py-10 flex flex-col justify-end bg-[#C4ED5F] relative overflow-hidden border-l border-black/10">
+              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none">∇</span>
+              <p className="text-sm text-black/70 font-medium relative z-10">
+                We provide end-to-end consulting, auditing, and deep-tech protocol engineering to transition institutional infrastructure to quantum safety.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* 3 service cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-in">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
+        {/* Three Column Services */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* CBOM Audit */}
+          <div className="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-black transition-colors shrink-0">
+                <SearchCheck className="w-5 h-5 text-black" />
+              </div>
+              <h3 className="text-xl font-bold text-black">CBOM Audit</h3>
+            </div>
+            <p className="text-sm text-gray-600 font-medium leading-relaxed mb-8">
+              A 4-phase Cryptographic Bill of Materials generation identifying vulnerable algorithms across your stack to ensure FIPS 203 readiness.
+            </p>
+            <div className="mt-auto pt-6 border-t border-gray-100">
               <Link
-                key={index}
-                href={service.href}
-                className="group relative bg-white border border-gray-100 rounded-[2rem] p-10 hover:border-[#C4ED5F] transition-all shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(196,237,95,0.1)] flex flex-col overflow-hidden"
+                href="/solutions/cbom-audit"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4ED5F] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
               >
-                {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[#C4ED5F]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                
-                <div className="relative z-10 flex items-center justify-between mb-8">
-                  <div className="bg-gray-50 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-black transition-all duration-300">
-                    <Icon className="w-6 h-6 text-black group-hover:text-[#C4ED5F] transition-colors" />
-                  </div>
-                  {service.badge && (
-                    <span className="text-[10px] font-black px-3 py-1 rounded-full bg-gray-100 text-gray-500 border border-gray-200 group-hover:bg-[#C4ED5F]/10 group-hover:text-[#C4ED5F] group-hover:border-[#C4ED5F]/20 transition-colors">
-                      {service.badge}
-                    </span>
-                  )}
-                </div>
-                <h3 className="relative z-10 font-extrabold text-black text-2xl mb-4 tracking-tight group-hover:text-black transition-colors">{service.title}</h3>
-                <p className="relative z-10 text-base text-gray-500 font-medium leading-relaxed flex-1 group-hover:text-gray-600 transition-colors">{service.desc}</p>
-                <div className="relative z-10 mt-8 flex items-center gap-2 text-xs font-bold text-[#C4ED5F] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                  Technical Documentation <ArrowUpRight className="w-4 h-4" />
-                </div>
+                Learn More
+                <ArrowUpRight className="w-3 h-3" />
               </Link>
-            );
-          })}
-        </div>
+            </div>
+          </div>
 
+          {/* PQC Migration */}
+          <div className="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-black transition-colors shrink-0">
+                <ArrowRightLeft className="w-5 h-5 text-black" />
+              </div>
+              <h3 className="text-xl font-bold text-black">PQC Migration</h3>
+            </div>
+            <p className="text-sm text-gray-600 font-medium leading-relaxed mb-8">
+              Full-scale engineering transition from legacy cryptography to NSA-recommended Hybrid Cryptography (ML-KEM/ML-DSA) for TLS and HSMs.
+            </p>
+            <div className="mt-auto pt-6 border-t border-gray-100">
+              <Link
+                href="/solutions/pqc-migration"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4ED5F] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
+              >
+                Learn More
+                <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Custom Engineering */}
+          <div className="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-black transition-colors shrink-0">
+                <Code2 className="w-5 h-5 text-black" />
+              </div>
+              <h3 className="text-xl font-bold text-black">Custom Engineering</h3>
+            </div>
+            <p className="text-sm text-gray-600 font-medium leading-relaxed mb-8">
+              Bespoke protocol engineering in Rust/C++. We design and implement custom sovereign L1 blockchains, AlephBFT consensus, and ZKP circuits.
+            </p>
+            <div className="mt-auto pt-6 border-t border-gray-100">
+              <Link
+                href="/solutions/engineering"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4ED5F] text-black font-bold text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
+              >
+                Learn More
+                <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

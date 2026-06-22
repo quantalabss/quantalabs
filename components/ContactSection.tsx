@@ -251,7 +251,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full bg-black text-white py-5 mt-4 rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-xl shadow-black/10 text-sm uppercase tracking-widest flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full bg-black text-white py-5 mt-4 rounded-xl font-bold hover:bg-[#C4ED5F] hover:text-black transition-colors shadow-xl shadow-black/10 text-sm uppercase tracking-widest flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {status === "loading" ? "Submitting..." : "Submit Inquiry"}
                     {status !== "loading" && <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />}

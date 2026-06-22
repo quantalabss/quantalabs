@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mainnet PQC Migrations — Post-Quantum Cryptography | Quantalabs",
+  title: "Mainnet PQC Migrations | Post-Quantum Cryptography | Quantalabs",
   description:
     "Quantalabs executes zero-downtime mainnet migrations from ECDSA to NIST-standardized Falcon-512 and Kyber KEM. Full auditing, state Merkle-tree transitions, and wallet infrastructure upgrades included.",
   alternates: { canonical: "https://quantalabs.cc/services/pqc-migrations" },
@@ -93,8 +93,8 @@ export default function PqcMigrationsPage() {
                 <span className="text-xs font-black uppercase tracking-widest text-gray-600">Post-Quantum Security</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 leading-[1.0]">
-                Mainnet PQC<br />
-                <span className="text-gray-300">Migrations.</span>
+                <span className="text-[#C4ED5F]">Zero-Downtime</span><br />
+                <span className="text-gray-300">PQC Migrations.</span>
               </h1>
               <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-xl">
                 The quantum threat is not theoretical — harvest-now-decrypt-later attacks are active today.
@@ -104,7 +104,7 @@ export default function PqcMigrationsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-xl hover:bg-gray-800 transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C4ED5F] text-black font-bold rounded-xl hover:bg-black hover:text-white transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
                 >
                   Request Free Audit <ArrowUpRight className="w-4 h-4" />
                 </Link>

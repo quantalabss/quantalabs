@@ -1,98 +1,118 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, BookOpen } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import Link from "next/link";
 
-const papers = [
-  {
-    doi: "10.5281/zenodo.18753528",
-    title: "QUANTA: Engineering a Production-Ready Post-Quantum Blockchain with Falcon-512 Lattice Signatures",
-    tag: "ZENODO PUBLICATION",
-    date: "February 24, 2026",
-    href: "https://doi.org/10.5281/zenodo.18753528",
-  },
-  {
-    doi: "10.5281/zenodo.18753529",
-    title: "Learning with Correlated Errors: A New Lattice Hard Problem with Worst-Case Reductions",
-    tag: "ZENODO PUBLICATION",
-    date: "March 11, 2026",
-    href: "https://doi.org/10.5281/zenodo.18753528",
-  },
-  {
-    doi: "10.5281/zenodo.18753530",
-    title: "Quantum Temporal Order: Structural Inevitability of Modular Flow and the Problem of Time",
-    tag: "ZENODO PUBLICATION",
-    date: "March 3, 2026",
-    href: "https://doi.org/10.5281/zenodo.18753528",
-  },
-];
-
 export default function ResearchTeaser() {
+  const papers = [
+    {
+      id: "LCE-2026-01",
+      title: "Learning with Correlated Errors: A New Lattice Hard Problem with Worst-Case Reductions",
+      date: "MAY 2026",
+      type: "PREPRINT",
+      zenodoUrl: "https://zenodo.org/records/20361875",
+    },
+    {
+      id: "QTO-2026-02",
+      title: "Quantum Temporal Order: Structural Inevitability of Modular Flow and the Problem of Time",
+      date: "MAR 2026",
+      type: "PREPRINT",
+      zenodoUrl: "https://zenodo.org/records/18845465",
+    },
+    {
+      id: "QNT-2026-03",
+      title: "QUANTA: Engineering a Production-Ready Post-Quantum Blockchain with Falcon-512 Lattice Signatures",
+      date: "FEB 2026",
+      type: "TECHNICAL REPORT",
+      zenodoUrl: "https://zenodo.org/records/18753528",
+    },
+  ];
+
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-24 bg-gray-50 text-black border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header */}
-        <div
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 animate-fade-in"
-        >
-          <div>
-            <div className="flex items-center space-x-3 mb-5">
-              <BookOpen className="w-5 h-5 text-[#C4ED5F]" />
-              <span className="font-bold tracking-widest text-xs uppercase text-gray-400">Academic Foundation</span>
+        
+        <div className="flex flex-col border border-gray-200 shadow-sm bg-white overflow-hidden">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200">
+            <div className="lg:col-span-4 p-10 border-b lg:border-b-0 lg:border-r border-black/10 flex flex-col justify-between bg-[#C4ED5F] relative">
+              <div 
+                className="absolute inset-0 opacity-30 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px"
+                }}
+              ></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 bg-black"></div>
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
+                    Applied Research
+                  </span>
+                </div>
+                <h2 className="text-3xl font-black tracking-tight text-black mb-4">
+                  From theory<br />
+                  to production.
+                </h2>
+                <p className="text-sm text-black/70 font-medium leading-relaxed mb-8">
+                  Our protocol engineering team regularly publishes findings on lattice-based cryptography, ZKPs, and secure migration strategies.
+                </p>
+              </div>
+              <Link
+                href="/research"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#C4ED5F] text-black font-bold text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-colors w-max"
+              >
+                <span>View All Papers</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter leading-tight">
-              Peer-reviewed cryptography. <br className="hidden md:block" /> Built for reality.
-            </h2>
+
+            <div className="lg:col-span-8 bg-gray-50/50">
+              <div className="flex flex-col h-full">
+                {papers.map((paper, index) => (
+                  <a
+                    href={paper.zenodoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={paper.id}
+                    className={`group flex flex-col sm:flex-row sm:items-center justify-between p-6 md:p-8 hover:bg-white transition-colors ${
+                      index !== papers.length - 1 ? 'border-b border-gray-200' : ''
+                    }`}
+                  >
+                    <div className="flex items-start gap-6 mb-4 sm:mb-0">
+                      <div className="hidden sm:flex mt-1">
+                        <FileText className="w-6 h-6 text-gray-300 group-hover:text-black transition-colors" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="font-mono text-[9px] font-bold text-gray-400 group-hover:text-black transition-colors">
+                            {paper.id}
+                          </span>
+                          <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black bg-gray-200 px-1.5 py-0.5">
+                            {paper.type}
+                          </span>
+                        </div>
+                        <h3 className="text-base font-bold text-black group-hover:text-[#8ab329] transition-colors max-w-xl">
+                          {paper.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between sm:justify-end gap-6 sm:w-auto w-full border-t sm:border-t-0 border-gray-200 pt-4 sm:pt-0">
+                      <span className="font-mono text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                        {paper.date}
+                      </span>
+                      <div className="w-8 h-8 border border-gray-200 rounded flex items-center justify-center group-hover:bg-[#C4ED5F] group-hover:border-[#C4ED5F] transition-colors">
+                        <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <Link
-            href="/research"
-            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg text-sm shrink-0"
-          >
-            Read All Publications
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
+
         </div>
-
-        {/* Subheading */}
-        <p className="text-lg text-gray-500 font-medium mb-12 leading-relaxed max-w-2xl">
-          Our core architecture is derived from rigorous academic research. We are the first to actively implement state-aware NIST-standardized Falcon-512 signatures into a globally distributed consensus engine.
-        </p>
-
-        {/* Papers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {papers.map((paper, i) => (
-            <a
-              key={i}
-              href={paper.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-gray-50 border border-gray-100 rounded-[1.5rem] p-8 hover:bg-white hover:border-[#C4ED5F] hover:shadow-[0_8px_40px_rgba(196,237,95,0.08)] transition-all duration-300 relative overflow-hidden animate-fade-in"
-            >
-              {/* Number watermark */}
-              <div className="absolute top-4 right-5 text-[4rem] font-extrabold text-gray-100 leading-none select-none pointer-events-none group-hover:text-gray-200 transition-colors">
-                0{i + 1}
-              </div>
-
-              <div className="relative z-10 flex justify-between items-start mb-4">
-                <span className="text-[9px] font-black tracking-[0.15em] text-gray-400 uppercase">
-                  {paper.tag}
-                </span>
-                <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transition-colors shrink-0 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-
-              <h3 className="relative z-10 text-base font-bold text-black leading-snug mb-6 pr-2">
-                {paper.title}
-              </h3>
-
-              <div className="relative z-10 flex flex-col gap-1 pt-4 border-t border-gray-100">
-                <span className="text-[10px] font-mono text-gray-300">DOI: {paper.doi}</span>
-                <span className="text-xs font-bold text-gray-400">{paper.date}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-
       </div>
     </section>
   );

@@ -1,117 +1,118 @@
 "use client";
 
-import { Download, Shield, Key, Server, Lock, ShieldCheck, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { ShieldCheck, Workflow, Binary, Fingerprint } from "lucide-react";
 
 export default function QuantaCipherShowcase() {
-  const features = [
-    { icon: Shield, title: "NIST Kyber-1024", desc: "Enterprise-grade post-quantum key encapsulation for secure transit.", tag: "NIST Standard" },
-    { icon: Server, title: "Zero-Trust Architecture", desc: "We never see your plaintext data or private keys. End-to-end encryption via WASM.", tag: "Zero-Trust" },
-    { icon: Lock, title: "Hybrid Cryptography", desc: "Combines ECC and Kyber for defense-in-depth security against classical and quantum threats.", tag: "FIPS Compliant" },
-    { icon: Key, title: "Developer APIs", desc: "Drop-in SDKs for Node.js, Python, and Browser. Secure your data in 15 minutes.", tag: "Developer First" },
-  ];
-
   return (
-    <section id="quantacipher" className="py-24 md:py-32 bg-white text-black relative border-t border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 bg-white text-black border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Component Grid Wrapper */}
+        <div className="flex flex-col border border-gray-200 shadow-sm bg-white overflow-hidden">
           
-          {/* Left Column: Copy */}
-          <div className="flex flex-col animate-fade-in order-2 lg:order-1">
-            <div className="flex items-center space-x-3 mb-4">
-              <ShieldCheck className="w-5 h-5 text-[#C4ED5F]" />
-              <span className="font-bold tracking-widest text-xs uppercase text-gray-400">First-Party Products</span>
+          {/* HEADER ROW */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200 bg-gray-50/50">
+            <div className="lg:col-span-8 px-8 py-10 md:py-16 border-b lg:border-b-0 lg:border-r border-gray-200">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-2 bg-[#C4ED5F]"></div>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-gray-500 uppercase font-bold">
+                  Core Infrastructure // QuantaCipher API
+                </span>
+              </div>
+              <h2 className="text-[2.5rem] md:text-[4rem] font-black tracking-tighter leading-[0.95] text-black">
+                The standard for<br/>
+                quantum safety.
+              </h2>
             </div>
             
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#C4ED5F]/10 border border-[#C4ED5F]/20 w-fit mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C4ED5F] animate-pulse"></span>
-              <span className="text-[10px] font-black text-[#C4ED5F] uppercase tracking-wider">Enterprise API Gateway</span>
-            </div>
-
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-tight text-black">
-              QuantaCipher
-            </h2>
-
-            <p className="text-xl md:text-2xl font-bold text-gray-700 mb-6 leading-relaxed">
-              Zero-Trust Post-Quantum Security for your Applications.
-            </p>
-
-            <p className="text-lg text-gray-500 mb-8 leading-relaxed font-medium">
-              Protect your enterprise applications from &quot;Store Now, Decrypt Later&quot; attacks. QuantaCipher provides a fully managed, zero-trust API gateway secured by NIST&apos;s ML-KEM (Kyber-1024) standard. 
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link 
-                href="https://quantacipher.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
-              >
-                <span>Visit QuantaCipher</span>
-                <ArrowUpRight className="w-5 h-5" />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-               {features.map((opt, i) => {
-                 const Icon = opt.icon;
-                 return (
-                   <div key={i} className="flex flex-col space-y-3">
-                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#C4ED5F]/5 border-2 border-[#C4ED5F] text-[#C4ED5F] transition-all">
-                       <Icon className="w-5 h-5" />
-                     </div>
-                     <div className="flex items-center space-x-2">
-                        <h4 className="font-bold text-black text-sm">{opt.title}</h4>
-                        {opt.tag && (
-                          <span className="text-[8px] font-black px-1.5 py-0.5 rounded-sm bg-[#C4ED5F] text-black uppercase tracking-tighter">{opt.tag}</span>
-                        )}
-                     </div>
-                     <p className="text-xs text-gray-500 font-medium leading-relaxed">{opt.desc}</p>
-                   </div>
-                 )
-               })}
+            <div className="lg:col-span-4 px-8 py-10 flex flex-col justify-end bg-gray-100/50 relative overflow-hidden">
+              {/* Decorative math/code block */}
+              <div className="absolute top-8 right-8 font-mono text-[10px] text-gray-400 opacity-50 select-none text-right space-y-1">
+                <div>let ctx = QuantaCipher::init();</div>
+                <div>ctx.load_keys(pk, sk);</div>
+                <div>ctx.encrypt(payload, ALGO_ML_KEM);</div>
+              </div>
+              <p className="text-sm text-gray-600 font-medium relative z-10 mt-16">
+                A high-performance cryptographic co-processor accessible via REST and gRPC. Instantly upgrade any stack to post-quantum readiness.
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Visual Showcase */}
-          <div className="relative lg:h-[700px] w-full flex items-center justify-center animate-fade-in order-1 lg:order-2">
-             <div className="relative w-full max-w-md bg-white rounded-2xl border border-gray-200 shadow-2xl p-8 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#C4ED5F]"></div>
-                
-                <div className="flex items-center justify-between mb-8">
-                    <div className="font-bold text-xl tracking-tighter">QuantaCipher</div>
-                    <div className="px-2 py-1 bg-gray-100 rounded text-xs font-mono text-gray-500">v1.0.0</div>
-                </div>
+          {/* FEATURES GRID ROW */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-white">
+            
+            {/* Feature 1 */}
+            <div className="p-8 border-b md:border-b-0 border-r border-gray-200 group hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 border border-gray-200 flex items-center justify-center mb-6 bg-white group-hover:border-[#C4ED5F] group-hover:bg-[#C4ED5F]/10 transition-colors">
+                <ShieldCheck className="w-5 h-5 text-black group-hover:text-[#8ab329]" />
+              </div>
+              <h3 className="text-base font-bold text-black mb-2">FIPS 203 & 204</h3>
+              <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                Strict adherence to finalized NIST lattice-based ML-KEM and ML-DSA standards.
+              </p>
+            </div>
 
-                <div className="space-y-6">
-                    <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-2">API Keys</div>
-                        <div className="flex items-center justify-between">
-                            <span className="font-mono text-sm font-bold text-gray-700">qz_live_8f9...2b1a</span>
-                            <span className="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded">ACTIVE</span>
-                        </div>
-                    </div>
+            {/* Feature 2 */}
+            <div className="p-8 border-b md:border-b-0 border-r border-gray-200 group hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 border border-gray-200 flex items-center justify-center mb-6 bg-white group-hover:border-[#C4ED5F] group-hover:bg-[#C4ED5F]/10 transition-colors">
+                <Workflow className="w-5 h-5 text-black group-hover:text-[#8ab329]" />
+              </div>
+              <h3 className="text-base font-bold text-black mb-2">Hybrid Modes</h3>
+              <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                Combine classical ECC with PQC for zero-regression security during migration.
+              </p>
+            </div>
 
-                    <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-2">Usage</div>
-                        <div className="flex justify-between items-end mb-2">
-                            <span className="text-2xl font-bold text-black">12.4M</span>
-                            <span className="text-xs font-bold text-gray-400 uppercase">Requests</span>
-                        </div>
-                        <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                            <div className="bg-[#C4ED5F] h-1.5 rounded-full w-3/4"></div>
-                        </div>
-                    </div>
+            {/* Feature 3 */}
+            <div className="p-8 border-b lg:border-b-0 lg:border-r border-gray-200 group hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 border border-gray-200 flex items-center justify-center mb-6 bg-white group-hover:border-[#C4ED5F] group-hover:bg-[#C4ED5F]/10 transition-colors">
+                <Binary className="w-5 h-5 text-black group-hover:text-[#8ab329]" />
+              </div>
+              <h3 className="text-base font-bold text-black mb-2">Sub-millisecond</h3>
+              <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                Optimized C++ and Rust core for high-frequency trading and low-latency networks.
+              </p>
+            </div>
 
-                    <div className="bg-gray-900 text-gray-300 p-4 rounded-xl font-mono text-xs overflow-x-auto shadow-inner">
-                        <div className="text-[#C4ED5F] mb-2">// Secure payload</div>
-                        <div><span className="text-pink-400">const</span> encrypted <span className="text-pink-400">=</span> <span className="text-blue-400">await</span> qc.encrypt(&#123;</div>
-                        <div className="pl-4">data: <span className="text-yellow-300">&apos;sensitive_record&apos;</span></div>
-                        <div>&#125;);</div>
-                    </div>
-                </div>
-             </div>
+            {/* Feature 4 */}
+            <div className="p-8 group hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 border border-gray-200 flex items-center justify-center mb-6 bg-white group-hover:border-[#C4ED5F] group-hover:bg-[#C4ED5F]/10 transition-colors">
+                <Fingerprint className="w-5 h-5 text-black group-hover:text-[#8ab329]" />
+              </div>
+              <h3 className="text-base font-bold text-black mb-2">HSM Integration</h3>
+              <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                Native support for PKCS#11 and major cloud HSMs to protect root keys.
+              </p>
+            </div>
+
+          </div>
+
+          {/* BOTTOM CODE PREVIEW ROW */}
+          <div className="border-t border-gray-200 bg-black text-white p-6 overflow-hidden relative">
+            {/* Subtle grid in black bg */}
+            <div 
+              className="absolute inset-0 opacity-10 pointer-events-none"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
+                backgroundSize: "20px 20px"
+              }}
+            ></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="font-mono text-xs text-gray-400">
+                <span className="text-[#C4ED5F]">import</span> {'{'} QuantaCipher {'}'} <span className="text-[#C4ED5F]">from</span> '@quantalabs/sdk';<br/>
+                <span className="text-white">const</span> qc = <span className="text-white">new</span> QuantaCipher({'{'} mode: <span className="text-[#C4ED5F]">'FIPS-203-HYBRID'</span> {'}'});
+              </div>
+              
+              <a
+                href="https://quantacipher.com/docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 border border-white/20 text-white font-bold text-xs uppercase tracking-widest hover:border-[#C4ED5F] hover:text-[#C4ED5F] transition-colors bg-white/5"
+              >
+                Read Documentation
+              </a>
+            </div>
           </div>
 
         </div>

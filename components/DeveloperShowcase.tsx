@@ -1,116 +1,101 @@
 "use client";
 
-import { Terminal, Copy, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
-import Link from "next/link";
+import { Terminal } from "lucide-react";
 
 export default function DeveloperShowcase() {
-  const [copied, setCopied] = useState(false);
-
-  const codeSnippet = `// Bootstrap a Post-Quantum Autonomous Node
-use quanta_core::consensus::PqcConsensus;
-use quanta_ai::agents::ValidatorAgent;
-
-fn main() -> Result<(), CoreError> {
-    // 1. Initialize NIST-standardized PQC layer
-    let pqc_layer = PqcConsensus::new(SignatureScheme::Falcon512);
-
-    // 2. Attach local autonomous validator AI
-    let mut ai_validator = ValidatorAgent::new(Model::Qwen3);
-    ai_validator.set_strategy(ValidationStrategy::OptimizeYield);
-
-    // 3. Launch the custom network node
-    let node = QuantaNodeBuilder::new()
-        .with_consensus(pqc_layer)
-        .with_ai_validator(ai_validator)
-        .build()?;
-
-    node.start().await
-}`;
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(codeSnippet);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <section className="py-24 md:py-32 bg-white relative">
+    <section className="py-24 bg-white text-black border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col border border-gray-200 shadow-sm bg-white overflow-hidden">
           
-          {/* Text Content */}
-          <div className="w-full lg:w-5/12 animate-fade-in">
-            <span className="text-[#C4ED5F] font-bold tracking-widest uppercase text-xs mb-6 block">
-              Core Protocol R&D
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-6 leading-tight">
-              Architected for AI. <br />
-              Secured for the Quantum Era.
-            </h2>
-            <p className="text-lg text-gray-500 font-medium mb-8">
-              We specialize in custom blockchain engineering, seamless mainnet Post-Quantum Cryptography (PQC) migrations, and native AI validator integration. Build sovereign infrastructure that outlives modern encryption.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/services" className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-[#C4ED5F] hover:text-black transition-all hover:scale-105 active:scale-95 text-center">
-                Explore Services
-              </Link>
-              <Link href="/research" className="bg-white text-black border border-gray-200 px-8 py-4 rounded-full font-medium hover:border-[#C4ED5F] hover:text-[#C4ED5F] transition-all text-center">
-                Read Research
-              </Link>
-            </div>
-          </div>
-
-          {/* Code Terminal */}
-          <div className="w-full lg:w-7/12 animate-fade-in">
-            <div className="bg-[#0A0A0A] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
-              {/* Terminal Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800 bg-[#111]">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
-                </div>
-                <div className="flex items-center text-gray-500 text-xs font-mono">
-                  <Terminal className="w-3 h-3 mr-2" />
-                  src/node/bootstrap.rs
-                </div>
-                <button onClick={copyToClipboard} className="text-gray-500 hover:text-[#C4ED5F] transition-colors">
-                  {copied ? <CheckCircle2 className="w-4 h-4 text-[#C4ED5F]" /> : <Copy className="w-4 h-4" />}
-                </button>
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            
+            {/* Content Left */}
+            <div className="lg:col-span-5 p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-black/10 flex flex-col justify-center bg-[#C4ED5F] relative">
+              <div 
+                className="absolute inset-0 opacity-30 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px"
+                }}
+              ></div>
+              <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="w-2 h-2 bg-black"></div>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
+                  Developer Experience
+                </span>
               </div>
               
-              {/* Terminal Body */}
-              <div className="p-4 sm:p-6 overflow-x-auto">
-                <pre className="text-[10px] sm:text-xs md:text-sm font-mono leading-relaxed">
-                  <code className="text-gray-300">
-                    <span className="text-gray-500">// Bootstrap a Post-Quantum Autonomous Node</span><br />
-                    <span className="text-blue-400">use</span> quanta_core::consensus::PqcConsensus;<br />
-                    <span className="text-blue-400">use</span> quanta_ai::agents::ValidatorAgent;<br />
-                    <br />
-                    <span className="text-blue-400">fn</span> <span className="text-yellow-200">main</span>() -&gt; <span className="text-[#C4ED5F]">Result</span>&lt;(), <span className="text-[#C4ED5F]">CoreError</span>&gt; {'{'}<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 1. Initialize NIST-standardized PQC layer</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> pqc_layer = <span className="text-[#C4ED5F]">PqcConsensus</span>::<span className="text-yellow-200">new</span>(<span className="text-[#C4ED5F]">SignatureScheme</span>::Falcon512);<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 2. Attach local autonomous validator AI</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let mut</span> ai_validator = <span className="text-[#C4ED5F]">ValidatorAgent</span>::<span className="text-yellow-200">new</span>(<span className="text-[#C4ED5F]">Model</span>::Qwen3);<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;ai_validator.<span className="text-yellow-200">set_strategy</span>(<span className="text-[#C4ED5F]">ValidationStrategy</span>::OptimizeYield);<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 3. Launch the custom network node</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> node = <span className="text-[#C4ED5F]">QuantaNodeBuilder</span>::<span className="text-yellow-200">new</span>()<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">with_consensus</span>(pqc_layer)<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">with_ai_validator</span>(ai_validator)<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">build</span>()?;<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;node.<span className="text-yellow-200">start</span>().<span className="text-blue-400">await</span><br />
-                    {'}'}
-                  </code>
-                </pre>
+              <h2 className="text-[2.5rem] md:text-[3.5rem] font-black tracking-tighter leading-[0.95] text-black mb-6 relative z-10">
+                Integrate PQC<br />
+                in minutes.
+              </h2>
+              
+              <p className="text-sm text-black/70 font-medium leading-relaxed mb-8 relative z-10">
+                Drop-in replacements for OpenSSL and WebCrypto APIs. SDKs available in Rust, Go, Python, and TypeScript.
+              </p>
+
+              <div className="space-y-4">
+                {['Zero-knowledge proofs for key rotation', 'Constant-time implementations', 'Automated memory safety checks'].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-4 h-4 border border-gray-300 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 bg-black"></div>
+                    </div>
+                    <span className="text-xs font-bold text-gray-800">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
 
+            {/* Terminal Right */}
+            <div className="lg:col-span-7 bg-[#0a0a0a] p-8 md:p-12 relative overflow-hidden flex flex-col">
+              
+              {/* Terminal Header */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <Terminal className="w-4 h-4 text-gray-500" />
+                  <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">
+                    bash // install
+                  </span>
+                </div>
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
+                  <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+                  <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
+                </div>
+              </div>
+
+              {/* Terminal Body */}
+              <div className="font-mono text-xs sm:text-sm leading-relaxed flex-grow">
+                <div className="text-gray-400 mb-2">
+                  <span className="text-[#C4ED5F] mr-2">$</span>
+                  <span className="text-white">cargo</span> add quantalabs-pqc
+                </div>
+                <div className="text-gray-500 mb-6">
+                  Updating crates.io index<br/>
+                  Adding quantalabs-pqc v2.1.0 to dependencies.
+                </div>
+
+                <div className="text-gray-400 mb-2">
+                  <span className="text-[#C4ED5F] mr-2">$</span>
+                  <span className="text-white">cat</span> src/main.rs
+                </div>
+                <div className="text-gray-300 border-l-2 border-white/10 pl-4 py-2 bg-white/5 space-y-1">
+                  <div><span className="text-purple-400">use</span> quantalabs_pqc::ml_kem;</div>
+                  <br/>
+                  <div><span className="text-purple-400">fn</span> <span className="text-blue-400">main</span>() {'{'}</div>
+                  <div className="pl-4"><span className="text-gray-500">// Generate NIST FIPS 203 keys</span></div>
+                  <div className="pl-4"><span className="text-purple-400">let</span> (pk, sk) = ml_kem::<span className="text-blue-400">generate_keypair</span>();</div>
+                  <br/>
+                  <div className="pl-4"><span className="text-purple-400">let</span> (shared_secret, ciphertext) = ml_kem::<span className="text-blue-400">encapsulate</span>(&amp;pk);</div>
+                  <div>{'}'}</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
