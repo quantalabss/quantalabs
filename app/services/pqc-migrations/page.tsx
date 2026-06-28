@@ -72,12 +72,17 @@ const threatStats = [
 export default function PqcMigrationsPage() {
   return (
     <div className="bg-white min-h-screen">
-
       {/* ── BACK NAV ─────────────────────────────────────────────── */}
       <div className="pt-28 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/services" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors">
-            <ArrowLeft className="w-3.5 h-3.5" /> All Services
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors"
+          >
+            <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+              ⊢
+            </span>{" "}
+            All Services
           </Link>
         </div>
       </div>
@@ -88,37 +93,47 @@ export default function PqcMigrationsPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left */}
             <div className="animate-fade-in">
-              <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-2 mb-8">
-                <ShieldCheck className="w-4 h-4 text-black" />
-                <span className="text-xs font-black uppercase tracking-widest text-gray-600">Post-Quantum Security</span>
+              <div className="inline-flex items-center gap-2 bg-gray-50 border-2 border-black rounded-full px-4 py-2 mb-8">
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  ∴
+                </span>
+                <span className="text-xs font-black uppercase tracking-widest text-gray-600">
+                  Post-Quantum Security
+                </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 leading-[1.0]">
-                <span className="text-[#C4ED5F]">Zero-Downtime</span><br />
+                <span className="text-[#C4ED5F]">Zero-Downtime</span>
+                <br />
                 <span className="text-gray-300">PQC Migrations.</span>
               </h1>
               <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-xl">
-                The quantum threat is not theoretical — harvest-now-decrypt-later attacks are active today.
-                We execute zero-downtime migrations from vulnerable ECDSA to NIST-standardized post-quantum
-                cryptography for production blockchain networks.
+                The quantum threat is not theoretical —
+                harvest-now-decrypt-later attacks are active today. We execute
+                zero-downtime migrations from vulnerable ECDSA to
+                NIST-standardized post-quantum cryptography for production
+                blockchain networks.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C4ED5F] text-black font-bold rounded-xl hover:bg-black hover:text-white transition-all shadow-xl shadow-black/10 hover:-translate-y-0.5 text-sm uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C4ED5F] border-2 border-transparent text-black font-bold hover:bg-white hover:border-black transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-none hover:-translate-y-1 text-sm uppercase tracking-wider"
                 >
                   Request Free Audit <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/research"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-200 text-black font-bold rounded-xl hover:border-black transition-all text-sm uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-transparent text-black font-bold hover:bg-[#C4ED5F] hover:border-black transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-none text-sm uppercase tracking-wider"
                 >
-                  Read Research <ArrowRight className="w-4 h-4" />
+                  Read Research{" "}
+                  <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                    ∞
+                  </span>
                 </Link>
               </div>
             </div>
 
             {/* Right: Illustration */}
-            <div className="relative rounded-[2.5rem] overflow-hidden bg-gray-950 aspect-square md:aspect-[4/3] lg:aspect-square shadow-2xl animate-fade-in">
+            <div className="relative border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-gray-950 aspect-square md:aspect-[4/3] lg:aspect-square animate-fade-in">
               <Image
                 src="/solutions/wasm.png"
                 alt="Post-Quantum Cryptography Illustration"
@@ -130,11 +145,17 @@ export default function PqcMigrationsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex gap-3">
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-                  <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">Algorithm</p>
-                  <p className="text-[#C4ED5F] font-extrabold text-lg font-mono">Falcon-512</p>
+                  <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">
+                    Algorithm
+                  </p>
+                  <p className="text-[#C4ED5F] font-extrabold text-lg font-mono">
+                    Falcon-512
+                  </p>
                 </div>
                 <div className="flex-1 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-                  <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">NIST Status</p>
+                  <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest mb-1">
+                    NIST Status
+                  </p>
                   <p className="text-white font-extrabold text-lg">FINAL ✓</p>
                 </div>
               </div>
@@ -149,8 +170,12 @@ export default function PqcMigrationsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {threatStats.map((s, i) => (
               <div key={i} className="text-center">
-                <p className="text-gray-600 font-mono text-[10px] uppercase tracking-widest mb-1">{s.label}</p>
-                <p className={`text-lg font-extrabold ${s.red ? "text-red-400" : s.warning ? "text-yellow-400" : s.green ? "text-[#C4ED5F]" : "text-white"}`}>
+                <p className="text-gray-600 font-mono text-[10px] uppercase tracking-widest mb-1">
+                  {s.label}
+                </p>
+                <p
+                  className={`text-lg font-extrabold ${s.red ? "text-red-400" : s.warning ? "text-yellow-400" : s.green ? "text-[#C4ED5F]" : "text-white"}`}
+                >
                   {s.value}
                 </p>
               </div>
@@ -163,19 +188,32 @@ export default function PqcMigrationsPage() {
       <section className="py-20 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-3 block">What We Deliver</span>
-            <h2 className="text-4xl font-extrabold text-black tracking-tight">End-to-end quantum-safe migration.</h2>
+            <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-3 block">
+              What We Deliver
+            </span>
+            <h2 className="text-4xl font-extrabold text-black tracking-tight">
+              End-to-end quantum-safe migration.
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
-                <div key={i} className="bg-white border border-gray-200 rounded-[1.5rem] p-8 hover:border-black hover:shadow-xl transition-all group">
+                <div
+                  key={i}
+                  className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-8 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all group"
+                >
                   <div className="w-11 h-11 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-black group-hover:border-black transition-all">
-                    <Icon className="w-5 h-5 text-black group-hover:text-white transition-colors" />
+                    <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                      ∇
+                    </span>
                   </div>
-                  <h3 className="text-lg font-extrabold text-black mb-2 tracking-tight">{f.title}</h3>
-                  <p className="text-gray-500 text-sm font-medium leading-relaxed">{f.desc}</p>
+                  <h3 className="text-lg font-extrabold text-black mb-2 tracking-tight">
+                    {f.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                    {f.desc}
+                  </p>
                 </div>
               );
             })}
@@ -188,12 +226,17 @@ export default function PqcMigrationsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-4 block">Migration Protocol</span>
-              <h2 className="text-4xl font-extrabold text-black tracking-tight mb-6">How the migration works.</h2>
+              <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-4 block">
+                Migration Protocol
+              </span>
+              <h2 className="text-4xl font-extrabold text-black tracking-tight mb-6">
+                How the migration works.
+              </h2>
               <p className="text-gray-500 font-medium leading-relaxed text-lg mb-8">
-                Our proprietary migration protocol orchestrates each phase of the cryptographic upgrade atomically.
-                Validators coordinate through a temporary governance quorum, ensuring network liveness is maintained
-                throughout the transition.
+                Our proprietary migration protocol orchestrates each phase of
+                the cryptographic upgrade atomically. Validators coordinate
+                through a temporary governance quorum, ensuring network liveness
+                is maintained throughout the transition.
               </p>
               <ul className="space-y-3">
                 {[
@@ -202,15 +245,21 @@ export default function PqcMigrationsPage() {
                   "Merkle-tree state recalculation",
                   "Atomic consensus upgrade & network resume",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-bold text-black">
-                    <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" /> {item}
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-sm font-bold text-black"
+                  >
+                    <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                      ∫
+                    </span>{" "}
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Terminal mock */}
-            <div className="bg-[#0A0A0A] rounded-[2rem] border border-gray-800 shadow-2xl overflow-hidden">
+            <div className="bg-[#0A0A0A] border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
               <div className="bg-[#111] border-b border-gray-800 p-4 flex items-center justify-between">
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
@@ -218,21 +267,48 @@ export default function PqcMigrationsPage() {
                   <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
                 </div>
                 <div className="text-gray-500 font-mono text-xs flex items-center gap-1">
-                  <Terminal className="w-3 h-3" /> migration.sh
+                  <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                    ∬
+                  </span>{" "}
+                  migration.sh
                 </div>
                 <div className="w-12" />
               </div>
               <div className="p-6 font-mono text-sm leading-loose text-gray-300">
-                <div><span className="text-green-400">root@quanta:~$</span> quanta-cli network upgrade --target pqc_falcon512</div>
-                <div className="text-gray-500 mt-2">[INFO] Initiating mainnet state migration protocol...</div>
-                <div className="text-gray-500">[INFO] Pausing mempool &amp; securing validator signatures...</div>
-                <div className="text-gray-500">[INFO] Compiling WASM cryptographic primitives...</div>
-                <div className="mt-3"><span className="text-blue-400">Loading module:</span> kyber_kem_v1.wasm [100%]</div>
-                <div><span className="text-blue-400">Loading module:</span> falcon_512_sig.wasm [100%]</div>
-                <div className="mt-3 text-emerald-400">✔ Cryptographic modules verified.</div>
-                <div className="text-emerald-400">✔ Merkle-tree state recalculated.</div>
-                <div className="mt-3 font-bold text-white">Migration Complete. Network is now Post-Quantum Secure.</div>
-                <div className="mt-3"><span className="text-green-400">root@quanta:~$</span> <span className="animate-pulse">_</span></div>
+                <div>
+                  <span className="text-green-400">root@quanta:~$</span>{" "}
+                  quanta-cli network upgrade --target pqc_falcon512
+                </div>
+                <div className="text-gray-500 mt-2">
+                  [INFO] Initiating mainnet state migration protocol...
+                </div>
+                <div className="text-gray-500">
+                  [INFO] Pausing mempool &amp; securing validator signatures...
+                </div>
+                <div className="text-gray-500">
+                  [INFO] Compiling WASM cryptographic primitives...
+                </div>
+                <div className="mt-3">
+                  <span className="text-blue-400">Loading module:</span>{" "}
+                  kyber_kem_v1.wasm [100%]
+                </div>
+                <div>
+                  <span className="text-blue-400">Loading module:</span>{" "}
+                  falcon_512_sig.wasm [100%]
+                </div>
+                <div className="mt-3 text-emerald-400">
+                  ✔ Cryptographic modules verified.
+                </div>
+                <div className="text-emerald-400">
+                  ✔ Merkle-tree state recalculated.
+                </div>
+                <div className="mt-3 font-bold text-white">
+                  Migration Complete. Network is now Post-Quantum Secure.
+                </div>
+                <div className="mt-3">
+                  <span className="text-green-400">root@quanta:~$</span>{" "}
+                  <span className="animate-pulse">_</span>
+                </div>
               </div>
             </div>
           </div>
@@ -242,28 +318,39 @@ export default function PqcMigrationsPage() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-black rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="bg-black border-2 border-black shadow-[6px_6px_0px_0px_rgba(196,237,95,1)] p-12 md:p-20 text-center relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
-            <span className="relative z-10 text-gray-500 font-bold tracking-widest uppercase text-xs mb-6 block">Free Assessment</span>
+            <span className="relative z-10 text-gray-500 font-bold tracking-widest uppercase text-xs mb-6 block">
+              Free Assessment
+            </span>
             <h2 className="relative z-10 text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tighter">
               Is your protocol quantum-vulnerable?
             </h2>
             <p className="relative z-10 text-xl text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
-              We offer free preliminary cryptographic exposure audits. Get a written assessment of your protocol&apos;s
-              vulnerability timeline and recommended migration path — no commitment required.
+              We offer free preliminary cryptographic exposure audits. Get a
+              written assessment of your protocol&apos;s vulnerability timeline
+              and recommended migration path — no commitment required.
             </p>
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-1">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-1"
+              >
                 Request Free Audit <ArrowUpRight className="w-5 h-5" />
               </Link>
-              <Link href="/research" className="inline-flex items-center gap-2 px-10 py-5 border border-gray-700 text-white font-bold uppercase tracking-wider text-sm rounded-xl hover:border-gray-500 hover:bg-white/5 transition-all">
-                Read Our Research <ArrowRight className="w-5 h-5" />
+              <Link
+                href="/research"
+                className="inline-flex items-center gap-2 px-10 py-5 border border-gray-700 text-white font-bold uppercase tracking-wider text-sm rounded-xl hover:border-gray-500 hover:bg-white/5 transition-all"
+              >
+                Read Our Research{" "}
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  ⨀
+                </span>
               </Link>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

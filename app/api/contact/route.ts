@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     });
     
     return NextResponse.json({ success: true, data: newContact }, { status: 201 });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating contact:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },

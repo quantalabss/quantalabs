@@ -68,7 +68,7 @@ function ServiceCTA({
       className={`mt-16 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border relative overflow-hidden ${
         dark
           ? "bg-white/5 border-white/10"
-          : "bg-white border-gray-200 shadow-sm"
+          : "bg-white border-gray-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
       }`}
     >
       <div className="relative z-10 max-w-xl">
@@ -86,7 +86,9 @@ function ServiceCTA({
         >
           {headline}
         </h3>
-        <p className={`text-base font-medium leading-relaxed ${dark ? "text-gray-400" : "text-gray-500"}`}>
+        <p
+          className={`text-base font-medium leading-relaxed ${dark ? "text-gray-400" : "text-gray-500"}`}
+        >
           {subline}
         </p>
       </div>
@@ -110,7 +112,10 @@ function ServiceCTA({
                 : "border-gray-200 text-gray-700 hover:border-black hover:text-black"
             }`}
           >
-            {secondaryLabel} <ArrowRight className="w-4 h-4" />
+            {secondaryLabel}{" "}
+            <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+              ∬
+            </span>
           </Link>
         )}
       </div>
@@ -121,7 +126,6 @@ function ServiceCTA({
 export default function ServicesPage() {
   return (
     <div className="pt-24 min-h-screen pb-32 bg-white selection:bg-gray-200">
-
       {/* ── PAGE HERO ──────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 text-center pt-12 md:pt-20">
         <div className="animate-fade-in">
@@ -129,36 +133,46 @@ export default function ServicesPage() {
             Capabilities &amp; R&amp;D
           </span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-black mb-8 leading-[1.05]">
-            <span className="text-[#C4ED5F]">Enterprise</span><br />
+            <span className="text-[#C4ED5F]">Enterprise</span>
+            <br />
             Engineering the <br />
             <span className="text-gray-300">Decentralized Future</span>.
           </h1>
           <p className="text-lg md:text-xl text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
-            From bespoke sovereign rollups to full-scale post-quantum algorithmic migrations, our
-            engineering team architects the next generation of institutional networks.
+            From bespoke sovereign rollups to full-scale post-quantum
+            algorithmic migrations, our engineering team architects the next
+            generation of institutional networks.
           </p>
           {/* Quick-jump pills */}
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { label: "PQC Migrations", href: "#pqc-migrations", icon: ShieldCheck },
+              {
+                label: "PQC Migrations",
+                href: "#pqc-migrations",
+                icon: ShieldCheck,
+              },
               { label: "AI Agents", href: "#ai-agents", icon: BrainCircuit },
             ].map(({ label, href, icon: Icon }) => (
               <a
                 key={href}
                 href={href}
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-all bg-white"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full border-2 border-black text-gray-600 hover:border-black hover:text-black transition-all bg-white"
               >
-                <Icon className="w-3.5 h-3.5" /> {label}
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  ⨀
+                </span>{" "}
+                {label}
               </a>
             ))}
           </div>
         </div>
       </section>
 
-
-
       {/* ── DEEP DIVE 2: PQC MIGRATIONS ────────────────────────── */}
-      <section id="pqc-migrations" className="py-24 border-y border-gray-100 overflow-hidden">
+      <section
+        id="pqc-migrations"
+        className="py-24 border-y border-gray-100 overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2 order-2 lg:order-1 animate-fade-in">
@@ -171,7 +185,10 @@ export default function ServicesPage() {
                     <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
                   </div>
                   <div className="text-gray-500 font-mono text-xs flex items-center">
-                    <Terminal className="w-3 h-3 mr-2" /> migration.sh
+                    <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                      ⚙
+                    </span>{" "}
+                    migration.sh
                   </div>
                   <div className="w-12" />
                 </div>
@@ -185,19 +202,26 @@ export default function ServicesPage() {
                     [INFO] Initiating mainnet state migration protocol...
                   </div>
                   <div className="text-gray-500">
-                    [INFO] Pausing mempool &amp; securing validator signatures...
+                    [INFO] Pausing mempool &amp; securing validator
+                    signatures...
                   </div>
                   <div className="text-gray-500">
                     [INFO] Compiling WASM cryptographic primitives...
                   </div>
                   <div className="mt-4">
-                    <span className="text-blue-400">Loading module:</span> kyber_kem_v1.wasm [100%]
+                    <span className="text-blue-400">Loading module:</span>{" "}
+                    kyber_kem_v1.wasm [100%]
                   </div>
                   <div>
-                    <span className="text-blue-400">Loading module:</span> falcon_512_sig.wasm [100%]
+                    <span className="text-blue-400">Loading module:</span>{" "}
+                    falcon_512_sig.wasm [100%]
                   </div>
-                  <div className="mt-4 text-emerald-400">✔ Cryptographic modules verified.</div>
-                  <div className="text-emerald-400">✔ Merkle-tree state recalculated.</div>
+                  <div className="mt-4 text-emerald-400">
+                    ✔ Cryptographic modules verified.
+                  </div>
+                  <div className="text-emerald-400">
+                    ✔ Merkle-tree state recalculated.
+                  </div>
                   <div className="mt-4 font-bold text-white">
                     Migration Complete. Network is now Post-Quantum Secure.
                   </div>
@@ -210,16 +234,18 @@ export default function ServicesPage() {
             </div>
 
             <div className="w-full lg:w-1/2 order-1 lg:order-2 animate-fade-in">
-              <div className="bg-gray-50 border border-gray-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-                <ShieldCheck className="w-8 h-8 text-black" />
+              <div className="bg-gray-50 border border-gray-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  ⬡
+                </span>
               </div>
               <h2 className="text-4xl font-extrabold text-black mb-6 tracking-tight">
                 Mainnet PQC Migrations
               </h2>
               <p className="text-lg text-gray-500 font-medium leading-relaxed mb-8">
-                The quantum threat is imminent. We partner with legacy protocols to execute
-                zero-downtime migrations from vulnerable ECDSA algorithms to NIST-standardized
-                Post-Quantum schemes.
+                The quantum threat is imminent. We partner with legacy protocols
+                to execute zero-downtime migrations from vulnerable ECDSA
+                algorithms to NIST-standardized Post-Quantum schemes.
               </p>
               <ul className="space-y-4">
                 {[
@@ -230,9 +256,12 @@ export default function ServicesPage() {
                 ].map((feat, i) => (
                   <li
                     key={i}
-                    className="flex items-center text-black font-bold text-sm bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl shadow-sm w-max"
+                    className="flex items-center text-black font-bold text-sm bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] w-max"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-gray-400 mr-3" /> {feat}
+                    <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                      ⇌
+                    </span>{" "}
+                    {feat}
                   </li>
                 ))}
               </ul>
@@ -241,8 +270,14 @@ export default function ServicesPage() {
 
           {/* ── CTA for PQC ── */}
           <div className="mt-6 flex justify-center">
-            <Link href="/services/pqc-migrations" className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#C4ED5F] transition-colors border-b-2 border-black hover:border-[#C4ED5F] pb-0.5">
-              Deep Dive: PQC Migrations <ExternalLink className="w-3.5 h-3.5" />
+            <Link
+              href="/services/pqc-migrations"
+              className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#C4ED5F] transition-colors border-b-2 border-black hover:border-[#C4ED5F] pb-0.5"
+            >
+              Deep Dive: PQC Migrations{" "}
+              <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                Φ
+              </span>
             </Link>
           </div>
           <ServiceCTA
@@ -257,7 +292,10 @@ export default function ServicesPage() {
       </section>
 
       {/* ── DEEP DIVE 3: AI NETWORKS ────────────────────────────── */}
-      <section id="ai-agents" className="bg-black py-24 overflow-hidden text-white relative">
+      <section
+        id="ai-agents"
+        className="bg-black py-24 overflow-hidden text-white relative"
+      >
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[80%] bg-white opacity-[0.02] blur-[150px] rounded-full" />
         </div>
@@ -265,15 +303,18 @@ export default function ServicesPage() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2 animate-fade-in">
               <div className="bg-white/10 border border-gray-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                <BrainCircuit className="w-8 h-8 text-white" />
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  Ξ
+                </span>
               </div>
               <h2 className="text-4xl font-extrabold text-white mb-6 tracking-tight">
                 Autonomous AI Agents
               </h2>
               <p className="text-lg text-gray-400 font-medium leading-relaxed mb-8">
-                Integrate intelligent autonomy at the protocol level. We architect specialized nodes
-                running LLM-driven deterministic agents performing predictive automated trading,
-                risk-monitoring, and dynamic gas optimization.
+                Integrate intelligent autonomy at the protocol level. We
+                architect specialized nodes running LLM-driven deterministic
+                agents performing predictive automated trading, risk-monitoring,
+                and dynamic gas optimization.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -286,7 +327,10 @@ export default function ServicesPage() {
                     key={i}
                     className="flex items-center text-white font-bold text-sm bg-white/5 border border-white/10 px-4 py-4 rounded-xl"
                   >
-                    <ArrowRight className="w-4 h-4 text-gray-500 mr-3" /> {feat}
+                    <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                      Γ
+                    </span>{" "}
+                    {feat}
                   </div>
                 ))}
               </div>
@@ -295,27 +339,33 @@ export default function ServicesPage() {
             <div className="w-full lg:w-1/2 animate-fade-in">
               <div className="bg-[#050505] rounded-[2rem] border border-gray-800 shadow-2xl p-8 h-[450px] relative overflow-hidden font-mono text-sm flex flex-col justify-end">
                 <div className="opacity-40 mb-auto">
-                  <span className="text-gray-600 block">Initializing Agent Sequence...</span>
+                  <span className="text-gray-600 block">
+                    Initializing Agent Sequence...
+                  </span>
                   <span className="text-gray-600 block">Model: Qwen-3-72B</span>
-                  <span className="text-gray-600 block">Risk Tolerance: Strict</span>
-                  <span className="text-gray-600 block mt-4">--- STREAM ---</span>
+                  <span className="text-gray-600 block">
+                    Risk Tolerance: Strict
+                  </span>
+                  <span className="text-gray-600 block mt-4">
+                    --- STREAM ---
+                  </span>
                 </div>
                 <div className="space-y-3">
                   <div className="text-gray-400">
-                    <span className="text-blue-400 mr-2">[14:02:01]</span> Analyzing mempool
-                    transactions...
+                    <span className="text-blue-400 mr-2">[14:02:01]</span>{" "}
+                    Analyzing mempool transactions...
                   </div>
                   <div className="text-gray-400">
-                    <span className="text-yellow-400 mr-2">[14:02:04]</span> Arbitrage opportunity
-                    identified in Liquidity Pool A.
+                    <span className="text-yellow-400 mr-2">[14:02:04]</span>{" "}
+                    Arbitrage opportunity identified in Liquidity Pool A.
                   </div>
                   <div className="text-gray-400">
-                    <span className="text-blue-400 mr-2">[14:02:05]</span> Calculating deterministic
-                    execution path...
+                    <span className="text-blue-400 mr-2">[14:02:05]</span>{" "}
+                    Calculating deterministic execution path...
                   </div>
                   <div className="text-white font-bold bg-green-500/10 border border-green-500/20 p-3 rounded-lg mt-4 shadow-lg shadow-green-500/5">
-                    <span className="text-green-400 mr-2">➜</span> Executing Atomic Swap Tx:
-                    0x8a92...b14e
+                    <span className="text-green-400 mr-2">➜</span> Executing
+                    Atomic Swap Tx: 0x8a92...b14e
                   </div>
                 </div>
               </div>
@@ -324,8 +374,14 @@ export default function ServicesPage() {
 
           {/* ── CTA for AI Agents (dark variant) ── */}
           <div className="mt-6 flex justify-center">
-            <Link href="/services/ai-agents" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#C4ED5F] transition-colors border-b-2 border-white hover:border-[#C4ED5F] pb-0.5">
-              Deep Dive: AI Agents <ExternalLink className="w-3.5 h-3.5" />
+            <Link
+              href="/services/ai-agents"
+              className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#C4ED5F] transition-colors border-b-2 border-white hover:border-[#C4ED5F] pb-0.5"
+            >
+              Deep Dive: AI Agents{" "}
+              <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                Δ
+              </span>
             </Link>
           </div>
           <ServiceCTA
@@ -337,8 +393,6 @@ export default function ServicesPage() {
           />
         </div>
       </section>
-
-
 
       {/* ── HOW WE WORK ─────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
@@ -380,13 +434,17 @@ export default function ServicesPage() {
                 <span className="font-mono text-[10px] font-bold text-gray-300 mb-5 block tracking-widest">
                   {step.step}
                 </span>
-                <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                  <Icon className="w-5 h-5 text-black" />
+                <div className="w-10 h-10 bg-white border-2 border-black rounded-xl flex items-center justify-center mb-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                    Σ
+                  </span>
                 </div>
                 <h4 className="text-xl font-extrabold text-black mb-3 tracking-tight">
                   {step.title}
                 </h4>
-                <p className="text-gray-500 font-medium text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-gray-500 font-medium text-sm leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             );
           })}
@@ -404,8 +462,8 @@ export default function ServicesPage() {
             Ready to engineer your sovereign protocol?
           </h3>
           <p className="relative z-10 text-xl text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
-            Our core protocol architecture team is available for deep-tech consulting and
-            end-to-end institutional engineering.
+            Our core protocol architecture team is available for deep-tech
+            consulting and end-to-end institutional engineering.
           </p>
           <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -418,7 +476,10 @@ export default function ServicesPage() {
               href="/research"
               className="inline-flex items-center justify-center px-10 py-5 border border-gray-700 text-white font-bold uppercase tracking-wider text-sm rounded-xl hover:border-gray-500 hover:bg-white/5 transition-all"
             >
-              Read Our Research <ArrowRight className="w-5 h-5 ml-2" />
+              Read Our Research{" "}
+              <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                Ω
+              </span>
             </Link>
           </div>
         </div>

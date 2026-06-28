@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import LogoTicker from "@/components/LogoTicker";
+
 import ProductsShowcase from "@/components/ProductsShowcase";
 import EcosystemShowcase from "@/components/EcosystemShowcase";
 import OpenSourceShowcase from "@/components/OpenSourceShowcase";
@@ -12,14 +12,16 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+  title:
+    "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
   description:
     "Quantalabs is the premier institutional protocol engineering lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure for global financial systems.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+    title:
+      "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
     description:
       "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
     url: siteUrl,
@@ -33,7 +35,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+    title:
+      "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
     description:
       "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
     images: [ogImage],
@@ -41,45 +44,43 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': 'https://www.quantalabs.cc/#organization',
-        name: 'QuantaLabs Private Limited',
-        url: 'https://www.quantalabs.cc',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://www.quantalabs.cc/logo.png',
-        },
-        description: 'India\'s first post-quantum cryptography migration company. CBOM audits, NIST PQC migration services, and QuantaCipher encryption API.',
-        foundingDate: '2026',
-        foundingLocation: {
-          '@type': 'Place',
-          name: 'Coimbatore, Tamil Nadu, India',
-        },
-        areaServed: ['IN', 'Worldwide'],
-        contactPoint: {
-          '@type': 'ContactPoint',
-          email: 'quanta@quantachain.org',
-          contactType: 'sales',
-        },
-        sameAs: [
-          'https://quantachain.org',
-          'https://quantacipher.com',
-        ],
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.quantalabs.cc/#organization",
+      name: "QuantaLabs Private Limited",
+      url: "https://www.quantalabs.cc",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.quantalabs.cc/logo.png",
       },
-      {
-        '@type': 'WebSite',
-        '@id': 'https://www.quantalabs.cc/#website',
-        url: 'https://www.quantalabs.cc',
-        name: 'QuantaLabs',
-        publisher: {
-          '@id': 'https://www.quantalabs.cc/#organization',
-        },
+      description:
+        "India's first post-quantum cryptography migration company. CBOM audits, NIST PQC migration services, and QuantaCipher encryption API.",
+      foundingDate: "2026",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Coimbatore, Tamil Nadu, India",
       },
-    ],
-  };
+      areaServed: ["IN", "Worldwide"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "quanta@quantachain.org",
+        contactType: "sales",
+      },
+      sameAs: ["https://quantachain.org", "https://quantacipher.com"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.quantalabs.cc/#website",
+      url: "https://www.quantalabs.cc",
+      name: "QuantaLabs",
+      publisher: {
+        "@id": "https://www.quantalabs.cc/#organization",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
@@ -89,7 +90,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <LogoTicker />
+
       <ProductsShowcase />
       <EcosystemShowcase />
       <OpenSourceShowcase />

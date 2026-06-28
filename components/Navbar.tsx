@@ -23,34 +23,74 @@ const NAV_ITEMS: NavItem[] = [
     name: "Solutions",
     href: "/solutions",
     dropdown: [
-      { title: "CBOM Audit", description: "FIPS 203 readiness assessment", href: "/solutions/cbom-audit" },
-      { title: "PQC Migration", description: "End-to-end lattice integration", href: "/solutions/pqc-migration" },
-      { title: "Custom Engineering", description: "Sovereign blockchain development", href: "/solutions/engineering" },
+      {
+        title: "CBOM Audit",
+        description: "FIPS 203 readiness assessment",
+        href: "/solutions/cbom-audit",
+      },
+      {
+        title: "PQC Migration",
+        description: "End-to-end lattice integration",
+        href: "/solutions/pqc-migration",
+      },
+      {
+        title: "Custom Engineering",
+        description: "Sovereign blockchain development",
+        href: "/solutions/engineering",
+      },
     ],
   },
   {
     name: "Products",
     href: "/products",
     dropdown: [
-      { title: "QuantaChain", description: "PQC execution layer for AI agents", href: "/products/quantachain" },
-      { title: "QuantaCipher SaaS", description: "Zero-trust enterprise Kyber SDK", href: "/products/quantacipher" },
+      {
+        title: "QuantaChain",
+        description: "PQC execution layer for AI agents",
+        href: "/products/quantachain",
+      },
+      {
+        title: "QuantaCipher SaaS",
+        description: "Zero-trust enterprise Kyber SDK",
+        href: "/products/quantacipher",
+      },
     ],
   },
   {
     name: "Ecosystem",
     href: "/ecosystem",
     dropdown: [
-      { title: "Quanta Wallet", description: "Browser extension for PQC assets", href: "/ecosystem/quanta-wallet" },
-      { title: "QuaScan Explorer", description: "Live Falcon-512 block explorer", href: "/ecosystem/quascan" },
+      {
+        title: "Quanta Wallet",
+        description: "Browser extension for PQC assets",
+        href: "/ecosystem/quanta-wallet",
+      },
+      {
+        title: "QuaScan Explorer",
+        description: "Live Falcon-512 block explorer",
+        href: "/ecosystem/quascan",
+      },
     ],
   },
   {
     name: "Open Source",
     href: "/opensource",
     dropdown: [
-      { title: "Algo-PQC-Kit", description: "Algorand AVM v12 Toolkit", href: "/ecosystem/algo-pqc-kit" },
-      { title: "Ornyx Protocol", description: "Aztec Privacy RWA Protocol", href: "/ecosystem/ornyx" },
-      { title: "Falcon-Multisig", description: "Rust Threshold Signatures", href: "/ecosystem/falcon-multisig" },
+      {
+        title: "Algo-PQC-Kit",
+        description: "Algorand AVM v12 Toolkit",
+        href: "/ecosystem/algo-pqc-kit",
+      },
+      {
+        title: "Ornyx Protocol",
+        description: "Aztec Privacy RWA Protocol",
+        href: "/ecosystem/ornyx",
+      },
+      {
+        title: "Falcon-Multisig",
+        description: "Rust Threshold Signatures",
+        href: "/ecosystem/falcon-multisig",
+      },
     ],
   },
   {
@@ -98,13 +138,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
-          : "bg-white border-b border-gray-100"
+          ? "bg-white/90 backdrop-blur-md border-b-2 border-black shadow-[0_4px_0_0_rgba(0,0,0,1)]"
+          : "bg-white border-b-2 border-black"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
           {/* 1. Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
@@ -131,14 +170,14 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md"
-                >
+                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md">
                   {item.name}
                   {item.dropdown && (
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        activeDropdown === item.name ? "rotate-180 text-black" : "text-gray-400"
+                        activeDropdown === item.name
+                          ? "rotate-180 text-black"
+                          : "text-gray-400"
                       }`}
                     />
                   )}
@@ -153,18 +192,18 @@ export default function Navbar() {
                         : "opacity-0 scale-95 translate-y-2 invisible"
                     }`}
                   >
-                    <div className="bg-white border border-gray-200 shadow-xl rounded-none p-4 overflow-hidden grid gap-2">
+                    <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-none p-4 overflow-hidden grid gap-2">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.title}
                           href={dropdownItem.href}
-                          className="block p-4 border border-transparent hover:border-gray-100 bg-white hover:bg-gray-50 transition-all group/item"
+                          className="block p-4 border-2 border-transparent hover:border-black bg-white hover:bg-[#C4ED5F] transition-all group/item"
                         >
-                          <div className="text-sm font-bold text-black group-hover/item:text-[#8db236] flex items-center justify-between">
+                          <div className="text-sm font-bold text-black group-hover/item:text-black flex items-center justify-between">
                             {dropdownItem.title}
-                            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/item:opacity-100 transition-opacity text-black" />
                           </div>
-                          <div className="text-xs text-gray-500 mt-1">
+                          <div className="text-xs text-gray-500 group-hover/item:text-black/80 mt-1">
                             {dropdownItem.description}
                           </div>
                         </Link>
@@ -185,11 +224,22 @@ export default function Navbar() {
               className="p-2 text-gray-400 hover:text-black transition-colors"
               aria-label="GitHub"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.5 6.5-7a5.2 5.2 0 0 0-1.5-3.8 5.2 5.2 0 0 0-.15-3.8s-1.2-.38-3.9 1.4a13.38 13.38 0 0 0-7 0C6.2 1.5 5 1.9 5 1.9a5.2 5.2 0 0 0-.15 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7.02a4.8 4.8 0 0 0-1 3.02V22"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-5 h-5"
+              >
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.5 6.5-7a5.2 5.2 0 0 0-1.5-3.8 5.2 5.2 0 0 0-.15-3.8s-1.2-.38-3.9 1.4a13.38 13.38 0 0 0-7 0C6.2 1.5 5 1.9 5 1.9a5.2 5.2 0 0 0-.15 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7.02a4.8 4.8 0 0 0-1 3.02V22"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
             </a>
             <Link
               href="/contact"
-              className="px-6 py-2.5 bg-[#C4ED5F] text-black text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-colors"
+              className="px-6 py-2.5 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-gray-900 transition-colors border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
             >
               Contact Us
             </Link>
@@ -214,8 +264,10 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed inset-x-0 top-20 bg-white border-b border-gray-200 overflow-y-auto transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? "max-h-[calc(100vh-80px)] border-b opacity-100" : "max-h-0 opacity-0 border-transparent overflow-hidden"
+        className={`md:hidden fixed inset-x-0 top-20 bg-white border-b-2 border-black overflow-y-auto transition-all duration-300 ease-in-out ${
+          mobileMenuOpen
+            ? "max-h-[calc(100vh-80px)] border-b-2 opacity-100"
+            : "max-h-0 opacity-0 border-transparent overflow-hidden"
         }`}
       >
         <div className="px-4 pt-2 pb-6 space-y-1">
@@ -231,7 +283,7 @@ export default function Navbar() {
                       key={dropdownItem.title}
                       href={dropdownItem.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 border border-gray-50 bg-gray-50/50 hover:bg-white rounded text-sm font-bold text-gray-700"
+                      className="block px-3 py-2 border-2 border-transparent bg-gray-50/50 hover:border-black hover:bg-[#C4ED5F] rounded-none text-sm font-bold text-gray-700 hover:text-black"
                     >
                       {dropdownItem.title}
                     </Link>
@@ -244,7 +296,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center px-5 py-3 bg-[#C4ED5F] text-black text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-colors"
+              className="w-full text-center px-5 py-3 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-gray-900 transition-colors border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
             >
               Contact Us
             </Link>

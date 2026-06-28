@@ -1,17 +1,17 @@
 "use client";
 
-import { AlertTriangle } from "lucide-react";
 import Link from "next/link";
 
 export default function PqcStandardBanner() {
   return (
-    <section className="py-16 bg-white border-b border-gray-200">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#C4ED5F] border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          
+        <div className="bg-[#C4ED5F] border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-start gap-6">
             <div className="hidden sm:flex mt-1">
-              <AlertTriangle className="w-10 h-10 text-black" strokeWidth={1.5} />
+              <span className="font-serif text-4xl text-black leading-none mt-[-4px]">
+                ⚠
+              </span>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-2">
@@ -23,7 +23,10 @@ export default function PqcStandardBanner() {
                 India DST Mandates PQC Migration by FY 2027-28
               </h3>
               <p className="text-black/80 font-medium text-sm max-w-2xl">
-                The Department of Science and Technology requires all critical financial and state infrastructure to establish Cryptographic Bills of Materials (CBOM) and begin migration to NIST FIPS 203/204 standard algorithms.
+                The Department of Science and Technology requires all critical
+                financial and state infrastructure to establish Cryptographic
+                Bills of Materials (CBOM) and begin migration to NIST FIPS
+                203/204 standard algorithms.
               </p>
             </div>
           </div>
@@ -31,12 +34,11 @@ export default function PqcStandardBanner() {
           <div className="flex-shrink-0 w-full md:w-auto">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center w-full md:w-auto px-8 py-4 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-black/80 transition-colors border border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.5)]"
+              className="inline-flex items-center justify-center w-full md:w-auto px-8 py-4 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors border-2 border-transparent hover:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
             >
               Start Your CBOM Audit
             </Link>
           </div>
-
         </div>
       </div>
     </section>

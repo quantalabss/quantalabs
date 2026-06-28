@@ -14,54 +14,57 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
-  description: 'QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards before India\'s DST FY 2027-28 deadline. Falcon-512 blockchain. QuantaCipher API.',
+  title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+  description:
+    "QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards before India's DST FY 2027-28 deadline. Falcon-512 blockchain. QuantaCipher API.",
   keywords: [
-    'PQC migration India',
-    'post-quantum cryptography India',
-    'CBOM audit India',
-    'cryptographic bill of materials India',
-    'NIST PQC migration services',
-    'quantum safe cryptography India',
-    'India DST PQC compliance',
-    'Falcon-512 blockchain',
-    'Kyber-1024 encryption',
-    'post-quantum cryptography company India',
-    'QuantaCipher',
-    'QuantaLabs',
-    'PQC readiness assessment India',
-    'quantum resistant cryptography India',
-    'fintech PQC migration India',
+    "PQC migration India",
+    "post-quantum cryptography India",
+    "CBOM audit India",
+    "cryptographic bill of materials India",
+    "NIST PQC migration services",
+    "quantum safe cryptography India",
+    "India DST PQC compliance",
+    "Falcon-512 blockchain",
+    "Kyber-1024 encryption",
+    "post-quantum cryptography company India",
+    "QuantaCipher",
+    "QuantaLabs",
+    "PQC readiness assessment India",
+    "quantum resistant cryptography India",
+    "fintech PQC migration India",
   ],
-  authors: [{ name: 'QuantaLabs Private Limited' }],
-  creator: 'QuantaLabs Private Limited',
-  publisher: 'QuantaLabs Private Limited',
-  metadataBase: new URL('https://www.quantalabs.cc'),
+  authors: [{ name: "QuantaLabs Private Limited" }],
+  creator: "QuantaLabs Private Limited",
+  publisher: "QuantaLabs Private Limited",
+  metadataBase: new URL("https://www.quantalabs.cc"),
   alternates: {
-    canonical: 'https://www.quantalabs.cc',
+    canonical: "https://www.quantalabs.cc",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    url: 'https://www.quantalabs.cc',
-    siteName: 'QuantaLabs',
-    title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
-    description: 'India\'s first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.',
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.quantalabs.cc",
+    siteName: "QuantaLabs",
+    title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+    description:
+      "India's first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.",
     images: [
       {
-        url: '/seo/image.png',
+        url: "/seo/image.png",
         width: 1200,
         height: 630,
-        alt: 'QuantaLabs | Post-Quantum Cryptography Built and Deployed',
+        alt: "QuantaLabs | Post-Quantum Cryptography Built and Deployed",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'QuantaLabs | Post-Quantum Cryptography Migration Company India',
-    description: 'CBOM audits and NIST PQC migration for Indian fintechs and crypto companies. India DST FY 2027-28 deadline compliance.',
-    images: ['/seo/image.png'],
-    creator: '@quantalabs',
+    card: "summary_large_image",
+    title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+    description:
+      "CBOM audits and NIST PQC migration for Indian fintechs and crypto companies. India DST FY 2027-28 deadline compliance.",
+    images: ["/seo/image.png"],
+    creator: "@quantalabs",
   },
   robots: {
     index: true,
@@ -69,13 +72,10 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-  },
-  verification: {
-    google: 'YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE',
   },
 };
 
@@ -85,15 +85,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} h-full scroll-smooth`}
-    >
+    <html lang="en" className={`${manrope.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans antialiased">
         <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <script
           type="application/ld+json"
@@ -101,14 +96,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "QuantaLabs Private Limited",
-              "alternateName": "QuantaLabs Pvt Ltd",
-              "url": "https://www.quantalabs.cc",
-              "logo": "https://www.quantalabs.cc/seo/image.png",
-              "sameAs": [
-                "https://github.com/quantachain"
-              ]
-            })
+              name: "QuantaLabs Private Limited",
+              alternateName: "QuantaLabs Pvt Ltd",
+              url: "https://www.quantalabs.cc",
+              logo: "https://www.quantalabs.cc/seo/image.png",
+              sameAs: ["https://github.com/quantachain"],
+            }),
           }}
         />
       </body>
