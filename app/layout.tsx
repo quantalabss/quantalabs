@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -90,6 +92,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
