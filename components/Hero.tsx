@@ -28,12 +28,12 @@ export default async function Hero() {
             {/* Left: Headline */}
             <div className="lg:col-span-8 px-8 py-10 md:py-14 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-white">
               <h1 className="text-[2.8rem] sm:text-[3.8rem] md:text-[4.8rem] font-extrabold tracking-tighter leading-[0.93] text-black mb-4">
-                Cryptography
+                We migrate your
                 <br />
-                the quantum
+                crypto stack
                 <br />
                 <span className="relative inline-block mt-1">
-                  era demands.
+                  to PQC.
                   <span className="absolute bottom-1 left-0 w-full h-[5px] bg-[#C4ED5F] -z-10"></span>
                 </span>
               </h1>
@@ -124,7 +124,9 @@ export default async function Hero() {
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
-                href="/solutions"
+                href="https://quantacipher.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-between w-full px-6 py-3.5 border-2 border-black text-black font-bold hover:bg-gray-100 transition-colors text-xs uppercase tracking-widest"
               >
                 <span>Explore Solutions</span>

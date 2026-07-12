@@ -22,23 +22,6 @@ const NAV_ITEMS: NavItem[] = [
   {
     name: "Solutions",
     href: "/solutions",
-    dropdown: [
-      {
-        title: "CBOM Audit",
-        description: "FIPS 203 readiness assessment",
-        href: "/solutions/cbom-audit",
-      },
-      {
-        title: "PQC Migration",
-        description: "End-to-end lattice integration",
-        href: "/solutions/pqc-migration",
-      },
-      {
-        title: "Custom Engineering",
-        description: "Sovereign blockchain development",
-        href: "/solutions/engineering",
-      },
-    ],
   },
   {
     name: "Products",
@@ -47,31 +30,21 @@ const NAV_ITEMS: NavItem[] = [
       {
         title: "QuantaChain",
         description: "PQC execution layer for AI agents",
-        href: "/products/quantachain",
+        href: "https://quantachain.org",
       },
       {
-        title: "QuantaCipher SaaS",
+        title: "QuantaCipher",
         description: "Zero-trust enterprise Kyber SDK",
-        href: "/products/quantacipher",
+        href: "https://quantacipher.com",
       },
-    ],
-  },
-  {
-    name: "Ecosystem",
-    href: "/ecosystem",
-    dropdown: [
       {
         title: "Quanta Wallet",
-        description: "Browser extension for PQC assets",
-        href: "/ecosystem/quanta-wallet",
-      },
-      {
-        title: "QuaScan Explorer",
-        description: "Live Falcon-512 block explorer",
-        href: "/ecosystem/quascan",
+        description: "Post-Quantum Chrome Extension",
+        href: "https://chromewebstore.google.com",
       },
     ],
   },
+
   {
     name: "Open Source",
     href: "/opensource",
@@ -79,17 +52,17 @@ const NAV_ITEMS: NavItem[] = [
       {
         title: "Algo-PQC-Kit",
         description: "Algorand AVM v12 Toolkit",
-        href: "/ecosystem/algo-pqc-kit",
+        href: "https://github.com/quantalabss/algo-pqc-kit",
       },
       {
         title: "Ornyx Protocol",
         description: "Aztec Privacy RWA Protocol",
-        href: "/ecosystem/ornyx",
+        href: "https://ornyx.xyz",
       },
       {
         title: "Falcon-Multisig",
         description: "Rust Threshold Signatures",
-        href: "/ecosystem/falcon-multisig",
+        href: "https://github.com/quantalabss/falcon-multisig",
       },
     ],
   },
@@ -170,9 +143,9 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md">
-                  {item.name}
-                  {item.dropdown && (
+                {item.dropdown ? (
+                  <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md">
+                    {item.name}
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
                         activeDropdown === item.name
@@ -180,8 +153,15 @@ export default function Navbar() {
                           : "text-gray-400"
                       }`}
                     />
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md"
+                  >
+                    {item.name}
+                  </Link>
+                )}
 
                 {/* Dropdown Menu */}
                 {item.dropdown && (
@@ -274,7 +254,13 @@ export default function Navbar() {
           {NAV_ITEMS.map((item) => (
             <div key={item.name} className="py-2">
               <div className="px-3 py-2 text-xs font-bold uppercase tracking-widest text-black border-b border-gray-100">
-                {item.name}
+                {item.dropdown ? (
+                  <span>{item.name}</span>
+                ) : (
+                  <Link href={item.href} onClick={() => setMobileMenuOpen(false)} className="block w-full">
+                    {item.name}
+                  </Link>
+                )}
               </div>
               {item.dropdown && (
                 <div className="mt-2 space-y-2 pl-4">

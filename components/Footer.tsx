@@ -4,50 +4,48 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Mail } from "lucide-react";
 
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+  badge?: string;
+}
+
+interface FooterColumn {
+  heading: string;
+  links: FooterLink[];
+}
+
 export default function Footer() {
-  const footerColumns = [
-    {
-      heading: "Solutions",
-      links: [
-        { label: "CBOM Audit", href: "/solutions/cbom-audit" },
-        { label: "PQC Migration", href: "/solutions/pqc-migration" },
-        { label: "Custom Engineering", href: "/solutions/engineering" },
-      ],
-    },
+  const footerColumns: FooterColumn[] = [
     {
       heading: "Products",
       links: [
-        { label: "QuantaChain", href: "/products/quantachain" },
-        { label: "QuantaCipher SaaS", href: "/products/quantacipher" },
-      ],
-    },
-    {
-      heading: "Ecosystem",
-      links: [
-        { label: "Quanta Wallet", href: "/ecosystem/quanta-wallet" },
-        { label: "QuaScan Explorer", href: "/ecosystem/quascan" },
+        { label: "QuantaChain", href: "https://quantachain.org", external: true },
+        { label: "QuantaCipher", href: "https://quantacipher.com", external: true },
+        { label: "Quanta Wallet", href: "https://chromewebstore.google.com", external: true },
       ],
     },
     {
       heading: "Open Source",
       links: [
-        { label: "Algo-PQC-Kit", href: "/ecosystem/algo-pqc-kit" },
-        { label: "Ornyx Protocol", href: "/ecosystem/ornyx" },
-        { label: "Falcon-Multisig", href: "/ecosystem/falcon-multisig" },
+        { label: "Algo-PQC-Kit", href: "https://github.com/quantalabss/algo-pqc-kit", external: true },
+        { label: "Ornyx Protocol", href: "https://ornyx.xyz", external: true },
+        { label: "Falcon-Multisig", href: "https://github.com/quantalabss/falcon-multisig", external: true },
       ],
     },
     {
       heading: "Research",
       links: [
-        { label: "Publications", href: "/research/publications" },
+        { label: "Publications", href: "/research" },
         { label: "Blog", href: "/blog" },
-        { label: "NIST Guidelines", href: "#" },
+        { label: "NIST Guidelines", href: "https://csrc.nist.gov/projects/post-quantum-cryptography", external: true },
       ],
     },
     {
       heading: "Company",
       links: [
-        { label: "About Us", href: "/about" },
+        { label: "About Us", href: "/company" },
         { label: "Careers", href: "/careers", badge: "Hiring" },
         { label: "Contact", href: "/contact" },
       ],
@@ -202,16 +200,8 @@ export default function Footer() {
                     <li key={link.label} className="flex items-center gap-2">
                       <Link
                         href={link.href}
-                        target={
-                          (link as { external?: boolean }).external
-                            ? "_blank"
-                            : undefined
-                        }
-                        rel={
-                          (link as { external?: boolean }).external
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
+                        target={link.external ? "_blank" : undefined}
+                        rel={link.external ? "noopener noreferrer" : undefined}
                         className="text-sm text-black font-semibold hover:text-[#8ab329] transition-colors"
                       >
                         {link.label}

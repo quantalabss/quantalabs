@@ -31,7 +31,7 @@ export default function OpenSourceShowcase() {
               </h2>
             </div>
             <div className="lg:col-span-4 px-8 py-10 flex flex-col justify-end bg-[#C4ED5F] relative overflow-hidden">
-              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none opacity-90">
+              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none opacity-90 hidden md:block">
                 ⊕
               </span>
               <p className="text-sm text-black/70 font-medium relative z-10">

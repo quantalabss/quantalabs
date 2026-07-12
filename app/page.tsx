@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
 import ProductsShowcase from "@/components/ProductsShowcase";
-import EcosystemShowcase from "@/components/EcosystemShowcase";
 import OpenSourceShowcase from "@/components/OpenSourceShowcase";
 import ServicesPreview from "@/components/ServicesPreview";
 import ResearchTeaser from "@/components/ResearchTeaser";
@@ -90,13 +89,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-
-      <ProductsShowcase />
-      <EcosystemShowcase />
-      <OpenSourceShowcase />
       <ServicesPreview />
-      <ResearchTeaser />
       <PqcStandardBanner />
+      <ProductsShowcase />
+      <OpenSourceShowcase />
+      <ResearchTeaser />
     </>
   );
 }
