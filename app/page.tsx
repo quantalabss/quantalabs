@@ -2,42 +2,43 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
 import ProductsShowcase from "@/components/ProductsShowcase";
-import OpenSourceShowcase from "@/components/OpenSourceShowcase";
 import ServicesPreview from "@/components/ServicesPreview";
 import ResearchTeaser from "@/components/ResearchTeaser";
-import PqcStandardBanner from "@/components/PqcStandardBanner";
+
 
 const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
+// CHANGED: Updated metadata for two-pillar AI + PQC brand positioning
+// DATE: 2026-08-07 | VERSION: 2.0
 export const metadata: Metadata = {
   title:
-    "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+    "QuantaLabs | AI Engineering & Post-Quantum Security",
   description:
-    "Quantalabs is the premier institutional protocol engineering lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure for global financial systems.",
+    "Quantalabs helps businesses integrate AI, automate workflows, and secure applications with post-quantum cryptography. AI today, quantum ready tomorrow.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title:
-      "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+      "QuantaLabs | AI Engineering & Post-Quantum Security",
     description:
-      "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
+      "AI engineering and automation services + post-quantum cryptography security. QuantaCipher encryption APIs and QuantaChain AI agent infrastructure.",
     url: siteUrl,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "QuantaLabs | Post-Quantum Migration & Blockchain",
+        alt: "QuantaLabs | AI Engineering & Post-Quantum Security",
       },
     ],
   },
   twitter: {
     title:
-      "QuantaLabs | The Leading Standard for Post-Quantum Cryptography Migration",
+      "QuantaLabs | AI Engineering & Post-Quantum Security",
     description:
-      "Premier institutional protocol lab specializing in NIST-standardized PQC migration and sovereign blockchain infrastructure.",
+      "AI engineering + post-quantum security. Build intelligent systems. Secure them for the quantum era.",
     images: [ogImage],
   },
 };
@@ -55,7 +56,7 @@ const jsonLd = {
         url: "https://www.quantalabs.cc/logo.png",
       },
       description:
-        "India's first post-quantum cryptography migration company. CBOM audits, NIST PQC migration services, and QuantaCipher encryption API.",
+        "AI engineering and post-quantum security company. AI integration services, workflow automation, QuantaCipher PQC encryption API, and QuantaChain AI agent infrastructure.",
       foundingDate: "2026",
       foundingLocation: {
         "@type": "Place",
@@ -90,9 +91,6 @@ export default function Home() {
       />
       <Hero />
       <ServicesPreview />
-      <PqcStandardBanner />
-      <ProductsShowcase />
-      <OpenSourceShowcase />
       <ResearchTeaser />
     </>
   );

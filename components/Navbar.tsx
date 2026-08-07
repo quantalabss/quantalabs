@@ -20,10 +20,6 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    name: "Solutions",
-    href: "/solutions",
-  },
-  {
     name: "Products",
     href: "/products",
     dropdown: [
@@ -37,32 +33,21 @@ const NAV_ITEMS: NavItem[] = [
         description: "Zero-trust enterprise Kyber SDK",
         href: "https://quantacipher.com",
       },
-      {
-        title: "Quanta Wallet",
-        description: "Post-Quantum Chrome Extension",
-        href: "https://chromewebstore.google.com",
-      },
     ],
   },
-
   {
-    name: "Open Source",
-    href: "/opensource",
+    name: "Services",
+    href: "/services",
     dropdown: [
       {
-        title: "Algo-PQC-Kit",
-        description: "Algorand AVM v12 Toolkit",
-        href: "https://github.com/quantalabss/algo-pqc-kit",
+        title: "AI Engineering",
+        description: "Autonomous LLM agent frameworks",
+        href: "/services#ai-engineering",
       },
       {
-        title: "Ornyx Protocol",
-        description: "Aztec Privacy RWA Protocol",
-        href: "https://ornyx.xyz",
-      },
-      {
-        title: "Falcon-Multisig",
-        description: "Rust Threshold Signatures",
-        href: "https://github.com/quantalabss/falcon-multisig",
+        title: "PQC Migrations",
+        description: "Protocol cryptographic upgrades",
+        href: "/services#pqc-migrations",
       },
     ],
   },
@@ -73,22 +58,38 @@ const NAV_ITEMS: NavItem[] = [
       {
         title: "About Us",
         href: "/company",
-        description: "Our mission to secure sovereign infrastructure",
+        description: "Our mission and headquarters",
       },
       {
         title: "Research",
         href: "/research",
-        description: "Peer-reviewed papers on PQC and ZKPs",
-      },
-      {
-        title: "Blog",
-        href: "/blog",
-        description: "Protocol engineering updates",
+        description: "Peer-reviewed PQC and ZKP papers",
       },
       {
         title: "Careers",
         href: "/careers",
-        description: "Join the frontier of deep-tech innovation",
+        description: "Join the frontier of protocol engineering",
+      },
+    ],
+  },
+  {
+    name: "Connect",
+    href: "#",
+    dropdown: [
+      {
+        title: "GitHub",
+        description: "View our open-source tools",
+        href: "https://github.com/quantalabss",
+      },
+      {
+        title: "Twitter / X",
+        description: "Follow for protocol updates",
+        href: "https://x.com/quantalabss",
+      },
+      {
+        title: "LinkedIn",
+        description: "Professional networking",
+        href: "https://linkedin.com/company/quantachain",
       },
     ],
   },
@@ -109,10 +110,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 font-sans border-b ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b-2 border-black shadow-[0_4px_0_0_rgba(0,0,0,1)]"
-          : "bg-white border-b-2 border-black"
+          ? "bg-[#FAF9F5]/90 backdrop-blur-md border-gray-200 shadow-sm"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,7 +121,6 @@ export default function Navbar() {
           {/* 1. Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
-              {/* Removed invert, logo is natural color on white bg */}
               <Image
                 src="/logo/quanta-transparent-bg-logo.svg"
                 alt="Quantalabs Logo"
@@ -128,8 +128,8 @@ export default function Navbar() {
                 height={32}
                 className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="text-xl font-bold tracking-tighter text-black">
-                Quantalabs<span className="text-[#C4ED5F]">.</span>
+              <span className="text-xl font-display font-medium tracking-tight text-[#141413]">
+                Quantalabs<span className="text-[#C04A2B]">.</span>
               </span>
             </Link>
           </div>
@@ -144,10 +144,10 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {item.dropdown ? (
-                  <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md">
+                  <button className="flex items-center gap-1.5 px-4 py-2 text-xs font-mono uppercase tracking-[0.15em] text-gray-500 hover:text-black transition-colors">
                     {item.name}
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
                         activeDropdown === item.name
                           ? "rotate-180 text-black"
                           : "text-gray-400"
@@ -157,7 +157,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1.5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors rounded-md"
+                    className="flex items-center gap-1.5 px-4 py-2 text-xs font-mono uppercase tracking-[0.15em] text-gray-500 hover:text-black transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -172,18 +172,18 @@ export default function Navbar() {
                         : "opacity-0 scale-95 translate-y-2 invisible"
                     }`}
                   >
-                    <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-none p-4 overflow-hidden grid gap-2">
+                    <div className="bg-white border-t-2 border-t-black border-x border-b border-gray-200 shadow-xl overflow-hidden flex flex-col">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.title}
                           href={dropdownItem.href}
-                          className="block p-4 border-2 border-transparent hover:border-black bg-white hover:bg-[#C4ED5F] transition-all group/item"
+                          className="block p-5 bg-white border-l-2 border-transparent hover:border-[#C04A2B] hover:bg-[#FAF9F5] border-b border-gray-100 last:border-b-0 transition-all group/item"
                         >
-                          <div className="text-sm font-bold text-black group-hover/item:text-black flex items-center justify-between">
+                          <div className="text-sm font-display font-medium text-black transition-colors flex items-center justify-between mb-1">
                             {dropdownItem.title}
-                            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/item:opacity-100 transition-opacity text-black" />
+                            <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 translate-y-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:translate-y-0 transition-all text-black" />
                           </div>
-                          <div className="text-xs text-gray-500 group-hover/item:text-black/80 mt-1">
+                          <div className="text-xs text-gray-500 font-sans">
                             {dropdownItem.description}
                           </div>
                         </Link>
@@ -198,11 +198,11 @@ export default function Navbar() {
           {/* 3. Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://github.com/quantalabss"
+              href="https://linkedin.com/company/quantachain"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-gray-400 hover:text-black transition-colors"
-              aria-label="GitHub"
+              aria-label="LinkedIn"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -213,13 +213,14 @@ export default function Navbar() {
                 strokeLinejoin="round"
                 className="w-5 h-5"
               >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.5 6.5-7a5.2 5.2 0 0 0-1.5-3.8 5.2 5.2 0 0 0-.15-3.8s-1.2-.38-3.9 1.4a13.38 13.38 0 0 0-7 0C6.2 1.5 5 1.9 5 1.9a5.2 5.2 0 0 0-.15 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7.02a4.8 4.8 0 0 0-1 3.02V22"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
             <Link
               href="/contact"
-              className="px-6 py-2.5 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-gray-900 transition-colors border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
+              className="px-6 py-2.5 bg-[#C04A2B] text-white text-[10px] uppercase tracking-widest font-mono hover:bg-[#141413] transition-colors"
             >
               Contact Us
             </Link>
@@ -229,7 +230,7 @@ export default function Navbar() {
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-600 hover:text-black transition-colors"
+              className="p-2 text-gray-500 hover:text-black transition-colors"
             >
               <span className="sr-only">Open main menu</span>
               {mobileMenuOpen ? (
@@ -244,32 +245,32 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed inset-x-0 top-20 bg-white border-b-2 border-black overflow-y-auto transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-x-0 top-20 bg-white border-b border-gray-200 overflow-y-auto transition-all duration-300 ease-in-out ${
           mobileMenuOpen
-            ? "max-h-[calc(100vh-80px)] border-b-2 opacity-100"
+            ? "max-h-[calc(100vh-80px)] opacity-100"
             : "max-h-0 opacity-0 border-transparent overflow-hidden"
         }`}
       >
         <div className="px-4 pt-2 pb-6 space-y-1">
           {NAV_ITEMS.map((item) => (
             <div key={item.name} className="py-2">
-              <div className="px-3 py-2 text-xs font-bold uppercase tracking-widest text-black border-b border-gray-100">
+              <div className="px-3 py-2 text-xs font-mono uppercase tracking-widest text-gray-500 border-b border-gray-100">
                 {item.dropdown ? (
                   <span>{item.name}</span>
                 ) : (
-                  <Link href={item.href} onClick={() => setMobileMenuOpen(false)} className="block w-full">
+                  <Link href={item.href} onClick={() => setMobileMenuOpen(false)} className="block w-full text-black">
                     {item.name}
                   </Link>
                 )}
               </div>
               {item.dropdown && (
-                <div className="mt-2 space-y-2 pl-4">
+                <div className="mt-2 space-y-1 pl-4">
                   {item.dropdown.map((dropdownItem) => (
                     <Link
                       key={dropdownItem.title}
                       href={dropdownItem.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 border-2 border-transparent bg-gray-50/50 hover:border-black hover:bg-[#C4ED5F] rounded-none text-sm font-bold text-gray-700 hover:text-black"
+                      className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-black"
                     >
                       {dropdownItem.title}
                     </Link>
@@ -282,7 +283,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center px-5 py-3 bg-black text-white text-xs uppercase tracking-widest font-bold hover:bg-gray-900 transition-colors border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
+              className="w-full text-center px-5 py-3 bg-[#C04A2B] text-white text-xs uppercase tracking-widest font-mono hover:bg-[#141413] transition-colors"
             >
               Contact Us
             </Link>

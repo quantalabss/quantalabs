@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import Analytics from "@/components/Analytics";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
   display: "swap",
 });
@@ -16,25 +22,21 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+  title: "QuantaLabs | AI Engineering & Quantum Security",
   description:
-    "QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards before India's DST FY 2027-28 deadline. Falcon-512 blockchain. QuantaCipher API.",
+    "QuantaLabs engineers sovereign infrastructure for the autonomous AI economy. Enterprise AI Integrations, QuantaChain PQC blockchain, and QuantaCipher SDKs.",
   keywords: [
-    "PQC migration India",
-    "post-quantum cryptography India",
-    "CBOM audit India",
-    "cryptographic bill of materials India",
-    "NIST PQC migration services",
-    "quantum safe cryptography India",
-    "India DST PQC compliance",
-    "Falcon-512 blockchain",
-    "Kyber-1024 encryption",
-    "post-quantum cryptography company India",
+    "AI Engineering",
+    "Autonomous AI Agents",
+    "Post-Quantum Cryptography",
+    "QuantaChain",
     "QuantaCipher",
-    "QuantaLabs",
-    "PQC readiness assessment India",
-    "quantum resistant cryptography India",
-    "fintech PQC migration India",
+    "M2M Economy",
+    "Enterprise AI Integrations",
+    "LLM Architecture",
+    "FIPS 203/204 Compliance",
+    "Quantum Safe Blockchain",
+    "Zero-knowledge agent frameworks"
   ],
   authors: [{ name: "QuantaLabs Private Limited" }],
   creator: "QuantaLabs Private Limited",
@@ -48,23 +50,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.quantalabs.cc",
     siteName: "QuantaLabs",
-    title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+    title: "QuantaLabs | AI Engineering & Quantum Security",
     description:
-      "India's first PQC migration company. CBOM audits, NIST migration roadmaps, and QuantaCipher API. Built on 131,000+ blocks of live Falcon-512 blockchain.",
+      "Engineering the execution layer for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.",
     images: [
       {
         url: "/seo/image.png",
         width: 1200,
         height: 630,
-        alt: "QuantaLabs | Post-Quantum Cryptography Built and Deployed",
+        alt: "QuantaLabs | AI Engineering & Quantum Security",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantaLabs | Post-Quantum Cryptography Migration Company India",
+    title: "QuantaLabs | AI Engineering & Quantum Security",
     description:
-      "CBOM audits and NIST PQC migration for Indian fintechs and crypto companies. India DST FY 2027-28 deadline compliance.",
+      "Engineering the execution layer for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.",
     images: ["/seo/image.png"],
     creator: "@quantalabs",
   },
@@ -87,8 +89,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full scroll-smooth`}>
-      <body className="min-h-full flex flex-col bg-black text-white font-sans antialiased">
+    <html lang="en" className={`${inter.variable} ${lora.variable} h-full scroll-smooth`}>
+      <body className="min-h-full flex flex-col bg-[#FAF9F5] text-[#141413] font-sans antialiased selection:bg-[#C04A2B] selection:text-[#FAF9F5]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

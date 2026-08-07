@@ -1,148 +1,114 @@
+// CHANGED: Redesigned for Deep Tech Light Mode aesthetic and renamed to "About Us".
+// DATE: 2026-08-07 | VERSION: 4.0
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Company | QuantaLabs",
+  title: "About Us | QuantaLabs",
   description:
     "Engineering sovereign infrastructure at the frontier of post-quantum cryptography.",
 };
 
-export default function CompanyPage() {
+export default function AboutUsPage() {
   return (
-    <div className="bg-white min-h-screen pt-28 pb-24 text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-transparent min-h-screen pt-32 pb-24 text-[#141413] font-sans selection:bg-[#C04A2B] selection:text-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Page Header */}
-        <div className="border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-8 p-10 md:p-16 border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-gray-50/50">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 bg-[#C4ED5F]"></div>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-gray-500 uppercase font-bold">
-                  Corporate Overview
-                </span>
-              </div>
-              <h1 className="text-[3rem] md:text-[5rem] font-black tracking-tighter leading-[0.95] text-black">
-                <span className="text-[#C4ED5F]">QuantaLabs</span>
-                <br />
-                Private{" "}
-                <span className="relative inline-block mt-1">
-                  Limited.
-                  <span className="absolute bottom-1 left-0 w-full h-[6px] bg-[#C4ED5F] -z-10"></span>
-                </span>
-              </h1>
-            </div>
-
-            {/* Math/Symbol Block */}
-            <div className="lg:col-span-4 relative bg-[#C4ED5F] flex flex-col items-center justify-center p-6 overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-40 pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
-                  backgroundSize: "24px 24px",
-                }}
-              ></div>
-              <div className="relative z-10 flex flex-col items-center justify-center h-full py-8">
-                <span className="text-[8rem] font-black text-black leading-none select-none mb-4 tracking-tighter">
-                  λ
-                </span>
-                <div className="w-full bg-white/90 backdrop-blur-sm border-2 border-black p-3 font-mono text-[10px] text-gray-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mt-auto text-center">
-                  <span className="text-black font-bold">
-                    EST. 2026 // INDIA
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="mb-16 pb-12 border-b border-gray-200">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
+            <span className="w-1.5 h-1.5 bg-[#C04A2B]"></span>
+            <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">About Us</span>
           </div>
+          <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#141413] leading-[1.05]">
+            QuantaLabs <br/><span className="text-gray-400">Private Limited.</span>
+          </h1>
+          <p className="mt-8 text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
+            We are the protocol engineering lab building the execution layer for the autonomous AI economy, secured by post-quantum cryptography.
+          </p>
         </div>
 
         {/* Content Section */}
-        <div className="border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            {/* Sidebar Meta */}
-            <div className="lg:col-span-4 p-10 border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-gray-50/30">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="font-mono text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">
-                    Headquarters
-                  </h3>
-                  <p className="text-sm font-bold text-black">
-                    Coimbatore, Tamil Nadu
-                    <br />
-                    India
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-mono text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">
-                    Focus Areas
-                  </h3>
-                  <ul className="text-sm font-bold text-black space-y-1">
-                    <li>NIST FIPS 203/204/205</li>
-                    <li>CBOM Auditing</li>
-                    <li>Sovereign Blockchain</li>
-                    <li>ZKP Primitives</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-mono text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">
-                    Entity ID
-                  </h3>
-                  <p className="text-sm font-mono text-black bg-gray-100 p-2 border-2 border-black inline-block">
-                    QL-IN-2026-9A
-                  </p>
-                </div>
+        <div className="flex flex-col lg:flex-row gap-16">
+          
+          {/* Sidebar Meta */}
+          <div className="w-full lg:w-1/3">
+            <div className="bg-white border border-[#C04A2B] p-8 shadow-sm space-y-8 relative overflow-hidden group transition-colors">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+              <div className="relative z-10">
+                <h3 className="font-mono text-[10px] text-[#141413] font-medium uppercase tracking-widest mb-2">
+                  Headquarters
+                </h3>
+                <p className="text-sm font-medium text-gray-600">
+                  Coimbatore, Tamil Nadu<br />
+                  India
+                </p>
+              </div>
+              <div className="relative z-10">
+                <h3 className="font-mono text-[10px] text-[#141413] font-medium uppercase tracking-widest mb-2">
+                  Focus Areas
+                </h3>
+                <ul className="text-sm font-medium text-gray-600 space-y-2">
+                  <li>Enterprise AI Integration</li>
+                  <li>AI Autonomous Agents</li>
+                  <li>NIST FIPS 203/204/205</li>
+                  <li>Sovereign Blockchain</li>
+                </ul>
+              </div>
+              <div className="relative z-10">
+                <h3 className="font-mono text-[10px] text-[#141413] font-medium uppercase tracking-widest mb-2">
+                  Entity ID
+                </h3>
+                <p className="text-[10px] font-mono text-[#141413] bg-white border border-gray-200 p-2 inline-block shadow-sm">
+                  QL-IN-2026-9A
+                </p>
               </div>
             </div>
+          </div>
 
-            {/* Main Article */}
-            <div className="lg:col-span-8 p-10 md:p-16">
-              <article className="prose prose-gray max-w-none">
-                <h2 className="text-2xl font-black text-black mb-6">
-                  The Threat is Now.
-                </h2>
-                <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                  In December 2025, advances in quantum error correction
-                  demonstrated that Shor&apos;s algorithm will break RSA and
-                  Elliptic Curve Cryptography much sooner than historically
-                  projected. The resulting &quot;Store Now, Decrypt Later&quot;
-                  (SNDL) attacks threaten the very fabric of national
-                  sovereignty, banking infrastructure, and digital privacy.
-                </p>
-                <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                  QuantaLabs was founded to defend the digital frontier. We are
-                  India&apos;s first protocol engineering lab dedicated exclusively
-                  to Post-Quantum Cryptography (PQC).
-                </p>
+          {/* Main Article */}
+          <div className="w-full lg:w-2/3">
+            <article className="prose prose-gray max-w-none text-gray-600 font-normal leading-relaxed text-base">
+              <h2 className="text-2xl font-display font-medium text-[#141413] mb-6">
+                The Machine-to-Machine Economy
+              </h2>
+              <p className="mb-6">
+                As AI models evolve into autonomous agents, the internet is transitioning into a Machine-to-Machine (M2M) economy. Agents must coordinate, transact, and execute logic with absolute deterministic finality, free from human intervention.
+              </p>
+              <p className="mb-6">
+                QuantaLabs was founded to build the sovereign infrastructure for this new frontier. We engineer the cryptographic safeguards required to ensure that agent-to-agent transactions remain secure against both classical exploitation and future quantum adversaries.
+              </p>
 
-                <h2 className="text-2xl font-black text-black mt-12 mb-6">
-                  Our Mission
-                </h2>
-                <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                  Our mission is to migrate India&apos;s critical financial and state
-                  infrastructure to NIST-standardized lattice-based cryptography
-                  (ML-KEM and ML-DSA) before the Department of Science and
-                  Technology&apos;s FY 2027-28 mandate deadline.
-                </p>
+              <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
+                Our Mission
+              </h2>
+              <p className="mb-6">
+                Our mission is to deploy QuantaChain—a lattice-secured (FIPS 203/204) blockchain designed specifically as the trust and execution layer for autonomous AI agents. We provide the protocol foundations for agents to securely own assets, sign transactions, and interact across decentralized networks.
+              </p>
 
-                <blockquote className="border-l-8 border-black pl-6 my-8 py-2 bg-gray-50/50 pr-4">
-                  <p className="text-lg font-bold text-black italic">
-                    &quot;We do not build speculative cryptography. We build
-                    high-performance, compliant, and formally verified
-                    implementations of standardized mathematics.&quot;
-                  </p>
-                </blockquote>
+              <blockquote className="border-l-4 border-[#C04A2B] pl-6 my-10 py-4 italic text-lg text-[#141413] bg-white border border-y-gray-200 border-r-gray-200 shadow-sm relative overflow-hidden group">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+                <div className="relative z-10 p-4">
+                  &quot;We do not build speculative cryptography. We build the deterministic, mathematically verified infrastructure necessary for machines to trust each other.&quot;
+                </div>
+              </blockquote>
 
-                <h2 className="text-2xl font-black text-black mt-12 mb-6">
-                  The QuantaLabs Difference
-                </h2>
-                <p className="text-gray-600 font-medium leading-relaxed mb-6">
-                  Unlike generic cybersecurity consultants, we are deep-tech
-                  protocol engineers. We maintain the Falcon-512 blockchain, we
-                  build custom C++ and Rust cryptographic engines, and we
-                  understand the nuanced latency constraints of high-frequency
-                  trading networks. We don&apos;t just write reports; we deploy
-                  code.
-                </p>
-              </article>
-            </div>
+              <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
+                Enterprise AI Integration
+              </h2>
+              <p className="mb-6">
+                While our research lab focuses on next-generation cryptographic protocols, our primary commercial engine is <strong>Enterprise AI Integration</strong>. We help Fortune 500 companies and government agencies seamlessly integrate deterministic, secure AI workflows into their existing infrastructure. 
+              </p>
+              <p className="mb-6">
+                From custom LLM deployments and RAG architectures to fully autonomous internal agents, we build the bridges that allow traditional enterprises to operate at the speed of the AI economy—without compromising on data sovereignty or security.
+              </p>
+
+              <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
+                The QuantaLabs Difference
+              </h2>
+              <p className="mb-6">
+                We sit at the intersection of applied AI engineering and advanced cryptography. Whether we are migrating your enterprise data lakes to autonomous AI workflows or orchestrating zero-knowledge agent networks on QuantaChain, we don&apos;t just write reports; we deploy sovereign, production-ready code.
+              </p>
+            </article>
           </div>
         </div>
       </div>

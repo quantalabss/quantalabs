@@ -1,3 +1,5 @@
+// CHANGED: Redesigned for Deep Tech Light Mode aesthetic.
+// DATE: 2026-08-07 | VERSION: 4.0
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,23 +9,24 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="bg-white min-h-screen pt-28 pb-24 text-black">
+    <div className="bg-white min-h-screen pt-32 pb-24 text-[#111111] font-sans selection:bg-[#C4ED5F] selection:text-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <span className="font-mono text-[10px] tracking-[0.2em] text-gray-400 uppercase font-bold mb-4 block">
-            Legal
-          </span>
-          <h1 className="text-[3rem] md:text-[4rem] font-black tracking-tighter leading-none text-black">
+        <div className="mb-16 pb-12 border-b border-gray-200">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
+            <span className="w-1.5 h-1.5 bg-[#C4ED5F]"></span>
+            <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">Legal</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#111111] leading-[1.05]">
             Privacy Policy.
           </h1>
-          <p className="mt-6 text-sm text-gray-500 font-mono uppercase tracking-widest font-bold">
+          <p className="mt-8 text-sm text-gray-500 font-mono uppercase tracking-widest font-medium">
             Last Updated: June 2026
           </p>
         </div>
 
-        <div className="space-y-12 text-black/80 font-medium leading-relaxed">
+        <div className="space-y-12 text-gray-600 font-normal leading-relaxed text-sm md:text-base">
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-xl font-display font-medium text-[#111111] mb-4">
               1. Introduction
             </h2>
             <p className="mb-4">
@@ -42,26 +45,26 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-xl font-display font-medium text-[#111111] mb-4">
               2. Data We Collect
             </h2>
             <p className="mb-4">
               We may collect, use, store, and transfer different kinds of data
               about you, including:
             </p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-2 text-gray-600">
               <li>
-                <strong>Identity and Contact Data:</strong> Name, email address,
+                <strong className="text-gray-800 font-medium">Identity and Contact Data:</strong> Name, email address,
                 company name, and job title when you book a consultation or
                 contact us.
               </li>
               <li>
-                <strong>Technical Data:</strong> IP addresses, browser type,
+                <strong className="text-gray-800 font-medium">Technical Data:</strong> IP addresses, browser type,
                 time zone setting, and operating system when you interact with
                 our website.
               </li>
               <li>
-                <strong>Usage Data:</strong> Information about how you use our
+                <strong className="text-gray-800 font-medium">Usage Data:</strong> Information about how you use our
                 APIs, website, and services. We do not inspect the contents of
                 encrypted payloads passing through our infrastructure.
               </li>
@@ -69,7 +72,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-xl font-display font-medium text-[#111111] mb-4">
               3. How We Use Your Data
             </h2>
             <p className="mb-4">
@@ -77,25 +80,16 @@ export default function PrivacyPolicy() {
               Most commonly, we will use your personal data in the following
               circumstances:
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                To provide and manage your access to our services and APIs.
-              </li>
-              <li>
-                To manage our relationship with you, including notifying you
-                about changes to our terms or privacy policy.
-              </li>
-              <li>
-                To administer and protect our business and website (including
-                troubleshooting, data analysis, testing, system maintenance,
-                support, reporting, and hosting of data).
-              </li>
+            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+              <li>To provide and manage your access to our services and APIs.</li>
+              <li>To manage our relationship with you, including notifying you about changes to our terms or privacy policy.</li>
+              <li>To administer and protect our business and website (including troubleshooting, data analysis, testing, system maintenance, support, reporting, and hosting of data).</li>
               <li>To deliver relevant website content to you.</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-xl font-display font-medium text-[#111111] mb-4">
               4. Cryptographic Security
             </h2>
             <p className="mb-4">
@@ -109,7 +103,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-xl font-display font-medium text-[#111111] mb-4">
               5. Contact Us
             </h2>
             <p>
@@ -117,9 +111,9 @@ export default function PrivacyPolicy() {
               practices, please contact our Data Protection Officer at:
               <br />
               <br />
-              <strong>Email:</strong> privacy@quantalabs.cc
+              <strong className="text-gray-800 font-medium">Email:</strong> privacy@quantalabs.cc
               <br />
-              <strong>Address:</strong> QuantaLabs Private Limited, Coimbatore,
+              <strong className="text-gray-800 font-medium">Address:</strong> QuantaLabs Private Limited, Coimbatore,
               Tamil Nadu, India
             </p>
           </section>

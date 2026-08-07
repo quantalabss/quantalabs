@@ -30,32 +30,34 @@ export default function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-sm z-50 animate-fade-in">
-      <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col gap-4 text-black">
-        <div>
+    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md z-50 animate-fade-in">
+      <div className="bg-white border border-gray-200 shadow-xl flex flex-col text-[#141413] p-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-[#C04A2B]"></div>
+        <div className="relative z-10">
           <div className="flex items-center gap-3 mb-2">
-            <span className="font-serif text-2xl text-black leading-none inline-block">
-              ∿
+            <span className="font-mono text-xl text-[#141413] leading-none inline-block">
+              [ ]
             </span>
-            <h3 className="font-bold text-sm uppercase tracking-widest">
-              Cookie Policy
+            <h3 className="font-bold text-xs uppercase tracking-widest font-mono text-[#141413]">
+              System.Cookies
             </h3>
           </div>
-          <p className="text-sm font-medium text-gray-600 leading-relaxed">
+          <p className="text-sm font-normal text-gray-600 leading-relaxed mb-4 mt-3">
             We use minimal cookies to analyze traffic and secure our
             infrastructure. We believe in data minimization.
           </p>
         </div>
-        <div className="flex gap-3 mt-2">
+        <div className="flex gap-3 relative z-10">
           <button
             onClick={acceptCookies}
-            className="flex-1 px-4 py-2.5 bg-[#C4ED5F] border-2 border-transparent text-black font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white transition-colors text-center"
+            className="flex-1 px-4 py-2.5 bg-[#C04A2B] border border-[#C04A2B] text-white font-mono uppercase tracking-widest text-xs hover:bg-[#141413] hover:border-[#141413] transition-colors text-center"
           >
             Accept
           </button>
           <button
             onClick={declineCookies}
-            className="flex-1 px-4 py-2.5 bg-gray-100 border-2 border-transparent text-black font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition-colors text-center"
+            className="flex-1 px-4 py-2.5 bg-white border border-gray-200 text-[#141413] font-mono uppercase tracking-widest text-xs hover:bg-gray-50 transition-colors text-center"
           >
             Decline
           </button>

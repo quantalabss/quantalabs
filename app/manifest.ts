@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'QuantaLabs — Post-Quantum Cryptography Migration',
     short_name: 'QuantaLabs',
-    description: 'QuantaLabs helps Indian fintechs and crypto companies complete CBOM audits and migrate to NIST post-quantum standards.',
+    description: 'QuantaLabs engineers sovereign infrastructure for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

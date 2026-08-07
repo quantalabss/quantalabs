@@ -1,143 +1,93 @@
+// CHANGED: Replaced inline SVGs with high-end AI generated 3D images per user request.
+// DATE: 2026-08-07 | VERSION: 8.0
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export default function ProductsShowcase() {
   return (
-    <section className="pt-12 pb-24 bg-white text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex flex-col border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 border-b-2 border-black">
-            <div className="lg:col-span-8 px-8 py-10 md:py-16 border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-white relative">
-              <div
-                className="absolute inset-0 opacity-30 pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
-                  backgroundSize: "24px 24px",
-                }}
-              ></div>
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="w-2 h-2 bg-black"></div>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
-                  Core Products
-                </span>
+    <>
+      {/* Slab 1: QuantaChain */}
+      <section className="py-32 bg-transparent text-[#141413] font-sans border-b border-gray-200 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            {/* Left Content */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
+                <span className="w-1.5 h-1.5 bg-[#C04A2B]"></span>
+                <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">Flagship Product</span>
               </div>
-              <h2 className="text-[2.5rem] md:text-[4rem] font-black tracking-tighter leading-[0.95] text-black relative z-10">
-                Our Core PQC
-                <br />
-                Products.
-              </h2>
-            </div>
-            <div className="lg:col-span-4 px-8 py-10 flex flex-col justify-end bg-[#C4ED5F] relative overflow-hidden">
-              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none opacity-90 hidden md:block">
-                ∏
-              </span>
-              <p className="text-sm text-black/70 font-medium relative z-10">
-                Our flagship post-quantum products form the bedrock of the
-                next-generation financial system. From sovereign L1 execution to
-                enterprise zero-trust SDKs.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Stacked Showcase */}
-        <div className="flex flex-col border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white">
-          {/* QuantaCipher */}
-          <div className="grid grid-cols-1 md:grid-cols-12 border-b-2 border-black group">
-            <div className="md:col-span-4 p-8 md:p-10 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col bg-[#C4ED5F]">
-              <span className="text-2xl font-serif text-black mb-6 block leading-none font-bold tracking-tight">
-                C = E(K, P)
-              </span>
-              <h3 className="text-3xl md:text-4xl font-black mt-auto">
-                QuantaCipher
-              </h3>
-            </div>
-            <div className="md:col-span-8 p-8 md:p-10 flex flex-col justify-center relative bg-white">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
-                Encryption-as-a-Service powered by Zero-Trust Kyber-1024. Secure your
-                internal databases, S3 buckets, and IPC communications against
-                &quot;Store Now, Decrypt Later&quot; attacks with drop-in,
-                hybrid-capable APIs.
-              </p>
-              <div>
-                <Link
-                  href="https://quantacipher.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#C4ED5F] hover:text-black transition-colors border-2 border-black"
-                >
-                  Get API Key
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* QuantaChain */}
-          <div className="grid grid-cols-1 md:grid-cols-12 border-b-2 border-black group">
-            <div className="md:col-span-4 p-8 md:p-10 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col bg-[#C4ED5F]">
-              <span className="text-2xl font-serif text-black mb-6 block leading-none font-bold tracking-tight">
-                |ψ⟩ = α|0⟩ + β|1⟩
-              </span>
-              <h3 className="text-3xl md:text-4xl font-black mt-auto">
+              <h2 className="text-[3.5rem] md:text-[5rem] font-display font-medium tracking-tight leading-[1.05] text-[#141413] mb-6">
                 QuantaChain
-              </h3>
-            </div>
-            <div className="md:col-span-8 p-8 md:p-10 flex flex-col justify-center relative bg-white">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
-                A high-performance Post-Quantum Institutional Settlement and AI
-                Execution Layer. Deterministic 6-second finality via DPoS and
-                AlephBFT, strictly secured by Falcon-512 signatures. Designed
-                natively for Headless AI Agents.
+              </h2>
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-normal max-w-lg mb-10">
+                The post-quantum trust layer for autonomous AI agents. We enable agents to coordinate, transact, and execute logic with finality that survives the quantum era.
               </p>
-              <div>
-                <Link
-                  href="https://quantachain.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#C4ED5F] hover:text-black transition-colors border-2 border-black"
-                >
-                  Explore L1
-                  <ArrowUpRight className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Link href="https://quantachain.org" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-8 py-4 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-sm">
+                  Explore Infrastructure <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link href="https://docs.quantachain.org" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#141413] border border-gray-200 font-mono text-xs uppercase tracking-widest hover:border-[#141413] transition-all">
+                  Read Docs
                 </Link>
               </div>
             </div>
-          </div>
-
-          {/* Quanta Wallet */}
-          <div className="grid grid-cols-1 md:grid-cols-12 group">
-            <div className="md:col-span-4 p-8 md:p-10 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col bg-[#C4ED5F]">
-              <span className="text-2xl font-serif text-black mb-6 block leading-none font-bold tracking-tight">
-                σ = Sign(sk, m)
-              </span>
-              <h3 className="text-3xl md:text-4xl font-black mt-auto">
-                Quanta Wallet
-              </h3>
-            </div>
-            <div className="md:col-span-8 p-8 md:p-10 flex flex-col justify-center relative bg-white">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
-                The official non-custodial browser extension for QuantaChain. Engineered
-                entirely in WASM for native Falcon-512 and Kyber-1024 cryptography inside
-                Chromium browsers.
-              </p>
-              <div>
-                <Link
-                  href="https://chromewebstore.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#C4ED5F] hover:text-black transition-colors border-2 border-black"
-                >
-                  Install Extension
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
+            {/* Right: SVG Visual */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <div className="w-full max-w-md aspect-square bg-white border border-[#C04A2B] shadow-sm p-8 relative overflow-hidden group transition-colors">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-1 h-full bg-[#C04A2B]"></div>
+                <div className="absolute top-4 left-4 font-mono text-[9px] text-gray-400 uppercase tracking-widest z-10">AI Agent Network</div>
+                <div className="relative w-full h-full z-10">
+                  <Image src="/images/quantachain-m2m.png" alt="QuantaChain M2M visual" fill className="object-cover" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Slab 2: QuantaCipher */}
+      <section className="py-32 bg-transparent text-[#141413] font-sans border-b border-gray-200 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row-reverse items-center justify-between gap-16">
+            {/* Right Content */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
+                <span className="w-1.5 h-1.5 bg-[#C04A2B]"></span>
+                <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">Enterprise Security</span>
+              </div>
+              <h2 className="text-[3.5rem] md:text-[5rem] font-display font-medium tracking-tight leading-[1.05] text-[#141413] mb-6">
+                QuantaCipher
+              </h2>
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-normal max-w-lg mb-10">
+                Post-quantum encryption APIs. We provide drop-in ML-KEM and ML-DSA integration so you can protect your data against &quot;Store Now, Decrypt Later&quot; attacks today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Link href="https://quantacipher.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-8 py-4 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-sm">
+                  Get API Key <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link href="https://quantacipher.com/pricing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#141413] border border-gray-200 font-mono text-xs uppercase tracking-widest hover:border-[#141413] transition-all">
+                  View Pricing
+                </Link>
+              </div>
+            </div>
+            {/* Left: SVG Visual */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+              <div className="w-full max-w-md aspect-square bg-white border border-[#C04A2B] shadow-sm p-8 relative overflow-hidden group transition-colors">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#C04A2B]"></div>
+                <div className="absolute top-4 right-4 font-mono text-[9px] text-gray-400 uppercase tracking-widest z-10">ML-DSA / Kyber</div>
+                <div className="relative w-full h-full z-10">
+                  <Image src="/images/quantacipher.png" alt="QuantaCipher visual" fill className="object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+// CHANGED: Redesigned for Deep Tech Light Mode aesthetic.
+// DATE: 2026-08-07 | VERSION: 4.0
 import { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
@@ -48,124 +50,70 @@ const PAPERS = [
 
 export default function ResearchPage() {
   return (
-    <div className="bg-white min-h-screen pt-28 pb-24 text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-transparent min-h-screen pt-32 pb-24 text-[#141413] font-sans selection:bg-[#C04A2B] selection:text-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Page Header */}
-        <div className="border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-8 p-10 md:p-16 border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-[#C4ED5F] relative">
-              <div
-                className="absolute inset-0 opacity-30 pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
-                  backgroundSize: "24px 24px",
-                }}
-              ></div>
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="w-2 h-2 bg-black"></div>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-black/60 uppercase font-bold">
-                  Applied Research
-                </span>
-              </div>
-              <h1 className="text-[3rem] md:text-[5rem] font-black tracking-tighter leading-[0.95] text-black relative z-10">
-                Theory into
-                <br />
-                production.
-              </h1>
-            </div>
-
-            <div className="lg:col-span-4 p-10 flex flex-col justify-end bg-[#C4ED5F] relative overflow-hidden border-l-2 border-black">
-              <div
-                className="absolute inset-0 opacity-[0.15] pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)`,
-                  backgroundSize: "20px 20px",
-                }}
-              ></div>
-              <span className="absolute top-8 right-8 text-[6rem] font-black text-black leading-none select-none">
-                ∑
-              </span>
-              <div className="relative z-10">
-                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
-                  ⊛
-                </span>
-                <p className="text-sm text-black font-medium">
-                  Our protocol engineering team regularly publishes findings on
-                  lattice-based cryptography, ZKPs, and secure migration
-                  strategies.
-                </p>
-              </div>
-            </div>
+        <div className="mb-20 pb-12 border-b border-gray-200">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
+            <span className="w-1.5 h-1.5 bg-[#C04A2B]"></span>
+            <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">Applied Research</span>
           </div>
+          <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#141413] leading-[1.05]">
+            Theory into <br/><span className="text-gray-400">production.</span>
+          </h1>
+          <p className="mt-8 text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
+            Our protocol engineering team regularly publishes findings on lattice-based cryptography, ZKPs, and secure migration strategies for the quantum era.
+          </p>
         </div>
 
         {/* Papers List */}
-        <div className="border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden">
-          <div className="bg-gray-100 border-b-2 border-black px-8 py-4 flex items-center justify-between">
-            <span className="font-mono text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-              Index of Publications
-            </span>
-            <span className="font-mono text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-              {PAPERS.length} ITEMS
-            </span>
-          </div>
-
-          <div className="flex flex-col">
-            {PAPERS.map((paper, index) => (
-              <div
-                key={paper.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 hover:bg-gray-50 transition-colors ${
-                  index !== PAPERS.length - 1 ? "border-b-2 border-black" : ""
-                }`}
-              >
-                {/* Meta Column */}
-                <div className="lg:col-span-3 p-8 border-b-2 lg:border-b-0 lg:border-r-2 border-black flex flex-col justify-between bg-gray-50/30">
-                  <div>
-                    <div className="inline-block font-mono text-[10px] font-bold text-black bg-[#C4ED5F] px-2 py-1 uppercase tracking-widest mb-4">
-                      {paper.id}
-                    </div>
-                    <div className="font-mono text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">
-                      {paper.date}
-                    </div>
-                    <div className="font-mono text-[9px] font-bold text-gray-600 uppercase tracking-widest border-2 border-black px-1.5 py-0.5 inline-block bg-white mb-3">
-                      {paper.type}
-                    </div>
-                    <div className="font-mono text-[9px] font-bold text-gray-400 uppercase tracking-widest">
-                      DOI: {paper.doi}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Column */}
-                <div className="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                  <h2 className="text-xl md:text-2xl font-bold text-black mb-3">
-                    {paper.title}
-                  </h2>
-                  <div className="font-mono text-xs text-gray-500 font-bold uppercase tracking-widest mb-6">
-                    {paper.authors}
-                  </div>
-                  <p className="text-sm text-gray-600 font-medium leading-relaxed max-w-3xl">
-                    {paper.abstract}
-                  </p>
-                </div>
-
-                {/* Actions Column */}
-                <div className="lg:col-span-2 p-6 border-t-2 lg:border-t-0 lg:border-l-2 border-black flex flex-row lg:flex-col items-center justify-center gap-4 bg-white">
-                  <a
-                    href={paper.zenodoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center gap-2 p-4 bg-[#C4ED5F] border-2 border-transparent hover:bg-white hover:border-black transition-colors w-full text-black shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-none"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                    <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-center">
-                      View on Zenodo
-                    </span>
-                  </a>
-                </div>
+        <div className="flex flex-col gap-12">
+          {PAPERS.map((paper) => (
+            <div key={paper.id} className="group relative bg-white border border-[#C04A2B] p-8 transition-colors shadow-sm overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-1 h-full bg-[#C04A2B] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10">
+              
+              <div className="flex flex-wrap gap-3 mb-6 relative z-10">
+                <span className="font-mono text-[10px] font-medium text-white bg-[#C04A2B] px-2 py-1 uppercase tracking-widest">
+                  {paper.id}
+                </span>
+                <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
+                  {paper.date}
+                </span>
+                <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
+                  {paper.type}
+                </span>
               </div>
-            ))}
-          </div>
+
+              <h2 className="text-2xl font-display font-medium text-[#141413] mb-2 tracking-tight relative z-10">
+                {paper.title}
+              </h2>
+              <div className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6 relative z-10">
+                Authors: {paper.authors}
+              </div>
+              
+              <p className="text-sm text-gray-600 font-normal leading-relaxed max-w-3xl mb-8 relative z-10">
+                {paper.abstract}
+              </p>
+
+              <div className="flex items-center gap-4 border-t border-gray-200 pt-6 relative z-10">
+                <a
+                  href={paper.zenodoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-sm"
+                >
+                  View on Zenodo <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <span className="font-mono text-[10px] text-gray-400 relative z-10">
+                  DOI: {paper.doi}
+                </span>
+              </div>
+            </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

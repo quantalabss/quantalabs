@@ -1,139 +1,99 @@
+"use client";
+// CHANGED: Implemented light-mode minimal terminal/code block and simplified title.
+// DATE: 2026-08-07 | VERSION: 4.3
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-const RPC_URL = "https://rpc.quantachain.org";
-
-async function fetchStats() {
-  try {
-    const res = await fetch(`${RPC_URL}/api/stats`, {
-      next: { revalidate: 30 },
-    });
-    if (!res.ok) return null;
-    return await res.json();
-  } catch {
-    return null;
+const staticAsciiArt = (() => {
+  const rows = 28;
+  const cols = 64;
+  let art = "";
+  const chars = [" ", ".", ":", "-", "=", "+", "*", "#", "%", "@"];
+  
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      // Flowing topographic waves / data stream (no central blob)
+      const nx = x * 0.12;
+      const ny = y * 0.18;
+      
+      const wave1 = Math.sin(nx + ny);
+      const wave2 = Math.cos(nx * 0.5 - ny);
+      const wave3 = Math.sin(x * 0.05);
+      
+      const value = (wave1 + wave2 + wave3) / 3;
+      
+      const normalized = Math.floor(((value + 1) / 2) * (chars.length - 1));
+      const charIndex = Math.max(0, Math.min(chars.length - 1, normalized));
+      
+      art += chars[charIndex];
+    }
+    art += "\n";
   }
+  return art;
+})();
+
+function AsciiWaveArt() {
+  return (
+    <pre className="font-mono text-[9px] leading-[9px] md:text-[11px] md:leading-[11px] text-[#C04A2B] font-bold tracking-widest whitespace-pre opacity-90 select-none">
+      {staticAsciiArt}
+    </pre>
+  );
 }
 
-export default async function Hero() {
-  const stats = await fetchStats();
-  const chainLength = stats?.chain_length ?? null;
-
+export default function Hero() {
   return (
-    <section className="relative bg-white text-black pt-28 pb-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden">
-          {/* HEADLINE + VISUAL ROW */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 border-b-2 border-black">
-            {/* Left: Headline */}
-            <div className="lg:col-span-8 px-8 py-10 md:py-14 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-white">
-              <h1 className="text-[2.8rem] sm:text-[3.8rem] md:text-[4.8rem] font-extrabold tracking-tighter leading-[0.93] text-black mb-4">
-                We migrate your
-                <br />
-                crypto stack
-                <br />
-                <span className="relative inline-block mt-1">
-                  to PQC.
-                  <span className="absolute bottom-1 left-0 w-full h-[5px] bg-[#C4ED5F] -z-10"></span>
-                </span>
+    <section className="relative bg-transparent text-[#141413] pt-32 pb-24 overflow-hidden font-sans border-b border-gray-200">
+      {/* Structural Grid Background - Deep Tech Light Mode */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+
+          {/* Left: Headline & Copy */}
+          <div className="w-full lg:w-3/5 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="h-8 mb-8">
+              {/* Spacer to keep original layout height */}
+            </div>
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#141413] mb-8 leading-[1.1]">
+                AI Engineering <span className="text-[#C04A2B]">&amp;</span><br />
+                <span className="text-gray-400">Quantum Security.</span>
               </h1>
-              <p className="text-sm text-gray-500 leading-relaxed font-medium max-w-lg">
-                We audit your cryptographic stack and migrate it to{" "}
-                <strong className="text-black">
-                  NIST-finalized ML-KEM & ML-DSA
-                </strong>{" "}
-                before India DST&apos;s FY 2027-28 mandate.
-              </p>
             </div>
 
-            {/* Right: Accent Visual — compact */}
-            <div className="lg:col-span-4 relative bg-[#C4ED5F] flex flex-col items-center justify-center p-6 overflow-hidden min-h-[220px]">
-              <div
-                className="absolute inset-0 opacity-40 pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)`,
-                  backgroundSize: "24px 24px",
-                }}
-              ></div>
-              <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-                <span className="text-[7rem] font-black text-black leading-none select-none mb-8 tracking-tighter">
-                  ∑
-                </span>
-                <div className="w-full bg-white/90 border-2 border-black p-3 font-mono text-[10px] text-gray-500">
-                  <div className="flex justify-between border-b border-gray-100 pb-1.5 mb-1.5">
-                    <span>Algorithm</span>
-                    <span className="text-black font-bold">ML-KEM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Target</span>
-                    <span className="text-black font-bold">FIPS 203</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-normal max-w-2xl mb-10">
+              Quantalabs operates two dedicated engineering practices: <strong className="text-black font-medium">autonomous AI workflows</strong> and <strong className="text-black font-medium">post-quantum cryptographic migrations</strong>. Elite infrastructure for the enterprise layer.
+            </p>
 
-          {/* BOTTOM ROW: Live Stats + CTAs */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 bg-white">
-            {/* Live chain stats */}
-            <div className="lg:col-span-8 px-8 py-4 border-b-2 lg:border-b-0 lg:border-r-2 border-black flex items-center gap-6 md:gap-8 bg-gray-50/50">
-              <div>
-                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
-                  {chainLength !== null ? chainLength.toLocaleString() : "—"}
-                </div>
-                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">
-                  Chain Height
-                </div>
-              </div>
-              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
-              <div>
-                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
-                  15+
-                </div>
-                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">
-                  Active Projects
-                </div>
-              </div>
-              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
-              <div>
-                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
-                  10+
-                </div>
-                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">
-                  Published Packages
-                </div>
-              </div>
-              <div className="w-px h-6 bg-gray-200 shrink-0 hidden sm:block"></div>
-              <div>
-                <div className="text-lg font-black tracking-tight text-black leading-none mb-0.5">
-                  3
-                </div>
-                <div className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">
-                  Published Papers
-                </div>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="lg:col-span-4 p-3 flex flex-col gap-2 bg-white justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="group flex items-center justify-between w-full px-6 py-3.5 bg-black text-white font-bold hover:bg-gray-900 transition-colors text-xs uppercase tracking-widest border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
+                className="group flex items-center justify-center gap-2 px-8 py-4 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-md"
               >
-                <span>Get CBOM Audit</span>
+                <span>Automate Now</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
-                href="https://quantacipher.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between w-full px-6 py-3.5 border-2 border-black text-black font-bold hover:bg-gray-100 transition-colors text-xs uppercase tracking-widest"
+                href="/services"
+                className="group flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-[#141413] border border-[#141413] font-mono text-xs uppercase tracking-widest hover:bg-[#141413] hover:text-white transition-all shadow-sm"
               >
-                <span>Explore Solutions</span>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+                <span>Explore Services</span>
               </Link>
             </div>
           </div>
+
+          {/* Right: ASCII Art Container */}
+          <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
+            <div className="w-full max-w-md aspect-[4/3] bg-[#141413] border border-[#C04A2B] shadow-sm p-4 relative overflow-hidden group transition-colors flex items-center justify-center">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-1 h-full bg-[#C04A2B]"></div>
+              
+              <div className="relative z-10 overflow-hidden w-full h-full flex items-center justify-center bg-transparent">
+                <AsciiWaveArt />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,243 +1,106 @@
+// CHANGED: Redesigned to match the light-mode structural theme.
+// DATE: 2026-08-07 | VERSION: 3.0
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-interface FooterLink {
-  label: string;
-  href: string;
-  external?: boolean;
-  badge?: string;
-}
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+);
 
-interface FooterColumn {
-  heading: string;
-  links: FooterLink[];
-}
+const TwitterIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+);
+
+const LinkedinIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+);
 
 export default function Footer() {
-  const footerColumns: FooterColumn[] = [
-    {
-      heading: "Products",
-      links: [
-        { label: "QuantaChain", href: "https://quantachain.org", external: true },
-        { label: "QuantaCipher", href: "https://quantacipher.com", external: true },
-        { label: "Quanta Wallet", href: "https://chromewebstore.google.com", external: true },
-      ],
-    },
-    {
-      heading: "Open Source",
-      links: [
-        { label: "Algo-PQC-Kit", href: "https://github.com/quantalabss/algo-pqc-kit", external: true },
-        { label: "Ornyx Protocol", href: "https://ornyx.xyz", external: true },
-        { label: "Falcon-Multisig", href: "https://github.com/quantalabss/falcon-multisig", external: true },
-      ],
-    },
-    {
-      heading: "Research",
-      links: [
-        { label: "Publications", href: "/research" },
-        { label: "Blog", href: "/blog" },
-        { label: "NIST Guidelines", href: "https://csrc.nist.gov/projects/post-quantum-cryptography", external: true },
-      ],
-    },
-    {
-      heading: "Company",
-      links: [
-        { label: "About Us", href: "/company" },
-        { label: "Careers", href: "/careers", badge: "Hiring" },
-        { label: "Contact", href: "/contact" },
-      ],
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4"
-        >
-          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-        </svg>
-      ),
-      href: "https://twitter.com/quantalabss",
-      label: "Twitter",
-    },
-    {
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4"
-        >
-          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.5 6.5-7a5.2 5.2 0 0 0-1.5-3.8 5.2 5.2 0 0 0-.15-3.8s-1.2-.38-3.9 1.4a13.38 13.38 0 0 0-7 0C6.2 1.5 5 1.9 5 1.9a5.2 5.2 0 0 0-.15 3.8A5.2 5.2 0 0 0 3 9.5c0 5.4 3.3 6.6 6.5 7.02a4.8 4.8 0 0 0-1 3.02V22"></path>
-          <path d="M9 18c-4.51 2-5-2-7-2"></path>
-        </svg>
-      ),
-      href: "https://github.com/quantalabss",
-      label: "GitHub",
-    },
-    {
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4"
-        >
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      ),
-      href: "https://linkedin.com/company/quantalabs",
-      label: "LinkedIn",
-    },
-    {
-      icon: <Mail className="w-5 h-5 text-black group-hover:text-[#C4ED5F] transition-colors" />,
-      href: "mailto:contact@quantalabs.cc",
-      label: "Email",
-    },
-  ];
-
   return (
-    <footer className="bg-[#C4ED5F] text-black border-t-2 border-black">
-      {/* ── PRE-FOOTER CTA GRID ── */}
-      <div className="border-b-2 border-black bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="lg:col-span-8 p-10 md:p-16 border-b-2 lg:border-b-0 lg:border-r-2 border-black">
-                <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">
-                  Initiate Protocol
-                </p>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight text-black max-w-xl">
-                  Ready to secure your infrastructure?
-                </h2>
-              </div>
-
-              <div className="lg:col-span-4 p-10 md:p-16 flex flex-col justify-center gap-4 bg-gray-50/50">
-                <Link
-                  href="/contact"
-                  className="group flex items-center justify-between w-full px-6 py-4 bg-black text-white font-bold hover:bg-gray-900 transition-colors text-xs uppercase tracking-widest border-2 border-transparent hover:border-[#C4ED5F] shadow-[4px_4px_0px_0px_rgba(196,237,95,1)]"
-                >
-                  <span>Book Consultation</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-                <Link
-                  href="https://quantacipher.com"
-                  className="group flex items-center justify-between w-full px-6 py-4 border-2 border-black text-black font-bold hover:bg-gray-100 transition-colors text-xs uppercase tracking-widest bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                >
-                  <span>Explore QuantaCipher</span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── MAIN FOOTER ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Brand */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center gap-3 mb-6 group w-fit">
-              <Image
-                src="/logo/quanta-transparent-bg-logo.svg"
-                alt="Quantalabs Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8 transition-transform group-hover:scale-110"
-              />
-              <span className="text-xl font-bold tracking-tighter text-black">
-                Quantalabs<span className="text-[#C4ED5F]">.</span>
+    <footer className="bg-transparent border-t border-gray-200 pt-20 pb-10 text-[#141413] font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          
+          {/* Brand Col */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/logo/quanta-transparent-bg-logo.svg" alt="QuantaLabs Logo" className="w-6 h-6" />
+              <span className="text-xl font-display font-medium tracking-tight text-[#141413]">
+                Quantalabs<span className="text-[#C04A2B]">.</span>
               </span>
-            </Link>
-            <p className="text-black/60 text-sm font-medium leading-relaxed mb-8 max-w-xs">
-              Engineering sovereign infrastructure at the frontier of
-              post-quantum cryptography.
-            </p>
-            {/* Social links */}
-            <div className="flex gap-3">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 border-2 border-black text-black bg-transparent flex items-center justify-center hover:bg-black hover:text-[#C4ED5F] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                >
-                  {s.icon}
-                </a>
-              ))}
             </div>
+            <p className="text-[10px] text-gray-500 font-mono leading-loose tracking-widest uppercase">
+              Building infrastructure for autonomous AI and quantum-safe enterprises.
+            </p>
+          </div>
+          
+          {/* Links Col 1 */}
+          <div>
+            <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Products</h4>
+            <ul className="space-y-6">
+              <li>
+                <Link href="https://quantachain.org" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaChain</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">PQC blockchain for autonomous agents & M2M AI economy.</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://quantacipher.com" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaCipher</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Enterprise PQC tunneling & encryption.</div>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Links Col 2 */}
+          <div>
+            <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Company</h4>
+            <ul className="space-y-6">
+              <li>
+                <Link href="/services" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Engineering Services</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">AI & Cryptography implementations.</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/research" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Applied Research</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Frontier models and PQC research.</div>
+                </Link>
+              </li>
+              <li><Link href="/company" className="block text-sm text-gray-600 hover:text-black transition-colors">About Us</Link></li>
+              <li><Link href="/careers" className="block text-sm text-gray-600 hover:text-black transition-colors">Careers</Link></li>
+              <li><Link href="/contact" className="block text-sm text-gray-600 hover:text-black transition-colors">Contact</Link></li>
+            </ul>
           </div>
 
-          {/* Links grid */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {footerColumns.map((col) => (
-              <div key={col.heading}>
-                <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 mb-6">
-                  {col.heading}
-                </h4>
-                <ul className="space-y-4">
-                  {col.links.map((link) => (
-                    <li key={link.label} className="flex items-center gap-2">
-                      <Link
-                        href={link.href}
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noopener noreferrer" : undefined}
-                        className="text-sm text-black font-semibold hover:text-[#8ab329] transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                      {link.badge && (
-                        <span className="text-[9px] font-mono font-bold tracking-widest uppercase px-1.5 py-0.5 border border-black/10 text-black/60 bg-black/5">
-                          {link.badge}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Links Col 3 */}
+          <div>
+            <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Connect</h4>
+            <ul className="space-y-4">
+              <li><Link href="https://github.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><GithubIcon className="w-3.5 h-3.5 text-gray-400" /> GitHub <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
+              <li><Link href="https://x.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><TwitterIcon className="w-3.5 h-3.5 text-gray-400" /> Twitter <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
+              <li><Link href="https://linkedin.com/company/quantachain" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><LinkedinIcon className="w-3.5 h-3.5 text-gray-400" /> LinkedIn <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
+            </ul>
           </div>
+          
         </div>
-      </div>
 
-      {/* ── BOTTOM BAR ── */}
-      <div className="border-t-2 border-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-[10px] text-black/50 uppercase tracking-widest font-bold">
-            © {new Date().getFullYear()} QuantaLabs. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">
+            &copy; {new Date().getFullYear()} Quantalabs Private Limited. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-mono font-bold uppercase tracking-widest text-black/50">
-            <Link
-              href="/privacy"
-              className="hover:text-black transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-black transition-colors">
-              Terms of Service
-            </Link>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-[10px] font-mono text-gray-400 uppercase tracking-widest hover:text-black transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-[10px] font-mono text-gray-400 uppercase tracking-widest hover:text-black transition-colors">Terms of Service</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
