@@ -61,6 +61,11 @@ const NAV_ITEMS: NavItem[] = [
         description: "Our mission and headquarters",
       },
       {
+        title: "Blog",
+        href: "/blog",
+        description: "News and protocol updates",
+      },
+      {
         title: "Research",
         href: "/research",
         description: "Peer-reviewed PQC and ZKP papers",
