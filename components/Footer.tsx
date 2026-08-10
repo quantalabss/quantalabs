@@ -1,9 +1,9 @@
-// CHANGED: Redesigned to match the light-mode structural theme.
-// DATE: 2026-08-07 | VERSION: 3.0
+// CHANGED: Added DPIIT recognition status and registered office address to increase credibility.
+// DATE: 2026-08-10 | VERSION: 3.1
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, MapPin } from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
@@ -22,19 +22,41 @@ export default function Footer() {
     <footer className="bg-transparent pt-20 pb-10 text-[#141413] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
           
           {/* Brand Col */}
-          <div className="md:col-span-1">
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img src="/logo/quanta-transparent-bg-logo.svg" alt="QuantaLabs Logo" className="w-6 h-6" />
               <span className="text-xl font-display font-medium tracking-tight text-[#141413]">
                 Quantalabs<span className="text-[#C04A2B]">.</span>
               </span>
             </div>
-            <p className="text-[10px] text-gray-500 font-mono leading-loose tracking-widest uppercase">
+            <p className="text-[10px] text-gray-500 font-mono leading-loose tracking-widest uppercase max-w-sm mb-8">
               Building infrastructure for autonomous AI and quantum-safe enterprises.
             </p>
+
+            <div className="flex flex-col mb-8">
+              <div className="flex items-center gap-2 mb-2">
+                <ShieldCheck className="w-4 h-4 text-[#C04A2B]" />
+                <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-gray-600 font-semibold">DPIIT Recognized Startup</span>
+              </div>
+              <span className="text-[10px] text-gray-400 font-mono tracking-[0.1em] uppercase pl-6">
+                #StartupIndia &bull; Govt. of India
+              </span>
+            </div>
+
+            <div className="max-w-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-4 h-4 text-[#C04A2B]" />
+                <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-gray-600 font-semibold">Registered Office</span>
+              </div>
+              <p className="text-[10px] text-gray-400 font-mono leading-relaxed tracking-wider uppercase pl-6">
+                1st Floor, Smartspaces, 57-A, KS Ramasamy St,<br />
+                Kuppakonanpudur, Coimbatore North,<br />
+                Coimbatore &ndash; 641038, Tamil Nadu
+              </p>
+            </div>
           </div>
           
           {/* Links Col 1 */}
