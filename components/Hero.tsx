@@ -42,7 +42,7 @@ function AsciiWaveArt() {
 
 export default function Hero() {
   return (
-    <section className="relative bg-transparent text-[#141413] pt-32 pb-24 overflow-hidden font-sans border-b border-gray-200">
+    <section className="relative bg-transparent text-[#141413] pt-32 pb-24 overflow-hidden font-sans">
       {/* Structural Grid Background - Deep Tech Light Mode */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
 

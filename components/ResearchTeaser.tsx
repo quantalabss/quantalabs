@@ -31,7 +31,7 @@ export default function ResearchTeaser() {
   ];
 
   return (
-    <section className="py-32 bg-transparent text-[#141413] font-sans border-b border-gray-200">
+    <section className="py-32 bg-transparent text-[#141413] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -44,7 +44,7 @@ export default function ResearchTeaser() {
           </div>
           <h2 className="text-[2.5rem] md:text-[3.5rem] font-display font-medium tracking-tight leading-[1.1] text-[#141413] max-w-2xl">
             Advancing the frontier of <br className="hidden sm:block" />
-            <span className="text-gray-400">quantum-safe AI.</span>
+            AI & Post-Quantum Cryptography research.
           </h2>
         </div>
 

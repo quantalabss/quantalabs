@@ -3,7 +3,9 @@ import Hero from "@/components/Hero";
 
 import ProductsShowcase from "@/components/ProductsShowcase";
 import ServicesPreview from "@/components/ServicesPreview";
+import WhoWeFor from "@/components/WhoWeFor";
 import ResearchTeaser from "@/components/ResearchTeaser";
+import StartupPartners from "@/components/StartupPartners";
 
 
 const siteUrl = "https://quantalabs.cc";
@@ -90,7 +92,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <StartupPartners />
+      <ProductsShowcase />
       <ServicesPreview />
+      <WhoWeFor />
       <ResearchTeaser />
     </>
   );

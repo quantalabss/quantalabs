@@ -8,7 +8,7 @@ export default function ServicesPreview() {
     <div className="bg-transparent text-[#141413] font-sans">
       
       {/* 1. Value Proposition (ROI & Overhead) */}
-      <section className="py-24 border-b border-gray-200 bg-transparent">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[10px] font-mono text-gray-500 tracking-widest uppercase font-medium block mb-4">
@@ -18,7 +18,7 @@ export default function ServicesPreview() {
               Reduce overhead. Remove risk.
             </h2>
             <p className="text-lg text-gray-600 font-normal leading-relaxed">
-              You don't need to build an expensive in-house cryptography or AI engineering team. We scope, build, and deploy the infrastructure so you can focus on your core business.
+              You don&apos;t need to build an expensive in-house cryptography or AI engineering team. We scope, build, and deploy the infrastructure so you can focus on your core business.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function ServicesPreview() {
               <div className="relative z-10">
                 <h3 className="text-xl font-display font-medium mb-3">Eliminate Catastrophic Risk</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  Protect your enterprise data from future quantum computing attacks with zero-downtime cryptographic upgrades that don't disrupt your current operations.
+                  Protect your enterprise data from future quantum computing attacks with zero-downtime cryptographic upgrades that don&apos;t disrupt your current operations.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center text-sm font-medium text-gray-700">
@@ -63,7 +63,7 @@ export default function ServicesPreview() {
       </section>
 
       {/* 2. Concrete Services List */}
-      <section className="py-24 border-b border-gray-200 bg-transparent">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-16">

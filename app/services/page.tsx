@@ -156,28 +156,34 @@ export default function ServicesPage() {
             </div>
 
             <div className="w-full lg:w-1/2 animate-fade-in">
-              <div className="bg-black rounded-sm border border-gray-800 shadow-xl p-8 h-[450px] relative overflow-hidden font-mono text-xs flex flex-col justify-end">
-                <div className="opacity-40 mb-auto">
-                  <span className="text-gray-400 block">Initializing Agent Sequence...</span>
-                  <span className="text-gray-400 block">Model: Qwen-3-72B</span>
-                  <span className="text-gray-400 block">Risk Tolerance: Strict</span>
-                  <span className="text-gray-400 block mt-4">--- STREAM ---</span>
+              <div className="bg-gradient-to-br from-[#faf9f5] to-[#f0efe9] rounded-xl border border-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] p-8 h-[450px] relative overflow-hidden font-mono text-xs flex flex-col justify-end group">
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, #14141308 1px, transparent 1px), linear-gradient(to bottom, #14141308 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+                  <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#C04A2B]/10 rounded-full blur-[50px] group-hover:bg-[#C04A2B]/15 transition-colors duration-700"></div>
                 </div>
-                <div className="space-y-4">
-                  <div className="text-gray-300 flex gap-3">
-                    <span className="text-blue-400/70 shrink-0">[14:02:01]</span>
+                
+                <div className="relative z-10 opacity-70 mb-auto bg-white/70 backdrop-blur-md p-4 rounded border border-gray-200/50 shadow-sm">
+                  <span className="text-gray-500 block">Initializing Agent Sequence...</span>
+                  <span className="text-gray-500 block">Model: Qwen-3-72B</span>
+                  <span className="text-gray-500 block">Risk Tolerance: Strict</span>
+                  <span className="text-gray-400 block mt-4 font-medium">--- STREAM ---</span>
+                </div>
+                
+                <div className="relative z-10 space-y-4 mt-6 bg-white/90 backdrop-blur-xl p-5 rounded-xl border border-white shadow-sm">
+                  <div className="text-gray-600 flex gap-3">
+                    <span className="text-[#C04A2B] shrink-0 font-medium">[14:02:01]</span>
                     <span>Analyzing mempool transactions...</span>
                   </div>
-                  <div className="text-gray-300 flex gap-3">
-                    <span className="text-yellow-400/70 shrink-0">[14:02:04]</span>
+                  <div className="text-gray-600 flex gap-3">
+                    <span className="text-yellow-600 shrink-0 font-medium">[14:02:04]</span>
                     <span>Arbitrage opportunity identified in Liquidity Pool A.</span>
                   </div>
-                  <div className="text-gray-300 flex gap-3">
-                    <span className="text-blue-400/70 shrink-0">[14:02:05]</span>
+                  <div className="text-gray-600 flex gap-3">
+                    <span className="text-[#C04A2B] shrink-0 font-medium">[14:02:05]</span>
                     <span>Calculating deterministic execution path...</span>
                   </div>
-                  <div className="text-[#141413] font-medium bg-[#C04A2B]/10 border border-[#C04A2B]/20 p-4 mt-2 flex items-center gap-3">
-                    <span className="text-[#C04A2B] animate-pulse">●</span> 
+                  <div className="text-[#141413] font-medium bg-[#C04A2B]/5 border border-[#C04A2B]/20 p-4 mt-2 flex items-center gap-3 rounded">
+                    <span className="text-[#C04A2B] animate-pulse shadow-[0_0_8px_rgba(192,74,43,0.6)] rounded-full">●</span> 
                     Executing Atomic Swap Tx: 0x8a92...b14e
                   </div>
                 </div>
@@ -200,38 +206,45 @@ export default function ServicesPage() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             
             <div className="w-full lg:w-1/2 order-2 lg:order-1 animate-fade-in">
-              <div className="bg-black rounded-sm border border-gray-800 shadow-xl overflow-hidden h-[450px] flex flex-col">
-                <div className="bg-[#111111] border-b border-gray-800 p-4 flex items-center justify-between">
+              <div className="bg-gradient-to-br from-[#faf9f5] to-[#f0efe9] rounded-xl border border-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] overflow-hidden h-[450px] flex flex-col group relative">
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#C04A2B 1px, transparent 1px)', backgroundSize: '24px 24px', opacity: 0.07 }}></div>
+                  <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-orange-400/10 rounded-full blur-[40px]"></div>
+                </div>
+
+                <div className="relative z-10 bg-white/80 backdrop-blur-md border-b border-gray-100 p-4 flex items-center justify-between shadow-sm">
                   <div className="flex space-x-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
                   </div>
-                  <div className="text-gray-500 font-mono text-[10px] uppercase tracking-wider">
+                  <div className="text-gray-500 font-mono text-[10px] uppercase tracking-wider font-semibold">
                     migration.sh
                   </div>
                   <div className="w-12" />
                 </div>
-                <div className="p-6 font-mono text-xs leading-relaxed overflow-hidden text-gray-300">
+                
+                <div className="relative z-10 p-6 font-mono text-xs leading-relaxed overflow-hidden text-gray-600 bg-white/60 h-full">
                   <div className="mb-2">
-                    <span className="text-[#C04A2B]">root@quanta:~$</span> quanta-cli network upgrade --target pqc_falcon512
+                    <span className="text-[#C04A2B] font-medium">root@quanta:~$</span> <span className="text-[#141413]">quanta-cli network upgrade --target pqc_falcon512</span>
                   </div>
-                  <div className="text-gray-400 mb-1">[INFO] Initiating mainnet state migration protocol...</div>
-                  <div className="text-gray-400 mb-1">[INFO] Pausing mempool &amp; securing validator signatures...</div>
-                  <div className="text-gray-400 mb-4">[INFO] Compiling WASM cryptographic primitives...</div>
+                  <div className="text-gray-500 mb-1">[INFO] Initiating mainnet state migration protocol...</div>
+                  <div className="text-gray-500 mb-1">[INFO] Pausing mempool &amp; securing validator signatures...</div>
+                  <div className="text-gray-500 mb-4">[INFO] Compiling WASM cryptographic primitives...</div>
                   
-                  <div className="mb-1"><span className="text-blue-400/80">Loading module:</span> kyber_kem_v1.wasm [100%]</div>
-                  <div className="mb-4"><span className="text-blue-400/80">Loading module:</span> falcon_512_sig.wasm [100%]</div>
+                  <div className="mb-1"><span className="text-blue-600 font-medium">Loading module:</span> kyber_kem_v1.wasm [100%]</div>
+                  <div className="mb-4"><span className="text-blue-600 font-medium">Loading module:</span> falcon_512_sig.wasm [100%]</div>
                   
-                  <div className="text-emerald-400/80 mb-1">✔ Cryptographic modules verified.</div>
-                  <div className="text-emerald-400/80 mb-4">✔ Merkle-tree state recalculated.</div>
+                  <div className="text-emerald-600 mb-1 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_5px_rgba(16,185,129,0.5)]"></span> Cryptographic modules verified.</div>
+                  <div className="text-emerald-600 mb-4 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_5px_rgba(16,185,129,0.5)]"></span> Merkle-tree state recalculated.</div>
                   
-                  <div className="font-semibold text-white mb-4 bg-[#111111] p-3 border border-gray-800">
+                  <div className="font-semibold text-[#141413] mt-5 mb-4 bg-white p-4 border border-gray-200 shadow-sm rounded flex items-center gap-3">
+                    <ShieldCheck className="w-5 h-5 text-emerald-500" />
                     Migration Complete. Network is now Post-Quantum Secure.
                   </div>
                   
                   <div>
-                    <span className="text-[#C04A2B]">root@quanta:~$</span> <span className="animate-pulse">_</span>
+                    <span className="text-[#C04A2B] font-medium">root@quanta:~$</span> <span className="animate-pulse font-bold text-[#141413]">_</span>
                   </div>
                 </div>
               </div>
