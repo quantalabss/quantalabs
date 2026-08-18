@@ -20,6 +20,11 @@ export default function StartupPartners() {
     {
       name: "Cloudflare for Startups",
       logo: "/logos/cloudflare.svg",
+      className: "scale-[1.1] md:scale-[1.2]",
+    },
+    {
+      name: "Zoho for Startups",
+      logo: "/logos/zoho.svg",
     },
   ];
 
