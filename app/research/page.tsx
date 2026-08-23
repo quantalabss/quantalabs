@@ -1,5 +1,5 @@
-// CHANGED: Redesigned for Deep Tech Light Mode aesthetic.
-// DATE: 2026-08-07 | VERSION: 4.0
+// CHANGED: Added PQ-Sortition paper to the research list.
+// DATE: 2026-08-23 | VERSION: 4.1
 import { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
@@ -46,13 +46,25 @@ const PAPERS = [
     zenodoUrl: "https://zenodo.org/records/18753528",
     doi: "10.5281/zenodo.18753528",
   },
+  {
+    id: "PQS-2026-04",
+    title:
+      "PQ-Sortition: A Post-Quantum Cryptographic Sortition Protocol from NTRU Lattices with Applications to Proof-of-Stake Blockchains",
+    authors: "Kishore K",
+    date: "AUG 2026",
+    type: "PREPRINT",
+    abstract:
+      "PQ-Sortition is a post-quantum cryptographic sortition protocol constructed from the NTRU lattice hardness assumption and instantiated using Falcon-512 (FN-DSA). The construction uses deterministic Falcon signing to obtain a reproducible, publicly verifiable proof and combines it with a consensus-layer commit-then-reveal mechanism to address the lack of unconditional uniqueness inherent in GPV-style lattice signatures. The work introduces NTRU-Sortition, a many-time lattice-based verifiable random function construction, and provides formal analyses of third-party uniqueness, pseudorandomness under the NTRU-SIS assumption in the Random Oracle Model, and provability. The paper further defines PQ-Sortition as a post-quantum proof-of-stake leader-election protocol using a historical randomness beacon, stake-weighted sortition, adaptive difficulty, equivocation slashing, and grinding resistance. The Falcon-512 instantiation provides a 32-byte output and proofs of up to 666 bytes. The paper also presents concrete performance measurements, security parameters, consensus integration details, comparisons with prior post-quantum VRF constructions, and open research problems.",
+    zenodoUrl: "https://zenodo.org/records/22040423",
+    doi: "10.5281/zenodo.22040423",
+  },
 ];
 
 export default function ResearchPage() {
   return (
     <div className="bg-transparent min-h-screen pt-32 pb-24 text-[#141413] font-sans selection:bg-[#C04A2B] selection:text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Page Header */}
         <div className="mb-20 pb-12 border-b border-gray-200">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 mb-8 shadow-sm">
@@ -60,7 +72,7 @@ export default function ResearchPage() {
             <span className="text-[10px] tracking-[0.2em] text-gray-500 uppercase font-mono font-medium">Applied Research</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#141413] leading-[1.05]">
-            Theory into <br/><span className="text-gray-400">production.</span>
+            Theory into <br /><span className="text-gray-400">production.</span>
           </h1>
           <p className="mt-8 text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
             Our protocol engineering team regularly publishes findings on lattice-based cryptography, ZKPs, and secure migration strategies for the quantum era.
@@ -74,44 +86,44 @@ export default function ResearchPage() {
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
               <div className="absolute top-0 right-0 w-1 h-full bg-[#C04A2B] opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
-              
-              <div className="flex flex-wrap gap-3 mb-6 relative z-10">
-                <span className="font-mono text-[10px] font-medium text-white bg-[#C04A2B] px-2 py-1 uppercase tracking-widest">
-                  {paper.id}
-                </span>
-                <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
-                  {paper.date}
-                </span>
-                <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
-                  {paper.type}
-                </span>
-              </div>
 
-              <h2 className="text-2xl font-display font-medium text-[#141413] mb-2 tracking-tight relative z-10">
-                {paper.title}
-              </h2>
-              <div className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6 relative z-10">
-                Authors: {paper.authors}
-              </div>
-              
-              <p className="text-sm text-gray-600 font-normal leading-relaxed max-w-3xl mb-8 relative z-10">
-                {paper.abstract}
-              </p>
+                <div className="flex flex-wrap gap-3 mb-6 relative z-10">
+                  <span className="font-mono text-[10px] font-medium text-white bg-[#C04A2B] px-2 py-1 uppercase tracking-widest">
+                    {paper.id}
+                  </span>
+                  <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
+                    {paper.date}
+                  </span>
+                  <span className="font-mono text-[10px] font-medium text-gray-500 bg-white border border-gray-200 px-2 py-1 uppercase tracking-widest">
+                    {paper.type}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-4 border-t border-gray-200 pt-6 relative z-10">
-                <a
-                  href={paper.zenodoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-sm"
-                >
-                  View on Zenodo <ArrowUpRight className="w-4 h-4" />
-                </a>
-                <span className="font-mono text-[10px] text-gray-400 relative z-10">
-                  DOI: {paper.doi}
-                </span>
+                <h2 className="text-2xl font-display font-medium text-[#141413] mb-2 tracking-tight relative z-10">
+                  {paper.title}
+                </h2>
+                <div className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6 relative z-10">
+                  Authors: {paper.authors}
+                </div>
+
+                <p className="text-sm text-gray-600 font-normal leading-relaxed max-w-3xl mb-8 relative z-10">
+                  {paper.abstract}
+                </p>
+
+                <div className="flex items-center gap-4 border-t border-gray-200 pt-6 relative z-10">
+                  <a
+                    href={paper.zenodoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-all shadow-sm"
+                  >
+                    View on Zenodo <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                  <span className="font-mono text-[10px] text-gray-400 relative z-10">
+                    DOI: {paper.doi}
+                  </span>
+                </div>
               </div>
-            </div>
             </div>
           ))}
         </div>

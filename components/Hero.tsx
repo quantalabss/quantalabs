@@ -56,13 +56,13 @@ export default function Hero() {
             </div>
             <div className="max-w-2xl">
               <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-[#141413] mb-8 leading-[1.1]">
-                AI Engineering <span className="text-[#C04A2B]">&amp;</span><br />
-                <span className="text-gray-400">Quantum Security.</span>
+                Quantum Security <span className="text-[#C04A2B]">&amp;</span><br />
+                <span className="text-gray-400">Autonomous AI.</span>
               </h1>
             </div>
 
             <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-normal max-w-2xl mb-10">
-              Quantalabs operates two dedicated engineering practices: <strong className="text-black font-medium">autonomous AI workflows</strong> and <strong className="text-black font-medium">post-quantum cryptographic migrations</strong>. Elite infrastructure for the enterprise layer.
+              Quantalabs is a deep tech engineering lab specializing in <strong className="text-black font-medium">post-quantum cryptographic migrations</strong> and <strong className="text-black font-medium">autonomous AI workflows</strong>. Elite infrastructure for the enterprise layer. AI for today, Quantum for tomorrow.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

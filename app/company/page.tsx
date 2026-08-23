@@ -23,7 +23,7 @@ export default function AboutUsPage() {
             QuantaLabs <br/><span className="text-gray-400">Private Limited.</span>
           </h1>
           <p className="mt-8 text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
-            We are the protocol engineering lab building the execution layer for the autonomous AI economy, secured by post-quantum cryptography.
+            We are a deep tech engineering lab securing critical infrastructure with post-quantum cryptography and building the execution layer for the autonomous AI economy.
           </p>
         </div>
 
@@ -69,20 +69,23 @@ export default function AboutUsPage() {
           <div className="w-full lg:w-2/3">
             <article className="prose prose-gray max-w-none text-gray-600 font-normal leading-relaxed text-base">
               <h2 className="text-2xl font-display font-medium text-[#141413] mb-6">
-                The Machine-to-Machine Economy
+                The Post-Quantum Imperative
               </h2>
               <p className="mb-6">
-                As AI models evolve into autonomous agents, the internet is transitioning into a Machine-to-Machine (M2M) economy. Agents must coordinate, transact, and execute logic with absolute deterministic finality, free from human intervention.
+                Every RSA and ECC system in production today is on borrowed time. As adversaries harvest encrypted data now to decrypt later, organizations face an urgent need to transition to quantum-resistant architectures. QuantaLabs was founded to build this sovereign infrastructure.
               </p>
               <p className="mb-6">
-                QuantaLabs was founded to build the sovereign infrastructure for this new frontier. We engineer the cryptographic safeguards required to ensure that agent-to-agent transactions remain secure against both classical exploitation and future quantum adversaries.
+                Through <strong>QuantaCipher</strong>, we provide a zero-trust PQC encryption API built on ML-KEM (Kyber-1024), the NIST standardized lattice cryptography. Currently live and independently audited, it enables telecom operators, BFSI institutions, and critical infrastructure to achieve quantum compliance with just four lines of code.
               </p>
 
               <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
-                Our Mission
+                Securing the Autonomous AI Economy
               </h2>
               <p className="mb-6">
-                Our mission is to deploy QuantaChain—a lattice-secured (FIPS 203/204) blockchain designed specifically as the trust and execution layer for autonomous AI agents. We provide the protocol foundations for agents to securely own assets, sign transactions, and interact across decentralized networks.
+                As the internet transitions into a Machine-to-Machine (M2M) economy, AI agents must coordinate, transact, and execute logic with deterministic finality. However, the infrastructure they rely on was built for classical threats, making this gap a real risk to autonomous systems.
+              </p>
+              <p className="mb-6">
+                Enter <strong>QuantaChain</strong>, a quantum-safe execution layer built specifically for the AI agent economy. Securing transactions with Falcon-512 lattice signatures, it provides autonomous agents with protocol-native primitives for escrow, identity, bidding, and payments. Our testnet is currently live, finalizing over 160K+ blocks across a decentralized network.
               </p>
 
               <blockquote className="border-l-4 border-[#C04A2B] pl-6 my-10 py-4 italic text-lg text-[#141413] bg-white border border-y-gray-200 border-r-gray-200 shadow-sm relative overflow-hidden group">
@@ -93,20 +96,10 @@ export default function AboutUsPage() {
               </blockquote>
 
               <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
-                Enterprise AI Integration
-              </h2>
-              <p className="mb-6">
-                While our research lab focuses on next-generation cryptographic protocols, our primary commercial engine is <strong>Enterprise AI Integration</strong>. We help Fortune 500 companies and government agencies seamlessly integrate deterministic, secure AI workflows into their existing infrastructure. 
-              </p>
-              <p className="mb-6">
-                From custom LLM deployments and RAG architectures to fully autonomous internal agents, we build the bridges that allow traditional enterprises to operate at the speed of the AI economy—without compromising on data sovereignty or security.
-              </p>
-
-              <h2 className="text-2xl font-display font-medium text-[#141413] mt-12 mb-6">
                 The QuantaLabs Difference
               </h2>
               <p className="mb-6">
-                We sit at the intersection of applied AI engineering and advanced cryptography. Whether we are migrating your enterprise data lakes to autonomous AI workflows or orchestrating zero-knowledge agent networks on QuantaChain, we don&apos;t just write reports; we deploy sovereign, production-ready code.
+                As a DPIIT-recognized deep tech startup, we sit at the intersection of advanced cryptography and applied AI engineering. Whether we are migrating your telecom API gateways to quantum-safe tunneling or orchestrating zero-knowledge agent networks on QuantaChain, we don&apos;t just write reports; we deploy sovereign, production-ready code.
               </p>
             </article>
           </div>

@@ -1,5 +1,5 @@
-// CHANGED: Restored real research data into the new light-mode structural theme.
-// DATE: 2026-08-07 | VERSION: 3.1
+// CHANGED: Updated teaser list with the newest PQ-Sortition paper.
+// DATE: 2026-08-23 | VERSION: 3.2
 "use client";
 
 import Link from "next/link";
@@ -7,6 +7,13 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ResearchTeaser() {
   const papers = [
+    {
+      id: "PQS-2026-04",
+      title: "PQ-Sortition: A Post-Quantum Cryptographic Sortition Protocol from NTRU Lattices with Applications to Proof-of-Stake Blockchains",
+      date: "AUG 2026",
+      type: "PREPRINT",
+      zenodoUrl: "https://zenodo.org/records/22040423",
+    },
     {
       id: "LCE-2026-01",
       title: "Learning with Correlated Errors: A New Lattice Hard Problem with Worst-Case Reductions",
@@ -20,13 +27,6 @@ export default function ResearchTeaser() {
       date: "MAR 2026",
       type: "PREPRINT",
       zenodoUrl: "https://zenodo.org/records/18845465",
-    },
-    {
-      id: "QNT-2026-03",
-      title: "QUANTA: Engineering a Production-Ready Post-Quantum Blockchain with Falcon-512 Lattice Signatures",
-      date: "FEB 2026",
-      type: "TECHNICAL REPORT",
-      zenodoUrl: "https://zenodo.org/records/18753528",
     }
   ];
 
