@@ -34,8 +34,23 @@ export default function Footer() {
           
           {/* Brand Col */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/logo/quanta-transparent-bg-logo.svg" alt="QuantaLabs Logo" className="w-6 h-6" />
+            <div className="flex items-center gap-2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                className="flex-shrink-0"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M6 2H18L17 7L22 6V18L17 17L18 22H6L7 17L2 18V6L7 7Z M9 9V15H15V9H9Z"
+                  fill="#C04A2B"
+                />
+              </svg>
               <span className="text-xl font-display font-medium tracking-tight text-[#141413]">
                 Quantalabs<span className="text-[#C04A2B]">.</span>
               </span>
@@ -98,14 +113,19 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/research" className="block group">
-                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Applied Research</div>
-                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Frontier models and PQC research.</div>
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Research</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Papers & implementation reports.</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/press-kit" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Press Kit</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Logos and brand assets for media.</div>
                 </Link>
               </li>
               <li><Link href="/company" className="block text-sm text-gray-600 hover:text-black transition-colors">About Us</Link></li>
               <li><Link href="/blog" className="block text-sm text-gray-600 hover:text-black transition-colors">Blog</Link></li>
               <li><Link href="/careers" className="block text-sm text-gray-600 hover:text-black transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="block text-sm text-gray-600 hover:text-black transition-colors">Contact</Link></li>
             </ul>
           </div>
 

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 
 // Dropdown item interface
@@ -126,13 +125,23 @@ export default function Navbar() {
           {/* 1. Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
-              <Image
-                src="/logo/quanta-transparent-bg-logo.svg"
-                alt="Quantalabs Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
-              />
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
+              >
+                {/* Rust-red cross frame with square hole */}
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M6 2H18L17 7L22 6V18L17 17L18 22H6L7 17L2 18V6L7 7Z M9 9V15H15V9H9Z"
+                  fill="#C04A2B"
+                />
+              </svg>
               <span className="text-xl font-display font-medium tracking-tight text-[#141413]">
                 Quantalabs<span className="text-[#C04A2B]">.</span>
               </span>
