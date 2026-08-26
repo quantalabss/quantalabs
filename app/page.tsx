@@ -15,17 +15,17 @@ const ogImage = "/seo/image.png";
 // DATE: 2026-08-07 | VERSION: 2.0
 export const metadata: Metadata = {
   title:
-    "QuantaLabs | AI Engineering & Post-Quantum Security",
+    "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
   description:
-    "Quantalabs helps businesses integrate AI, automate workflows, and secure applications with post-quantum cryptography. AI today, quantum ready tomorrow.",
+    "Quantalabs helps businesses integrate post-quantum cryptography and secure autonomous AI agent workflows.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title:
-      "QuantaLabs | AI Engineering & Post-Quantum Security",
+      "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
     description:
-      "AI engineering and automation services + post-quantum cryptography security. QuantaCipher encryption APIs and QuantaChain AI agent infrastructure.",
+      "Post-quantum cryptography security + AI engineering. Secure your autonomous AI agent infrastructure for the quantum era.",
     url: siteUrl,
     images: [
       {
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     title:
-      "QuantaLabs | AI Engineering & Post-Quantum Security",
+      "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
     description:
-      "AI engineering + post-quantum security. Build intelligent systems. Secure them for the quantum era.",
+      "Post-quantum security + AI engineering. Build intelligent systems. Secure them for the quantum era.",
     images: [ogImage],
   },
 };

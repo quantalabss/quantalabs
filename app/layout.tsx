@@ -22,9 +22,9 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "QuantaLabs | AI Engineering & Quantum Security",
+  title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
   description:
-    "QuantaLabs engineers sovereign infrastructure for the autonomous AI economy. Enterprise AI Integrations, QuantaChain PQC blockchain, and QuantaCipher SDKs.",
+    "QuantaLabs engineers post-quantum cryptographic security and sovereign infrastructure for the autonomous AI economy.",
   keywords: [
     "AI Engineering",
     "Autonomous AI Agents",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.quantalabs.cc",
     siteName: "QuantaLabs",
-    title: "QuantaLabs | AI Engineering & Quantum Security",
+    title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
     description:
-      "Engineering the execution layer for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.",
+      "Engineering post-quantum cryptographic security and the execution layer for the autonomous AI economy.",
     images: [
       {
         url: "/seo/image.png",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantaLabs | AI Engineering & Quantum Security",
+    title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
     description:
-      "Engineering the execution layer for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.",
+      "Engineering post-quantum cryptographic security and the execution layer for the autonomous AI economy.",
     images: ["/seo/image.png"],
     creator: "@quantalabs",
   },
@@ -105,7 +105,7 @@ export default function RootLayout({
               name: "QuantaLabs Private Limited",
               alternateName: "QuantaLabs Pvt Ltd",
               url: "https://www.quantalabs.cc",
-              logo: "https://www.quantalabs.cc/seo/image.png",
+              logo: "https://www.quantalabs.cc/logo/quantalabs-logo-white-bg.png",
               sameAs: ["https://github.com/quantachain"],
             }),
           }}
