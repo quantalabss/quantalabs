@@ -1,0 +1,52 @@
+---
+title: "What's in a CBOM, and how QuantaCipher Insight generates one"
+date: "2026-09-04"
+author: "QuantaLabs Team"
+excerpt: "A deep dive into Cryptographic Bills of Materials (CBOM), their CycloneDX structure, and how QuantaCipher Insight automates cryptographic discovery for PQC migration."
+---
+
+The discovery phase is the mandatory first step of any cryptographic migration. Before you can transition to Post-Quantum Cryptography (PQC), you need absolute clarity on what legacy cryptography currently exists across your architecture. You cannot migrate cryptography you don't know you have.
+
+This is where a **Cryptographic Bill of Materials (CBOM)** becomes critical.
+
+## What is a CBOM?
+
+A CBOM is a structured, machine-readable inventory of every cryptographic asset within a codebase or system. It tracks algorithms, key sizes, protocols, libraries, certificates, and their intricate dependency relationships.
+
+Importantly, **CBOM is not a proprietary format**. It is an official extension of the open-source **CycloneDX** standard, introduced in version 1.6 to sit alongside traditional Software Bills of Materials (SBOMs). It was designed by the community to enforce crypto-agility and provide standardized quantum readiness assessments.
+
+## Inside the CycloneDX CBOM Schema
+
+When you look inside a standard CycloneDX CBOM JSON, you will find several critical fields mapping your cryptographic posture. The core components include:
+
+- **Algorithms and Parameters**: Explicit declarations of primitive usage (e.g., `RSA-2048`, `AES-128-CBC`, `ECDSA`).
+- **`nist_quantum_security_level`**: A critical CycloneDX property that categorizes the security strength of a cryptographic algorithm against quantum computational attacks based on NIST evaluation criteria.
+- **Keys and Certificates**: Mapping embedded secrets, X.509 certificate chains, and their specific signature schemes.
+- **Protocols in Use**: Documenting TLS versions, negotiated cipher suites, and KDFs.
+- **The Dependency Graph**: The precise mapping linking the cryptographic primitives to the exact application code or third-party libraries invoking them.
+
+## How CBOM Generation Works Technically
+
+Generating a comprehensive CBOM typically relies on **static source-code analysis**. An analysis engine—such as the open-source IBM/PQCA CBOMkit—parses your application into an Abstract Syntax Tree (AST). It then uses pattern-matching engines to detect cryptographic API calls, scanning for imports like `crypto`, `openssl`, or `jsonwebtoken`.
+
+Once identified, the engine traces the data flow to determine the specific parameters (like key sizes and padding schemes) being used. It also scans deployment artifacts (such as static `.pem` files or embedded secrets) to build a fuller picture. 
+
+**The Limitation of Static Analysis**
+It is important to state clearly that static analysis alone is not a silver bullet. It can miss dynamically loaded cryptographic libraries, highly obfuscated code, or dependencies resolved entirely at runtime. True crypto-agility requires pairing static scanning with dynamic runtime monitoring.
+
+## How QuantaCipher Insight Automates Discovery
+
+**QuantaCipher Insight** operationalizes this standardized discovery phase. Our tooling implements the CycloneDX standard to generate precise, actionable CBOMs directly from your workflows.
+
+Instead of manually configuring open-source AST parsers, teams can run a scan effortlessly:
+1. **Connect your Repository** or upload a ZIP archive of your source code directly to the QuantaCipher Insight engine.
+2. Insight executes a deep static analysis across your codebase and dependencies.
+3. A standardized CycloneDX v1.6 CBOM is generated, indexing every cryptographic asset.
+
+## Bridging to Migration Planning
+
+A CBOM is only as valuable as the action it drives. QuantaCipher Insight feeds the generated CBOM directly into your migration planning workflow. 
+
+Every flagged legacy algorithm (e.g., an RSA-2048 signature or a deprecated SHA-1 hash) becomes a scored risk item. The platform then automatically maps out a concrete migration path from the vulnerable legacy primitive to a quantum-resistant standard, such as **FIPS 203 (ML-KEM)** or **FIPS 204 (ML-DSA)**.
+
+Finally, remember that a CBOM is not a one-time, static artifact. Crypto-agility means keeping your inventory current as code continuously evolves, ensuring that new legacy cryptography isn't silently reintroduced into production.
