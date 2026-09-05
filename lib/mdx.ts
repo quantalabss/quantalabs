@@ -10,6 +10,7 @@ export type BlogPost = {
   date: string;
   author: string;
   excerpt: string;
+  image?: string;
   content: string;
 };
 
@@ -38,6 +39,7 @@ export function getPostBySlug(slug: string): BlogPost {
     date: data.date || 'Unknown Date',
     author: data.author || 'QuantaLabs',
     excerpt: data.excerpt || '',
+    image: data.image,
     content,
   };
 }

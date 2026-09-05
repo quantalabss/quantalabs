@@ -6,6 +6,7 @@ import ServicesPreview from "@/components/ServicesPreview";
 import WhoWeFor from "@/components/WhoWeFor";
 import ResearchTeaser from "@/components/ResearchTeaser";
 import StartupPartners from "@/components/StartupPartners";
+import BlogTeaser from "@/components/BlogTeaser";
 
 
 const siteUrl = "https://quantalabs.cc";
@@ -96,6 +97,7 @@ export default function Home() {
       <ProductsShowcase />
       <ServicesPreview />
       <WhoWeFor />
+      <BlogTeaser />
       <ResearchTeaser />
     </>
   );

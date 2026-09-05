@@ -1,8 +1,8 @@
-quantakrypto — brand assets
+quantakrypto - brand assets
 ================================
 
 The lattice mark: two indigo basis vectors (b1, b2) and the single red shortest
-vector (lambda-1) from an ink origin — the hard problem at the heart of lattice
+vector (lambda-1) from an ink origin - the hard problem at the heart of lattice
 cryptography. Free to use when referring to quantakrypto.
 
 Files (SVG scales infinitely; PNG exported at 3x for slides and profile pictures):

@@ -2,7 +2,8 @@
 title: "What's in a CBOM, and how QuantaCipher Insight generates one"
 date: "2026-09-04"
 author: "QuantaLabs Team"
-excerpt: "A deep dive into Cryptographic Bills of Materials (CBOM), their CycloneDX structure, and how QuantaCipher Insight automates cryptographic discovery for PQC migration."
+excerpt: "Generating a Cryptographic Bill of Materials (CBOM) is now a hard regulatory requirement. Learn how QuantaCipher Insight automates CBOM generation for enterprise environments."
+image: "/images/blogs/cbom-hero.jpg"
 ---
 
 The discovery phase is the mandatory first step of any cryptographic migration. Before you can transition to Post-Quantum Cryptography (PQC), you need absolute clarity on what legacy cryptography currently exists across your architecture. You cannot migrate cryptography you don't know you have.
@@ -27,7 +28,7 @@ When you look inside a standard CycloneDX CBOM JSON, you will find several criti
 
 ## How CBOM Generation Works Technically
 
-Generating a comprehensive CBOM typically relies on **static source-code analysis**. An analysis engine—such as the open-source IBM/PQCA CBOMkit—parses your application into an Abstract Syntax Tree (AST). It then uses pattern-matching engines to detect cryptographic API calls, scanning for imports like `crypto`, `openssl`, or `jsonwebtoken`.
+Generating a comprehensive CBOM typically relies on **static source-code analysis**. An analysis engine-such as the open-source IBM/PQCA CBOMkit-parses your application into an Abstract Syntax Tree (AST). It then uses pattern-matching engines to detect cryptographic API calls, scanning for imports like `crypto`, `openssl`, or `jsonwebtoken`.
 
 Once identified, the engine traces the data flow to determine the specific parameters (like key sizes and padding schemes) being used. It also scans deployment artifacts (such as static `.pem` files or embedded secrets) to build a fuller picture. 
 

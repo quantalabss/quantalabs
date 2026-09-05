@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cbom-india-compliance-guide",
-    title: "What is a Cryptographic Bill of Materials (CBOM) — And Why Every Indian Fintech Needs One Before FY 2027-28",
+    title: "What is a Cryptographic Bill of Materials (CBOM) - And Why Every Indian Fintech Needs One Before FY 2027-28",
     excerpt: "India's Department of Science and Technology mandate requires Cryptographic Bill of Materials (CBOM) submissions from FY 2027-28. Most Indian CTOs don't know what it is. Here is exactly what your organisation needs to do.",
     date: "May 2026",
     readTime: "8 min read",

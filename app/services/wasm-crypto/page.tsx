@@ -32,7 +32,7 @@ const features = [
   {
     icon: Cpu,
     title: "Rust-to-WASM Compilation",
-    desc: "Our cryptographic core is written in memory-safe Rust and compiled to highly optimized WASM binaries — running at near-native speed in any environment.",
+    desc: "Our cryptographic core is written in memory-safe Rust and compiled to highly optimized WASM binaries - running at near-native speed in any environment.",
   },
   {
     icon: Shield,
@@ -47,7 +47,7 @@ const features = [
   {
     icon: Globe,
     title: "Browser & Chrome Extension",
-    desc: "Drop-in integration for any web app. Our library surfaces a clean JS/TS API over complex WASM internals — zero learning curve for frontend engineers.",
+    desc: "Drop-in integration for any web app. Our library surfaces a clean JS/TS API over complex WASM internals - zero learning curve for frontend engineers.",
   },
   {
     icon: Package,
@@ -57,7 +57,7 @@ const features = [
   {
     icon: Zap,
     title: "Mobile React Native Bridge",
-    desc: "Native JNI bridge for Android and iOS — Rust cryptography executed in a hardware-isolated process with hardware-backed key storage.",
+    desc: "Native JNI bridge for Android and iOS - Rust cryptography executed in a hardware-isolated process with hardware-backed key storage.",
   },
 ];
 
@@ -119,7 +119,7 @@ export default function WasmCryptoPage() {
               <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-xl">
                 Our proprietary Rust-to-WASM post-quantum cryptographic
                 libraries power the next generation of browser wallets, mobile
-                apps, and enterprise integrations — bringing Falcon-512 and
+                apps, and enterprise integrations - bringing Falcon-512 and
                 Kyber KEM to every JavaScript environment.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -215,7 +215,7 @@ export default function WasmCryptoPage() {
                 {[
                   "TypeScript-first with full type safety",
                   "Automatic WASM module initialization",
-                  "Tree-shakeable — only imports what you use",
+                  "Tree-shakeable - only imports what you use",
                   "Works in Node.js, Bun, browsers & React Native",
                 ].map((item, i) => (
                   <div

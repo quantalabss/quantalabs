@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Autonomous AI Agents | On-Chain Intelligence | Quantalabs",
   description:
-    "Quantalabs deploys deterministic LLM-driven agent frameworks at the validator node level — for automated trading, predictive gas pricing, risk monitoring, and decentralized compute pipelines.",
+    "Quantalabs deploys deterministic LLM-driven agent frameworks at the validator node level - for automated trading, predictive gas pricing, risk monitoring, and decentralized compute pipelines.",
   alternates: { canonical: "https://quantalabs.cc/services/ai-agents" },
   openGraph: {
     title: "Autonomous AI Agents | On-Chain Intelligence | Quantalabs",
@@ -32,7 +32,7 @@ const features = [
   {
     icon: Cpu,
     title: "Deterministic On-Chain AI",
-    desc: "LLM-driven agents with guaranteed deterministic outputs — every decision is reproducible, auditable, and consensus-safe.",
+    desc: "LLM-driven agents with guaranteed deterministic outputs - every decision is reproducible, auditable, and consensus-safe.",
   },
   {
     icon: BarChart2,
@@ -42,7 +42,7 @@ const features = [
   {
     icon: Network,
     title: "Validator Agent Frameworks",
-    desc: "Specialized node software extensions that run agent inference locally on validator hardware — no centralized API dependency.",
+    desc: "Specialized node software extensions that run agent inference locally on validator hardware - no centralized API dependency.",
   },
   {
     icon: Zap,
@@ -57,7 +57,7 @@ const features = [
   {
     icon: RefreshCw,
     title: "Decentralized Compute Pipelines",
-    desc: "Distribute AI inference workloads across the validator network — eliminating single points of failure and centralized ML infrastructure.",
+    desc: "Distribute AI inference workloads across the validator network - eliminating single points of failure and centralized ML infrastructure.",
   },
 ];
 
@@ -129,7 +129,7 @@ export default function AiAgentsPage() {
                 Integrate intelligent autonomy at the protocol level. We
                 architect specialized validator nodes running LLM-driven
                 deterministic agents for trading, risk management, and dynamic
-                resource optimization — all operating natively on-chain.
+                resource optimization - all operating natively on-chain.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -192,7 +192,7 @@ export default function AiAgentsPage() {
             <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-8 font-mono text-sm text-black">
               <div className="flex items-center justify-between mb-8 border-b border-gray-800 pb-4">
                 <span className="text-gray-500 text-xs uppercase tracking-widest font-bold">
-                  Agent Runtime — Node 4821
+                  Agent Runtime - Node 4821
                 </span>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#C4ED5F] rounded-full animate-pulse" />
@@ -246,7 +246,7 @@ export default function AiAgentsPage() {
                 Intelligence that runs at block speed.
               </h2>
               <p className="text-gray-400 font-medium leading-relaxed text-lg mb-8">
-                Our agents don&apos;t call external APIs — they run as
+                Our agents don&apos;t call external APIs - they run as
                 first-class node processes with direct mempool access and
                 sub-block-time decision latency. Every action is deterministic,
                 meaning the same agent state always produces the same

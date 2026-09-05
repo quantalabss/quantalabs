@@ -33,17 +33,17 @@ const features = [
   {
     icon: Server,
     title: "Bare-Metal Validators",
-    desc: "Dedicated physical hardware validators — no shared cloud infrastructure, no virtualization overhead, maximum consensus participation reliability.",
+    desc: "Dedicated physical hardware validators - no shared cloud infrastructure, no virtualization overhead, maximum consensus participation reliability.",
   },
   {
     icon: Activity,
     title: "Active/Passive HA Clusters",
-    desc: "Automatic failover between active and passive validator nodes with sub-second switchover — zero missed blocks during hardware maintenance or failures.",
+    desc: "Automatic failover between active and passive validator nodes with sub-second switchover - zero missed blocks during hardware maintenance or failures.",
   },
   {
     icon: Globe,
     title: "Global RPC Infrastructure",
-    desc: "Geographically distributed RPC endpoint clusters across 12+ data centres — latency-optimized for DApps, wallets, and institutional trading systems.",
+    desc: "Geographically distributed RPC endpoint clusters across 12+ data centres - latency-optimized for DApps, wallets, and institutional trading systems.",
   },
   {
     icon: Zap,
@@ -53,12 +53,12 @@ const features = [
   {
     icon: Shield,
     title: "DDoS-Hardened Nodes",
-    desc: "Multi-layer DDoS protection, IP allowlisting, and traffic scrubbing — your validator and RPC endpoints remain live under adversarial network conditions.",
+    desc: "Multi-layer DDoS protection, IP allowlisting, and traffic scrubbing - your validator and RPC endpoints remain live under adversarial network conditions.",
   },
   {
     icon: Database,
     title: "Dedicated Node Archives",
-    desc: "Full archival node deployments with complete blockchain history — required for compliance, analytics, and deep historical RPC queries.",
+    desc: "Full archival node deployments with complete blockchain history - required for compliance, analytics, and deep historical RPC queries.",
   },
 ];
 
@@ -260,7 +260,7 @@ export default function ValidatorNodesPage() {
                     name: "validator-04.fra.quantalabs.cc",
                     region: "Frankfurt",
                     status: "STANDBY",
-                    latency: "—",
+                    latency: "-",
                   },
                   {
                     name: "rpc-01.global.quantalabs.cc",
@@ -310,12 +310,12 @@ export default function ValidatorNodesPage() {
               <p className="text-gray-500 font-medium leading-relaxed text-lg mb-8">
                 We design, provision, and maintain your validator and RPC node
                 cluster end-to-end. From hardware selection to BGP peering,
-                colocation agreements, and ongoing 24/7 operations management —
+                colocation agreements, and ongoing 24/7 operations management -
                 your infrastructure is always on.
               </p>
               <div className="space-y-3">
                 {[
-                  "Dedicated hardware — no cloud, no neighbours",
+                  "Dedicated hardware - no cloud, no neighbours",
                   "Automated switchover under any failure condition",
                   "24/7 NOC monitoring with 15-min SLA response",
                   "Full observability stack (Prometheus / Grafana)",
@@ -348,7 +348,7 @@ export default function ValidatorNodesPage() {
             </h2>
             <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
               Speak to our infrastructure team about scoping your validator and
-              RPC deployment — including hardware specs, geographic
+              RPC deployment - including hardware specs, geographic
               distribution, and SLA requirements.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

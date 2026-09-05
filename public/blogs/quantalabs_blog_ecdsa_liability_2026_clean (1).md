@@ -4,7 +4,7 @@
 
 ---
 
-Five days ago, an independent researcher named Giancarlo Lelli broke a 15-bit elliptic curve key on a publicly accessible IBM quantum computer and collected a 1 BTC bounty from Project Eleven. The result was debated — some Bitcoin developers showed the winning result could be replicated with random noise, suggesting limited true quantum advantage at this scale. But the debate misses the point entirely.
+Five days ago, an independent researcher named Giancarlo Lelli broke a 15-bit elliptic curve key on a publicly accessible IBM quantum computer and collected a 1 BTC bounty from Project Eleven. The result was debated - some Bitcoin developers showed the winning result could be replicated with random noise, suggesting limited true quantum advantage at this scale. But the debate misses the point entirely.
 
 The real story is what happened three weeks before that, in the research papers.
 
@@ -16,7 +16,7 @@ In the last week of March 2026, two papers dropped on the same day that fundamen
 
 **Google Quantum AI (March 31, 2026)**
 
-Google's research team published a 57-page whitepaper outlining a significantly more efficient implementation of Shor's algorithm against secp256k1 — the elliptic curve that secures Bitcoin, Ethereum, and virtually every EVM-compatible blockchain. Their circuits require **fewer than 500,000 physical qubits** on a superconducting architecture to break ECDSA-P256. Critically, the estimated execution time is **under 9 minutes**.
+Google's research team published a 57-page whitepaper outlining a significantly more efficient implementation of Shor's algorithm against secp256k1 - the elliptic curve that secures Bitcoin, Ethereum, and virtually every EVM-compatible blockchain. Their circuits require **fewer than 500,000 physical qubits** on a superconducting architecture to break ECDSA-P256. Critically, the estimated execution time is **under 9 minutes**.
 
 Bitcoin's average block time is 10 minutes. The implication: a sufficiently powerful quantum computer could theoretically crack an exposed public key faster than a transaction confirms on-chain.
 
@@ -58,13 +58,13 @@ The web is already migrating. Blockchain hasn't started.
 
 There's a subtle but critical difference between what Cloudflare is protecting and what your blockchain is exposing.
 
-TLS key exchange is ephemeral. The keys are fresh for every session. Even if a quantum adversary harvests ciphertext today, breaking the key later only reveals that session's traffic — not the ability to forge future transactions.
+TLS key exchange is ephemeral. The keys are fresh for every session. Even if a quantum adversary harvests ciphertext today, breaking the key later only reveals that session's traffic - not the ability to forge future transactions.
 
 **Blockchain public keys are permanent and on-chain.**
 
 When you receive funds to an Ethereum address and spend from it, your public key is visible in the transaction history. Anyone who archives that public key today can attempt to derive the private key later. Every wallet that has ever signed a transaction exposes its public key to "harvest now, decrypt later" attacks.
 
-Moreover: Bitcoin and Ethereum addresses that have never been spent from expose only the *hash* of the public key — which buys some time. But ~6.9 million Bitcoin currently sit in wallets where the public key is already fully exposed on-chain. All of those funds can be targeted the moment a sufficiently powerful quantum computer exists.
+Moreover: Bitcoin and Ethereum addresses that have never been spent from expose only the *hash* of the public key - which buys some time. But ~6.9 million Bitcoin currently sit in wallets where the public key is already fully exposed on-chain. All of those funds can be targeted the moment a sufficiently powerful quantum computer exists.
 
 The Coinbase advisory board has explicitly flagged this: the transition to post-quantum cryptography in blockchains is not a simple key-swap. It is a complex, breaking migration that requires a hard fork, wallet migration tooling, and a coordinated cutover. The longer you wait to build on quantum-resistant foundations, the more painful the migration becomes.
 
@@ -72,26 +72,26 @@ The Coinbase advisory board has explicitly flagged this: the transition to post-
 
 ## What a Production Falcon-512 Blockchain Actually Looks Like
 
-We didn't write this post from theory. QuantaLabs builds [Quantachain](https://quantachain.org) — the first publicly live Layer 1 blockchain using NIST-standardized Falcon-512 lattice signatures from genesis, with external node operators, a live block explorer, and a published benchmark suite.
+We didn't write this post from theory. QuantaLabs builds [Quantachain](https://quantachain.org) - the first publicly live Layer 1 blockchain using NIST-standardized Falcon-512 lattice signatures from genesis, with external node operators, a live block explorer, and a published benchmark suite.
 
 Here is what our engineering team measured in the April 2026 benchmark run (Node v0.7.1, Ubuntu 22.04, 4-core environment):
 
-### Cryptographic Core — Falcon-512
+### Cryptographic Core - Falcon-512
 
 | Operation | Quantachain | ECDSA-P256 | Overhead |
 |---|---|---|---|
 | Sign | **0.227 ms** | ~0.05 ms | ~4.5× |
 | Verify (serial) | **0.006 µs** | ~0.12 ms | < 1× (faster) |
-| Verify (parallel, 4 cores) | **0.001 µs** (batch 100) | — | — |
+| Verify (parallel, 4 cores) | **0.001 µs** (batch 100) | - | - |
 | Key generation | 6.8 ms | ~0.05 ms | Higher |
 | Signature size | **689 bytes avg** | 64 bytes | ~10.8× |
 | Public key size | 897 bytes | 64 bytes | ~14× |
 
-The signing overhead is real — Falcon-512 costs approximately 4.5× more to sign than ECDSA-P256. This is the honest tradeoff of post-quantum security.
+The signing overhead is real - Falcon-512 costs approximately 4.5× more to sign than ECDSA-P256. This is the honest tradeoff of post-quantum security.
 
-But look at verification: Falcon-512 serial verification in our implementation runs at **168,000+ verifications per second**. With Rayon-based parallel batch verification across 4 physical cores, a block of 200 transactions verifies in **0.169 ms total** — a 7× speedup over serial, beating the theoretical 4× core maximum due to cache locality effects.
+But look at verification: Falcon-512 serial verification in our implementation runs at **168,000+ verifications per second**. With Rayon-based parallel batch verification across 4 physical cores, a block of 200 transactions verifies in **0.169 ms total** - a 7× speedup over serial, beating the theoretical 4× core maximum due to cache locality effects.
 
-The performance gap between classical and PQC signature verification — the primary throughput bottleneck in a block validator — closes to **under 1.3× per-block** in parallel batch mode.
+The performance gap between classical and PQC signature verification - the primary throughput bottleneck in a block validator - closes to **under 1.3× per-block** in parallel batch mode.
 
 ### Mempool and Throughput
 
@@ -116,13 +116,13 @@ Falcon-512 signatures are ~10× larger than ECDSA. Unmitigated, this would cause
 
 A full 1,200-transaction Falcon-512 block compresses from 2 MB to 838 KB in under 5.5 milliseconds. This cuts annualized ledger growth by over 60% relative to uncompressed Falcon-512, keeping storage costs competitive with classical blockchains.
 
-### Live Node — End-to-End HTTP Pipeline
+### Live Node - End-to-End HTTP Pipeline
 
 Beyond in-memory benchmarks, we ran a live HTTP stress test against a running testnet node (sequential submissions with Falcon-512 signed transactions via the `/api/transactions/submit` endpoint):
 
-- **Median round-trip latency (p50): 0.70 ms** — full pipeline (HTTP + JSON deserialize + Falcon-512 verify + nonce check + balance check + mempool insert)
+- **Median round-trip latency (p50): 0.70 ms** - full pipeline (HTTP + JSON deserialize + Falcon-512 verify + nonce check + balance check + mempool insert)
 - **Concurrent flood throughput: 792 tx/sec** (end-to-end, real network path)
-- **Sequential acceptance rate: 100%** — zero false rejections, zero signature errors
+- **Sequential acceptance rate: 100%** - zero false rejections, zero signature errors
 
 A 0.70 ms median acceptance latency for a fully Falcon-512 signed transaction is competitive with production ECDSA blockchains. We are not trading performance for security. The numbers prove it.
 
@@ -139,7 +139,7 @@ A common question: why not Dilithium (now ML-DSA), which NIST standardized first
 | ECDSA-P256 | No | 64 B | 64 B | ~8K ops/s (classical) |
 | Ed25519 | No | 64 B | 32 B | Very high (classical) |
 
-**Falcon-512 produces the smallest signature of any NIST-standardized PQC scheme.** At ~689 bytes average (with compression), it is 4.8× smaller than Dilithium3. For a blockchain where every transaction signature is stored permanently on-chain and propagated across every node, signature size is not a footnote — it determines long-term sustainability.
+**Falcon-512 produces the smallest signature of any NIST-standardized PQC scheme.** At ~689 bytes average (with compression), it is 4.8× smaller than Dilithium3. For a blockchain where every transaction signature is stored permanently on-chain and propagated across every node, signature size is not a footnote - it determines long-term sustainability.
 
 ---
 
@@ -157,7 +157,7 @@ For blockchain specifically: every ECDSA-signed transaction in your history is a
 
 Quantachain is not a proof of concept. It is a live mainnet-adjacent network with:
 
-- Falcon-512 signatures from genesis — every transaction on every block, since block #1
+- Falcon-512 signatures from genesis - every transaction on every block, since block #1
 - A [Chrome extension wallet](https://chromewebstore.google.com/detail/quanta-wallet/glofbcgdmodmaohealombcgoapdbdaff) with Falcon-512 key generation, mnemonic recovery, and AES-256-GCM encrypted local storage
 - External node operators running independent validating nodes
 - A live block explorer at [scan.quantachain.org](https://scan.quantachain.org)
@@ -170,11 +170,11 @@ This benchmark suite runs against the same node binary. These numbers are not si
 ## What You Should Do If You're Building on ECC Today
 
 **Immediate:**
-- Audit your signing scheme. Know every place ECDSA or Ed25519 is used in your infrastructure — transaction signing, TLS certificates, internal service auth, HSM configuration.
+- Audit your signing scheme. Know every place ECDSA or Ed25519 is used in your infrastructure - transaction signing, TLS certificates, internal service auth, HSM configuration.
 - Migrate TLS key exchange to ML-KEM (this is already handled by Cloudflare for your edge, but your origin servers and internal microservices need manual configuration).
 
 **Medium term (before 2027):**
-- If you are building a new chain or significant protocol upgrade, do not build on ECDSA. The engineering cost of migrating later — coordinating a hard fork, building parallel signing schemes, migrating wallet key material — will be an order of magnitude larger than building on Falcon-512 from genesis.
+- If you are building a new chain or significant protocol upgrade, do not build on ECDSA. The engineering cost of migrating later - coordinating a hard fork, building parallel signing schemes, migrating wallet key material - will be an order of magnitude larger than building on Falcon-512 from genesis.
 - Implement crypto agility in your signing layer. Even if you stay on ECDSA today, your codebase should be structured so the signing scheme is swappable without a full protocol rewrite.
 
 **If you want help:** QuantaLabs offers cryptographic readiness audits and Falcon-512 / Kyber-1024 migration engineering. We have done this on a production network. Reach us at [contact@quantalabs.cc](mailto:contact@quantalabs.cc).
@@ -193,7 +193,7 @@ The migration window is open. Build accordingly.
 
 ---
 
-**QuantaLabs** is the engineering lab behind Quantachain — the first live post-quantum blockchain running Falcon-512 signatures in production. We publish our benchmarks, architecture, and research openly.
+**QuantaLabs** is the engineering lab behind Quantachain - the first live post-quantum blockchain running Falcon-512 signatures in production. We publish our benchmarks, architecture, and research openly.
 
 - [quantalabs.cc](https://quantalabs.cc)
 - [quantachain.org](https://quantachain.org)
@@ -208,41 +208,41 @@ The migration window is open. Build accordingly.
 ## References and Further Reading
 
 **Google Quantum AI**
-- Google Quantum AI — Safeguarding cryptocurrency by disclosing quantum vulnerabilities responsibly (March 2026): https://research.google/blog/safeguarding-cryptocurrency-by-disclosing-quantum-vulnerabilities-responsibly/
-- Google Security Blog — Cryptography migration timeline (2029 commitment): https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
+- Google Quantum AI - Safeguarding cryptocurrency by disclosing quantum vulnerabilities responsibly (March 2026): https://research.google/blog/safeguarding-cryptocurrency-by-disclosing-quantum-vulnerabilities-responsibly/
+- Google Security Blog - Cryptography migration timeline (2029 commitment): https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
 
 **Oratomic / Caltech / UC Berkeley**
 - Cain et al., "Shor's algorithm is possible with as few as 10,000 reconfigurable atomic qubits" (March 31, 2026): https://arxiv.org/pdf/2603.28627
 
 **Project Eleven**
-- Project Eleven — Q-Day Prize awarded for largest public quantum attack on ECC (April 24, 2026): https://blog.projecteleven.com/posts/project-eleven-awards-1-btc-q-day-prize-for-largest-quantum-attack-on-elliptic-curve-cryptography-to-date
+- Project Eleven - Q-Day Prize awarded for largest public quantum attack on ECC (April 24, 2026): https://blog.projecteleven.com/posts/project-eleven-awards-1-btc-q-day-prize-for-largest-quantum-attack-on-elliptic-curve-cryptography-to-date
 - PR Newswire announcement: https://www.prnewswire.com/news-releases/project-eleven-awards-1-btc-q-day-prize-for-largest-quantum-attack-on-elliptic-curve-cryptography-to-date-302752439.html
 
 **Cloudflare**
-- Cloudflare — Post-Quantum Roadmap (2026, includes Q-Day timeline update): https://blog.cloudflare.com/post-quantum-roadmap/
-- Cloudflare — State of the Post-Quantum Internet in 2025 (October 2025): https://blog.cloudflare.com/pq-2025/
-- Cloudflare — Automatically Secure: 6,000,000 domains upgraded for the quantum future (September 2025): https://blog.cloudflare.com/automatically-secure/
-- Cloudflare — Post-Quantum Zero Trust (March 2025): https://blog.cloudflare.com/post-quantum-zero-trust/
+- Cloudflare - Post-Quantum Roadmap (2026, includes Q-Day timeline update): https://blog.cloudflare.com/post-quantum-roadmap/
+- Cloudflare - State of the Post-Quantum Internet in 2025 (October 2025): https://blog.cloudflare.com/pq-2025/
+- Cloudflare - Automatically Secure: 6,000,000 domains upgraded for the quantum future (September 2025): https://blog.cloudflare.com/automatically-secure/
+- Cloudflare - Post-Quantum Zero Trust (March 2025): https://blog.cloudflare.com/post-quantum-zero-trust/
 - Cloudflare PQC documentation: https://developers.cloudflare.com/ssl/post-quantum-cryptography/
 
 **Industry Coverage**
-- The Block — "No longer a drill": Google's quantum breakthrough and Bitcoin security: https://www.theblock.co/post/395944/no-longer-drill-googles-latest-quantum-breakthrough-debate-bitcoins-security
-- Fireblocks — What Google's new quantum research means for institutional crypto security: https://www.fireblocks.com/blog/google-quantum-research-institutional-crypto-security
-- The Quantum Insider — Q-Day just got closer: three papers in three months rewriting the timeline: https://thequantuminsider.com/2026/03/31/q-day-just-got-closer-three-papers-in-three-months-are-rewriting-the-quantum-threat-timeline/
-- TIME — AI helped spark a quantum breakthrough. The world is not prepared: https://time.com/article/2026/04/07/ai-quantum-computing-advance/
-- CoinDesk — Researcher wins 1 BTC bounty for largest quantum attack on ECC (April 24, 2026): https://www.coindesk.com/tech/2026/04/24/researcher-wins-1-bitcoin-bounty-for-largest-quantum-attack-on-underlying-tech
-- postquantum.com — Google Quantum AI achieves 10x reduction in resources to break Bitcoin's cryptography: https://postquantum.com/security-pqc/google-quantum-bitcoin-ecdlp/
-- postquantum.com — 10,000 qubits to run Shor's algorithm: https://postquantum.com/security-pqc/10000-qubits-shors/
+- The Block - "No longer a drill": Google's quantum breakthrough and Bitcoin security: https://www.theblock.co/post/395944/no-longer-drill-googles-latest-quantum-breakthrough-debate-bitcoins-security
+- Fireblocks - What Google's new quantum research means for institutional crypto security: https://www.fireblocks.com/blog/google-quantum-research-institutional-crypto-security
+- The Quantum Insider - Q-Day just got closer: three papers in three months rewriting the timeline: https://thequantuminsider.com/2026/03/31/q-day-just-got-closer-three-papers-in-three-months-are-rewriting-the-quantum-threat-timeline/
+- TIME - AI helped spark a quantum breakthrough. The world is not prepared: https://time.com/article/2026/04/07/ai-quantum-computing-advance/
+- CoinDesk - Researcher wins 1 BTC bounty for largest quantum attack on ECC (April 24, 2026): https://www.coindesk.com/tech/2026/04/24/researcher-wins-1-bitcoin-bounty-for-largest-quantum-attack-on-underlying-tech
+- postquantum.com - Google Quantum AI achieves 10x reduction in resources to break Bitcoin's cryptography: https://postquantum.com/security-pqc/google-quantum-bitcoin-ecdlp/
+- postquantum.com - 10,000 qubits to run Shor's algorithm: https://postquantum.com/security-pqc/10000-qubits-shors/
 
 **Standards and Policy**
-- NIST IR 8547 — PQC deprecation timeline (RSA/ECDSA deprecated after 2030, disallowed after 2035): https://csrc.nist.gov/pubs/ir/8547/ipd
-- NSA CNSA 2.0 — All new national security systems quantum-safe by January 2027: https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/
-- White House Executive Order 14144 — Strengthening and Promoting Innovation in the Nation's Cybersecurity (January 2025): https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-and-promoting-innovation-in-the-nations-cybersecurity/
+- NIST IR 8547 - PQC deprecation timeline (RSA/ECDSA deprecated after 2030, disallowed after 2035): https://csrc.nist.gov/pubs/ir/8547/ipd
+- NSA CNSA 2.0 - All new national security systems quantum-safe by January 2027: https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/
+- White House Executive Order 14144 - Strengthening and Promoting Innovation in the Nation's Cybersecurity (January 2025): https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-and-promoting-innovation-in-the-nations-cybersecurity/
 
 **Quantachain and QuantaLabs**
 - Quantachain live network: https://quantachain.org
 - Quantachain block explorer: https://scan.quantachain.org
 - QuantaLabs website: https://quantalabs.cc
 - Quanta Wallet (Chrome): https://chromewebstore.google.com/detail/quanta-wallet/glofbcgdmodmaohealombcgoapdbdaff
-- Research paper — "QUANTA: Engineering a Production-Ready Post-Quantum Blockchain with Falcon-512 Lattice Signatures" (Zenodo, February 2026): https://doi.org/10.5281/zenodo.18753528
-- Research paper — "Learning with Correlated Errors: A New Lattice Hard Problem with Worst-Case Reductions" (Zenodo, March 2026): https://doi.org/10.5281/zenodo.18753529
+- Research paper - "QUANTA: Engineering a Production-Ready Post-Quantum Blockchain with Falcon-512 Lattice Signatures" (Zenodo, February 2026): https://doi.org/10.5281/zenodo.18753528
+- Research paper - "Learning with Correlated Errors: A New Lattice Hard Problem with Worst-Case Reductions" (Zenodo, March 2026): https://doi.org/10.5281/zenodo.18753529

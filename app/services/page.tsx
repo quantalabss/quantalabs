@@ -315,7 +315,7 @@ export default function ServicesPage() {
               step: "03",
               icon: Server,
               title: "Build & Deploy",
-              desc: "We execute end-to-end — from code to deployment — with full documentation and knowledge transfer.",
+              desc: "We execute end-to-end - from code to deployment - with full documentation and knowledge transfer.",
             },
           ].map((step, i) => {
             const Icon = step.icon;

@@ -53,8 +53,8 @@ export default function BlogIndex() {
             
             <div className="w-full lg:w-1/2 relative min-h-[300px] lg:min-h-[450px] overflow-hidden bg-gray-100">
               <img 
-                src="/images/blog/hybrid-hero.jpg" 
-                alt="Hybrid Post-Quantum Migration" 
+                src={featuredPost.image || "/images/blog/hybrid-hero.jpg"} 
+                alt={featuredPost.title} 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/10"></div>
@@ -104,6 +104,13 @@ export default function BlogIndex() {
             <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex h-full">
               <article className="flex flex-col h-full w-full bg-white border border-[#e8e6dc] overflow-hidden hover:border-[#C04A2B] hover:shadow-lg transition-all duration-500 relative">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+                
+                {post.image && (
+                  <div className="h-48 md:h-56 w-full border-b border-[#e8e6dc] overflow-hidden relative z-10">
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                )}
+                
                 <div className="p-6 md:p-8 flex flex-col flex-grow relative z-10">
                   <div className="flex items-center justify-between mb-4 md:mb-6">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-gray-400">
