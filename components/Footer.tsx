@@ -86,12 +86,7 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Products</h4>
             <ul className="space-y-6">
-              <li>
-                <Link href="https://quantachain.org" className="block group">
-                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaChain</div>
-                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">PQC blockchain for autonomous agents & M2M AI economy.</div>
-                </Link>
-              </li>
+
               <li>
                 <Link href="https://quantacipher.com" className="block group">
                   <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaCipher</div>
@@ -135,7 +130,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><Link href="https://github.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><GithubIcon className="w-3.5 h-3.5 text-gray-400" /> GitHub <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
               <li><Link href="https://x.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><TwitterIcon className="w-3.5 h-3.5 text-gray-400" /> Twitter <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
-              <li><Link href="https://linkedin.com/company/quantachain" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><LinkedinIcon className="w-3.5 h-3.5 text-gray-400" /> LinkedIn <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
+
               <li><Link href="https://www.facebook.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><FacebookIcon className="w-3.5 h-3.5 text-gray-400" /> Facebook <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
               <li><Link href="https://instagram.com/quantalabss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors"><InstagramIcon className="w-3.5 h-3.5 text-gray-400" /> Instagram <ArrowUpRight className="w-3 h-3 text-gray-400"/></Link></li>
             </ul>

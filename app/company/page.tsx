@@ -51,7 +51,7 @@ export default function AboutUsPage() {
                   <li>Enterprise AI Integration</li>
                   <li>AI Autonomous Agents</li>
                   <li>NIST FIPS 203/204/205</li>
-                  <li>Sovereign Blockchain</li>
+
                 </ul>
               </div>
               <div className="relative z-10">
@@ -84,9 +84,7 @@ export default function AboutUsPage() {
               <p className="mb-6">
                 As the internet transitions into a Machine-to-Machine (M2M) economy, AI agents must coordinate, transact, and execute logic with deterministic finality. However, the infrastructure they rely on was built for classical threats, making this gap a real risk to autonomous systems.
               </p>
-              <p className="mb-6">
-                Enter <strong>QuantaChain</strong>, a quantum-safe execution layer built specifically for the AI agent economy. Securing transactions with Falcon-512 lattice signatures, it provides autonomous agents with protocol-native primitives for escrow, identity, bidding, and payments. Our testnet is currently live, finalizing over 160K+ blocks across a decentralized network.
-              </p>
+
 
               <blockquote className="border-l-4 border-[#C04A2B] pl-6 my-10 py-4 italic text-lg text-[#141413] bg-white border border-y-gray-200 border-r-gray-200 shadow-sm relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
@@ -99,7 +97,7 @@ export default function AboutUsPage() {
                 The QuantaLabs Difference
               </h2>
               <p className="mb-6">
-                As a DPIIT-recognized deep tech startup, we sit at the intersection of advanced cryptography and applied AI engineering. Whether we are migrating your telecom API gateways to quantum-safe tunneling or orchestrating zero-knowledge agent networks on QuantaChain, we don&apos;t just write reports; we deploy sovereign, production-ready code.
+                As a DPIIT-recognized deep tech startup, we sit at the intersection of advanced cryptography and applied AI engineering. Whether we are migrating your telecom API gateways to quantum-safe tunneling or building autonomous LLM agent frameworks, we don&apos;t just write reports; we deploy sovereign, production-ready code.
               </p>
             </article>
           </div>

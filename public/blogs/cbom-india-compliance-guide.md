@@ -225,7 +225,7 @@ Upgrading your TLS layer to support post-quantum key exchange is one step. It do
 
 QuantaLabs is India's first dedicated post-quantum cryptography migration company, incorporated in Coimbatore, Tamil Nadu in May 2026.
 
-We built QuantaChain - a live 131,000-block blockchain using Falcon-512 post-quantum signatures from genesis. We published peer-reviewed research on new lattice-based hardness assumptions. We shipped QuantaCipher - a developer API for Kyber-1024 encryption. We did not read about post-quantum cryptography. We built with it.
+We published peer-reviewed research on new lattice-based hardness assumptions. We shipped QuantaCipher - a developer API for Kyber-1024 encryption. We did not read about post-quantum cryptography. We built with it.
 
 Our CBOM Audit service covers all five phases described above and delivers:
 
@@ -286,7 +286,7 @@ We will walk through your current stack, estimate your quantum exposure, and tel
 
 ---
 
-*QuantaLabs Private Limited is incorporated in Coimbatore, Tamil Nadu. We build post-quantum cryptography infrastructure and help Indian and global organisations migrate to quantum-safe cryptographic standards. Contact us at quanta@quantachain.org*
+*QuantaLabs Private Limited is incorporated in Coimbatore, Tamil Nadu. We build post-quantum cryptography infrastructure and help Indian and global organisations migrate to quantum-safe cryptographic standards. Contact us at contact@quantalabs.cc*
 
 ---
 

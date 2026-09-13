@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     "AI Engineering",
     "Autonomous AI Agents",
     "Post-Quantum Cryptography",
-    "QuantaChain",
     "QuantaCipher",
     "M2M Economy",
     "Enterprise AI Integrations",
@@ -106,7 +105,7 @@ export default function RootLayout({
               alternateName: "QuantaLabs Pvt Ltd",
               url: "https://www.quantalabs.cc",
               logo: "https://www.quantalabs.cc/logo/quantalabs-logo-white-bg.png",
-              sameAs: ["https://github.com/quantachain"],
+              sameAs: ["https://github.com/quantalabss"],
             }),
           }}
         />

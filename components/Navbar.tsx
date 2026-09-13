@@ -23,11 +23,6 @@ const NAV_ITEMS: NavItem[] = [
     href: "/products",
     dropdown: [
       {
-        title: "QuantaChain",
-        description: "PQC execution layer for AI agents",
-        href: "https://quantachain.org",
-      },
-      {
         title: "QuantaCipher",
         description: "Zero-trust enterprise Kyber SDK",
         href: "https://quantacipher.com",
@@ -89,11 +84,6 @@ const NAV_ITEMS: NavItem[] = [
         title: "Twitter / X",
         description: "Follow for protocol updates",
         href: "https://x.com/quantalabss",
-      },
-      {
-        title: "LinkedIn",
-        description: "Professional networking",
-        href: "https://linkedin.com/company/quantachain",
       },
     ],
   },
@@ -211,27 +201,7 @@ export default function Navbar() {
 
           {/* 3. Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://linkedin.com/company/quantachain"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-400 hover:text-black transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-5 h-5"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
+
             <Link
               href="/contact"
               className="px-6 py-2.5 bg-[#C04A2B] text-white text-[10px] uppercase tracking-widest font-mono hover:bg-[#141413] transition-colors"
