@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'QuantaLabs - Post-Quantum Cryptography Migration',
     short_name: 'QuantaLabs',
-    description: 'QuantaLabs engineers sovereign infrastructure for the autonomous AI economy. Enterprise AI Integrations and QuantaCipher PQC encryption.',
+    description: 'QuantaLabs engineers sovereign infrastructure for the autonomous AI economy. Enterprise AI Integrations and QuantaChain PQC blockchain.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

@@ -311,7 +311,17 @@ export default function WasmCryptoPage() {
               >
                 Get Custom Integration <ArrowUpRight className="w-5 h-5" />
               </Link>
-
+              <a
+                href="https://quantachain.gitbook.io/quantachain-docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-white border-2 border-transparent text-black font-bold uppercase tracking-wider text-sm hover:bg-[#C4ED5F] hover:border-black transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-none"
+              >
+                Read Docs{" "}
+                <span className="font-serif text-3xl text-black group-hover:text-[#C4ED5F] transition-colors mb-4 relative z-10 leading-none inline-block">
+                  ⨂
+                </span>
+              </a>
             </div>
           </div>
         </div>

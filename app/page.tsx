@@ -59,7 +59,7 @@ const jsonLd = {
         url: "https://www.quantalabs.cc/logo.png",
       },
       description:
-        "AI engineering and post-quantum security company. AI integration services, workflow automation, and QuantaCipher PQC encryption API.",
+        "AI engineering and post-quantum security company. AI integration services, workflow automation, QuantaCipher PQC encryption API, and QuantaChain AI agent infrastructure.",
       foundingDate: "2026",
       foundingLocation: {
         "@type": "Place",
@@ -68,10 +68,10 @@ const jsonLd = {
       areaServed: ["IN", "Worldwide"],
       contactPoint: {
         "@type": "ContactPoint",
-        email: "contact@quantalabs.cc",
+        email: "quanta@quantachain.org",
         contactType: "sales",
       },
-      sameAs: ["https://quantacipher.com"],
+      sameAs: ["https://quantachain.org", "https://quantacipher.com"],
     },
     {
       "@type": "WebSite",
