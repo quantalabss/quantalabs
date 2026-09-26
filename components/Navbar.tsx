@@ -32,6 +32,11 @@ const NAV_ITEMS: NavItem[] = [
         description: "Zero-trust enterprise Kyber SDK",
         href: "https://quantacipher.com",
       },
+      {
+        title: "Ornyx",
+        description: "Decentralized AI Agent marketplace",
+        href: "https://ornyx.xyz",
+      },
     ],
   },
   {
@@ -39,14 +44,14 @@ const NAV_ITEMS: NavItem[] = [
     href: "/services",
     dropdown: [
       {
-        title: "AI Engineering",
-        description: "Autonomous LLM agent frameworks",
-        href: "/services#ai-engineering",
-      },
-      {
         title: "PQC Migrations",
         description: "Protocol cryptographic upgrades",
         href: "/services#pqc-migrations",
+      },
+      {
+        title: "AI Engineering",
+        description: "Autonomous LLM agent frameworks",
+        href: "/services#ai-engineering",
       },
     ],
   },

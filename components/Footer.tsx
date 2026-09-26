@@ -98,6 +98,12 @@ export default function Footer() {
                   <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Enterprise PQC tunneling & encryption.</div>
                 </Link>
               </li>
+              <li>
+                <Link href="https://ornyx.xyz" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Ornyx</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Decentralized AI Agent marketplace.</div>
+                </Link>
+              </li>
             </ul>
           </div>
           
