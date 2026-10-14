@@ -116,10 +116,13 @@ export default function ProductsShowcase() {
               {/* Product Explanation */}
               <div className="mb-6">
                 <h4 className="text-xs font-mono uppercase tracking-wider text-black font-semibold mb-2 flex items-center gap-2">
-                  <Layers className="w-3.5 h-3.5 text-[#C04A2B]" /> The Product: IONCE
+                  <Layers className="w-3.5 h-3.5 text-[#C04A2B]" /> The Product: IONCE (In Active R&amp;D)
                 </h4>
-                <p className="text-sm text-gray-600 leading-relaxed font-sans">
-                  IONCE is Quantalabs&apos; deep-tech computational discovery platform engineered specifically for next-generation sodium-ion battery materials. Focusing on the notoriously complex physics of disordered hard carbons, IONCE models turbostratic graphene misorientations (CSL twist boundaries), interlayer slit pore galleries, vacancy defects, and heteroatom edge functionalizations. By pairing pre-validated quantum electronic structure benchmarks with fast machine learning surrogates, IONCE screens anode architectures to maximize reversible capacity and optimize voltage plateaus before physical manufacturing.
+                <p className="text-sm text-gray-600 leading-relaxed font-sans mb-3">
+                  IONCE is Quantalabs&apos; upcoming deep-tech computational discovery platform engineered for next-generation sodium-ion battery materials. We are developing an AI-driven discovery engine to help battery cell makers and carbon precursor suppliers optimize hard carbon synthesis: predicting the exact pyrolysis temperature window, pore-opening activation, and edge functionalization to target reversible capacities exceeding 300 mAh/g and improve Initial Coulombic Efficiency (ICE &gt; 85%), aiming to shorten traditional wet-lab trial cycles from 18 months down to 2 months.
+                </p>
+                <p className="text-xs text-gray-500 leading-relaxed font-sans italic border-l-2 border-[#C04A2B]/40 pl-3">
+                  Currently in foundational benchmark validation. Pairing audited first-principles quantum calculations with geometric Graph Neural Networks to establish physics-grounded surrogates before commercial release.
                 </p>
               </div>
 
