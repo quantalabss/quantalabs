@@ -9,6 +9,7 @@ interface DropdownItem {
   title: string;
   href: string;
   description: string;
+  badge?: string;
 }
 
 interface NavItem {
@@ -23,14 +24,20 @@ const NAV_ITEMS: NavItem[] = [
     href: "/products",
     dropdown: [
       {
-        title: "QuantaChain",
-        description: "PQC execution layer for AI agents",
-        href: "https://quantachain.org",
+        title: "IONCE",
+        description: "AI platform for battery materials discovery",
+        href: "/#ionce",
+        badge: "Coming Soon",
       },
       {
         title: "QuantaCipher",
         description: "Zero-trust enterprise Kyber SDK",
         href: "https://quantacipher.com",
+      },
+      {
+        title: "QuantaChain",
+        description: "PQC execution layer for AI agents",
+        href: "https://quantachain.org",
       },
       {
         title: "Ornyx",
@@ -199,8 +206,19 @@ export default function Navbar() {
                           className="block p-5 bg-white border-l-2 border-transparent hover:border-[#C04A2B] hover:bg-[#FAF9F5] border-b border-gray-100 last:border-b-0 transition-all group/item"
                         >
                           <div className="text-sm font-display font-medium text-black transition-colors flex items-center justify-between mb-1">
-                            {dropdownItem.title}
-                            <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 translate-y-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:translate-y-0 transition-all text-black" />
+                            <span className="flex items-center gap-2">
+                              {dropdownItem.title}
+                              {dropdownItem.badge && (
+                                <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 bg-[#FAF9F5] text-[#C04A2B] border border-[#e8e6dc] rounded-full">
+                                  {dropdownItem.badge}
+                                </span>
+                              )}
+                            </span>
+                            {dropdownItem.href.startsWith("http") ? (
+                              <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 translate-y-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:translate-y-0 transition-all text-black" />
+                            ) : (
+                              <span className="text-xs font-mono text-gray-400 group-hover/item:text-[#C04A2B] transition-colors">&rarr;</span>
+                            )}
                           </div>
                           <div className="text-xs text-gray-500 font-sans">
                             {dropdownItem.description}
@@ -289,9 +307,14 @@ export default function Navbar() {
                       key={dropdownItem.title}
                       href={dropdownItem.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-black"
+                      className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-600 hover:text-black"
                     >
-                      {dropdownItem.title}
+                      <span>{dropdownItem.title}</span>
+                      {dropdownItem.badge && (
+                        <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 bg-[#FAF9F5] text-[#C04A2B] border border-[#e8e6dc] rounded-full">
+                          {dropdownItem.badge}
+                        </span>
+                      )}
                     </Link>
                   ))}
                 </div>

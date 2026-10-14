@@ -87,15 +87,24 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Products</h4>
             <ul className="space-y-6">
               <li>
-                <Link href="https://quantachain.org" className="block group">
-                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaChain</div>
-                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">PQC blockchain for autonomous agents & M2M AI economy.</div>
+                <Link href="/#ionce" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1 flex items-center justify-between">
+                    <span>IONCE</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 bg-white text-[#C04A2B] border border-[#e8e6dc] rounded-full">Coming Soon</span>
+                  </div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">AI for materials discovery & battery architecture.</div>
                 </Link>
               </li>
               <li>
                 <Link href="https://quantacipher.com" className="block group">
                   <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaCipher</div>
                   <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Enterprise PQC tunneling & encryption.</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://quantachain.org" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaChain</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">PQC blockchain for autonomous agents & M2M AI economy.</div>
                 </Link>
               </li>
               <li>

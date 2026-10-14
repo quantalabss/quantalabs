@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Lock, Cpu, Network, ShieldCheck, Key } from "lucide-react";
+import { ArrowUpRight, Terminal, Lock, Cpu, Network, ShieldCheck, Key, Atom, Sparkles, Layers, Clock } from "lucide-react";
 
 export default function ProductsShowcase() {
   return (
-    <section className="py-24 sm:py-32 bg-transparent">
+    <section id="products" className="py-24 sm:py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 md:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-8">
@@ -20,6 +20,144 @@ export default function ProductsShowcase() {
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+          {/* IONCE Card (First Product) */}
+          <div id="ionce" className="group border border-[#e8e6dc] bg-white flex flex-col xl:flex-row overflow-hidden hover:border-[#C04A2B] transition-colors duration-500 shadow-sm hover:shadow-md xl:col-span-2 scroll-mt-24">
+            {/* Visual Header area */}
+            <div className="xl:w-[45%] bg-gradient-to-br from-[#faf9f5] to-[#f0efe9] border-b xl:border-b-0 xl:border-r border-[#e8e6dc] p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group-hover:to-[#e8e6dc] transition-colors duration-700">
+              {/* Premium Background Elements */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, #14141308 1px, transparent 1px), linear-gradient(to bottom, #14141308 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+                <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#C04A2B]/10 rounded-full blur-[50px] group-hover:bg-[#C04A2B]/15 transition-colors duration-700"></div>
+                <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-orange-400/10 rounded-full blur-[40px]"></div>
+              </div>
+              
+              <div className="relative z-10 flex justify-between items-start gap-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/80 backdrop-blur-md border border-gray-200/60 text-[#141413] shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] rounded-full font-mono text-[10px] uppercase tracking-widest">
+                  <Atom className="w-3.5 h-3.5 text-[#C04A2B]" /> AI for Materials Discovery
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-md border border-[#C04A2B]/30 text-[#C04A2B] rounded-full font-mono text-[9px] uppercase tracking-widest font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B]"></span> Coming Soon
+                </div>
+              </div>
+              
+              {/* Materials Simulation Visual */}
+              <div className="relative z-10 my-6 bg-white/95 backdrop-blur-2xl rounded-xl border border-white p-5 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-500">
+                <div className="flex justify-between items-center pb-3 mb-3 border-b border-gray-100">
+                  <div className="flex gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  </div>
+                  <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Quantum DFT + GNN Inference</span>
+                </div>
+                
+                <div className="space-y-2.5 font-mono text-[11px] leading-relaxed">
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <span className="text-[#C04A2B] font-bold text-sm leading-none">{'>'}</span>
+                    <span>SYSTEM: <span className="text-[#141413] font-semibold">Turbostratic Hard Carbon (θ=21.8° CSL)</span></span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <span className="text-[#C04A2B] font-bold text-sm leading-none">{'>'}</span>
+                    <span>SURROGATE: <span className="text-blue-600 font-semibold">CHGNet GNN Force &amp; Stress Evaluator</span></span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <span className="text-[#C04A2B] font-bold text-sm leading-none">{'>'}</span>
+                    <span>QUANTUM GATE: <span className="text-emerald-600 font-semibold">Basal Adsorption +0.547 eV (PASS)</span></span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <span className="text-[#C04A2B] font-bold text-sm leading-none">{'>'}</span>
+                    <span>QUANTUM GATE: <span className="text-emerald-600 font-semibold">Vacancy Trapping -0.500 eV (PASS)</span></span>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Predicted Capacity:</span>
+                    <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200/50">
+                      311.1 mAh/g (Na-Ion)
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Badges footer */}
+              <div className="relative z-10 flex flex-wrap gap-2">
+                <span className="px-2.5 py-1 bg-white/70 backdrop-blur-md rounded border border-gray-200/60 text-[9px] font-mono uppercase tracking-wider text-gray-600">
+                  Quantum ESPRESSO (PBE+D3)
+                </span>
+                <span className="px-2.5 py-1 bg-white/70 backdrop-blur-md rounded border border-gray-200/60 text-[9px] font-mono uppercase tracking-wider text-gray-600">
+                  Graph Neural Networks
+                </span>
+                <span className="px-2.5 py-1 bg-white/70 backdrop-blur-md rounded border border-gray-200/60 text-[9px] font-mono uppercase tracking-wider text-gray-600">
+                  Sodium-Ion Anodes
+                </span>
+              </div>
+            </div>
+
+            {/* Content area */}
+            <div className="xl:w-[55%] p-8 md:p-10 flex flex-col flex-grow">
+              <div className="flex items-center gap-3 mb-2">
+                <h3 className="text-3xl font-display font-medium text-[#141413]">IONCE</h3>
+                <span className="px-2.5 py-0.5 bg-[#FAF9F5] text-[#C04A2B] border border-[#e8e6dc] rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold">
+                  Coming Soon
+                </span>
+              </div>
+              <div className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
+                AI for Materials Discovery &bull; Sodium-Ion Battery Architecture
+              </div>
+
+              {/* Area Explanation */}
+              <div className="mb-6">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-black font-semibold mb-2 flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-[#C04A2B]" /> The Area: AI for Materials Discovery
+                </h4>
+                <p className="text-sm text-gray-600 leading-relaxed font-sans">
+                  Traditional discovery of energy storage materials is constrained by years of empirical wet-lab synthesis and iterative characterization. AI for materials discovery transforms this bottleneck by combining ab-initio quantum mechanics (Density Functional Theory) with geometric Graph Neural Networks (GNNs). This synergy unlocks high-throughput virtual screening of vast chemical and structural design spaces, accurately calculating ion insertion energetics, phase stability, and diffusion kinetics in seconds rather than months.
+                </p>
+              </div>
+
+              {/* Product Explanation */}
+              <div className="mb-6">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-black font-semibold mb-2 flex items-center gap-2">
+                  <Layers className="w-3.5 h-3.5 text-[#C04A2B]" /> The Product: IONCE
+                </h4>
+                <p className="text-sm text-gray-600 leading-relaxed font-sans">
+                  IONCE is Quantalabs&apos; deep-tech computational discovery platform engineered specifically for next-generation sodium-ion battery materials. Focusing on the notoriously complex physics of disordered hard carbons, IONCE models turbostratic graphene misorientations (CSL twist boundaries), interlayer slit pore galleries, vacancy defects, and heteroatom edge functionalizations. By pairing pre-validated quantum electronic structure benchmarks with fast machine learning surrogates, IONCE screens anode architectures to maximize reversible capacity and optimize voltage plateaus before physical manufacturing.
+                </p>
+              </div>
+
+              {/* Architectural Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div className="p-3 bg-[#FAF9F5] border border-[#e8e6dc] rounded">
+                  <div className="text-xs font-medium text-black mb-1">Pre-Registered Quantum Gates</div>
+                  <div className="text-[11px] text-gray-500 leading-normal">
+                    Audited PBE+D3 physics benchmarks across pristine basal adsorption, peeling lower bounds, and monovacancy spin states.
+                  </div>
+                </div>
+                <div className="p-3 bg-[#FAF9F5] border border-[#e8e6dc] rounded">
+                  <div className="text-xs font-medium text-black mb-1">Disordered Hard Carbon Screening</div>
+                  <div className="text-[11px] text-gray-500 leading-normal">
+                    Microstructure simulation spanning slit intercalation, turbostratic twists, oxygenated edges, and closed-pore multi-Na condensation.
+                  </div>
+                </div>
+              </div>
+
+              {/* Coming Soon Indicator - Static, no blinking */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
+                <div className="inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#FAF9F5] text-[#141413] border border-[#e8e6dc] font-mono text-xs uppercase tracking-widest cursor-default select-none shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#C04A2B]"></span>
+                  Coming Soon &bull; In Active Research
+                </div>
+              </div>
+
+              {/* Footer bar */}
+              <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+                <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase">Research Domain</span>
+                <span className="text-[10px] font-mono font-medium tracking-widest text-[#C04A2B] uppercase flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B]"></span>
+                  AI for Materials Discovery
+                </span>
+              </div>
+            </div>
+          </div>
+
           {/* QuantaCipher Card */}
           <div className="group border border-[#e8e6dc] bg-white flex flex-col xl:flex-row overflow-hidden hover:border-[#C04A2B] transition-colors duration-500 shadow-sm hover:shadow-md xl:col-span-2">
             {/* Visual Header area */}

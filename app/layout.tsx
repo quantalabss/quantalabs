@@ -22,10 +22,12 @@ const siteUrl = "https://quantalabs.cc";
 const ogImage = "/seo/image.png";
 
 export const metadata: Metadata = {
-  title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+  title: "QuantaLabs | Quantum & AI Lab",
   description:
-    "QuantaLabs engineers post-quantum cryptographic security and sovereign infrastructure for the autonomous AI economy.",
+    "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI infrastructure, and materials discovery.",
   keywords: [
+    "IONCE",
+    "AI for Materials Discovery",
     "AI Engineering",
     "Autonomous AI Agents",
     "Post-Quantum Cryptography",
@@ -50,9 +52,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.quantalabs.cc",
     siteName: "QuantaLabs",
-    title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+    title: "QuantaLabs | Quantum & AI Lab",
     description:
-      "Engineering post-quantum cryptographic security and the execution layer for the autonomous AI economy.",
+      "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI infrastructure, and materials discovery.",
     images: [
       {
         url: "/seo/image.png",
@@ -64,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+    title: "QuantaLabs | Quantum & AI Lab",
     description:
-      "Engineering post-quantum cryptographic security and the execution layer for the autonomous AI economy.",
+      "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI infrastructure, and materials discovery.",
     images: ["/seo/image.png"],
     creator: "@quantalabs",
   },

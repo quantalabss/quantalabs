@@ -16,17 +16,17 @@ const ogImage = "/seo/image.png";
 // DATE: 2026-08-07 | VERSION: 2.0
 export const metadata: Metadata = {
   title:
-    "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+    "QuantaLabs | Quantum & AI Lab",
   description:
-    "Quantalabs helps businesses integrate post-quantum cryptography and secure autonomous AI agent workflows.",
+    "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI systems, and materials discovery.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title:
-      "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+      "QuantaLabs | Quantum & AI Lab",
     description:
-      "Post-quantum cryptography security + AI engineering. Secure your autonomous AI agent infrastructure for the quantum era.",
+      "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI systems, and materials discovery.",
     url: siteUrl,
     images: [
       {
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     title:
-      "QuantaLabs | Post-Quantum Cryptography & Autonomous AI",
+      "QuantaLabs | Quantum & AI Lab",
     description:
-      "Post-quantum security + AI engineering. Build intelligent systems. Secure them for the quantum era.",
+      "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI systems, and materials discovery.",
     images: [ogImage],
   },
 };
@@ -59,7 +59,7 @@ const jsonLd = {
         url: "https://www.quantalabs.cc/logo.png",
       },
       description:
-        "AI engineering and post-quantum security company. AI integration services, workflow automation, QuantaCipher PQC encryption API, and QuantaChain AI agent infrastructure.",
+        "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI agent infrastructure, and materials discovery.",
       foundingDate: "2026",
       foundingLocation: {
         "@type": "Place",
