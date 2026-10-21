@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "QuantaLabs is a Quantum & AI Lab engineering quantum-safe computing, autonomous AI infrastructure, and materials discovery.",
   keywords: [
-    "IONCE",
+    "IONZE",
     "AI for Materials Discovery",
     "AI Engineering",
     "Autonomous AI Agents",

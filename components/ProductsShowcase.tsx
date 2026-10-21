@@ -20,8 +20,8 @@ export default function ProductsShowcase() {
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {/* IONCE Card (First Product) */}
-          <div id="ionce" className="group border border-[#e8e6dc] bg-white flex flex-col xl:flex-row overflow-hidden hover:border-[#C04A2B] transition-colors duration-500 shadow-sm hover:shadow-md xl:col-span-2 scroll-mt-24">
+          {/* IONZE Card (First Product) */}
+          <div id="ionze" className="group border border-[#e8e6dc] bg-white flex flex-col xl:flex-row overflow-hidden hover:border-[#C04A2B] transition-colors duration-500 shadow-sm hover:shadow-md xl:col-span-2 scroll-mt-24">
             {/* Visual Header area */}
             <div className="xl:w-[45%] bg-gradient-to-br from-[#faf9f5] to-[#f0efe9] border-b xl:border-b-0 xl:border-r border-[#e8e6dc] p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group-hover:to-[#e8e6dc] transition-colors duration-700">
               {/* Premium Background Elements */}
@@ -36,7 +36,7 @@ export default function ProductsShowcase() {
                   <Atom className="w-3.5 h-3.5 text-[#C04A2B]" /> AI for Materials Discovery
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-md border border-[#C04A2B]/30 text-[#C04A2B] rounded-full font-mono text-[9px] uppercase tracking-widest font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B]"></span> Coming Soon
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B]"></span> Live Platform
                 </div>
               </div>
               
@@ -94,9 +94,9 @@ export default function ProductsShowcase() {
             {/* Content area */}
             <div className="xl:w-[55%] p-8 md:p-10 flex flex-col flex-grow">
               <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-3xl font-display font-medium text-[#141413]">IONCE</h3>
+                <h3 className="text-3xl font-display font-medium text-[#141413]">IONZE</h3>
                 <span className="px-2.5 py-0.5 bg-[#FAF9F5] text-[#C04A2B] border border-[#e8e6dc] rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold">
-                  Coming Soon
+                  Live Platform
                 </span>
               </div>
               <div className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
@@ -116,13 +116,13 @@ export default function ProductsShowcase() {
               {/* Product Explanation */}
               <div className="mb-6">
                 <h4 className="text-xs font-mono uppercase tracking-wider text-black font-semibold mb-2 flex items-center gap-2">
-                  <Layers className="w-3.5 h-3.5 text-[#C04A2B]" /> The Product: IONCE (In Active R&amp;D)
+                  <Layers className="w-3.5 h-3.5 text-[#C04A2B]" /> The Product: IONZE (Computational Platform)
                 </h4>
                 <p className="text-sm text-gray-600 leading-relaxed font-sans mb-3">
-                  IONCE is Quantalabs&apos; upcoming deep-tech computational discovery platform engineered for next-generation sodium-ion battery materials. We are developing an AI-driven discovery engine to help battery cell makers and carbon precursor suppliers optimize hard carbon synthesis: predicting the exact pyrolysis temperature window, pore-opening activation, and edge functionalization to target reversible capacities exceeding 300 mAh/g and improve Initial Coulombic Efficiency (ICE &gt; 85%), aiming to shorten traditional wet-lab trial cycles from 18 months down to 2 months.
+                  IONZE is QuantaLabs&apos; deep-tech computational discovery platform engineered for next-generation sodium-ion battery materials. We are developing an AI-driven discovery engine to help battery cell makers and carbon precursor suppliers optimize hard carbon synthesis: predicting the exact pyrolysis temperature window, pore-opening activation, and edge functionalization to target reversible capacities exceeding 300 mAh/g and commercial Initial Coulombic Efficiency (ICE &gt; 85%).
                 </p>
                 <p className="text-xs text-gray-500 leading-relaxed font-sans italic border-l-2 border-[#C04A2B]/40 pl-3">
-                  Currently in foundational benchmark validation. Pairing audited first-principles quantum calculations with geometric Graph Neural Networks to establish physics-grounded surrogates before commercial release.
+                  Pairing audited first-principles quantum calculations with geometric Graph Neural Networks to establish physics-grounded surrogates for battery materials design.
                 </p>
               </div>
 
@@ -142,12 +142,25 @@ export default function ProductsShowcase() {
                 </div>
               </div>
 
-              {/* Coming Soon Indicator - Static, no blinking */}
+              {/* Live CTA Action Bar */}
               <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                <div className="inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#FAF9F5] text-[#141413] border border-[#e8e6dc] font-mono text-xs uppercase tracking-widest cursor-default select-none shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#C04A2B]"></span>
-                  Coming Soon &bull; In Active Research
-                </div>
+                <Link
+                  href="https://www.ionze.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-[#C04A2B] text-white font-mono text-xs uppercase tracking-widest hover:bg-[#141413] transition-colors shadow-sm"
+                >
+                  <span>Launch Platform (www.ionze.xyz)</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="https://www.ionze.xyz/atlas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#141413] border border-gray-200 font-mono text-xs uppercase tracking-widest hover:border-[#141413] transition-colors"
+                >
+                  Explore Materials Atlas
+                </Link>
               </div>
 
               {/* Footer bar */}

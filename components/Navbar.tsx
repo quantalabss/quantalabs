@@ -24,10 +24,10 @@ const NAV_ITEMS: NavItem[] = [
     href: "/products",
     dropdown: [
       {
-        title: "IONCE",
+        title: "IONZE",
         description: "AI platform for battery materials discovery",
-        href: "/#ionce",
-        badge: "Coming Soon",
+        href: "https://www.ionze.xyz",
+        badge: "Live",
       },
       {
         title: "QuantaCipher",
