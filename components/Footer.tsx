@@ -59,14 +59,32 @@ export default function Footer() {
               Building infrastructure for autonomous AI and quantum-safe enterprises.
             </p>
 
-            <div className="flex flex-col mb-8">
-              <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck className="w-4 h-4 text-[#C04A2B]" />
-                <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-gray-600 font-semibold">DPIIT Recognized Startup</span>
+            <div className="flex flex-col mb-8 gap-5">
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <ShieldCheck className="w-4 h-4 text-[#C04A2B]" />
+                  <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-gray-600 font-semibold">DPIIT Recognized Startup</span>
+                </div>
+                <span className="text-[10px] text-gray-400 font-mono tracking-[0.1em] uppercase pl-6">
+                  #StartupIndia &bull; Govt. of India
+                </span>
               </div>
-              <span className="text-[10px] text-gray-400 font-mono tracking-[0.1em] uppercase pl-6">
-                #StartupIndia &bull; Govt. of India
-              </span>
+
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-4 h-4 flex items-center justify-center flex-shrink-0">
+                    <span className="w-2 h-2 rounded-full bg-[#76b900]" />
+                  </span>
+                  <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-gray-600 font-semibold">NVIDIA Inception Member</span>
+                </div>
+                <div className="pl-6 pt-0.5">
+                  <img
+                    src="/logos/nvidia-inception.svg"
+                    alt="NVIDIA Inception Program Member"
+                    className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="max-w-sm">

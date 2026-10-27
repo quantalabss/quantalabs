@@ -99,17 +99,20 @@ export default function Hero() {
 
           {/* Left: Headline & Copy */}
           <div className="w-full lg:w-[55%] text-center lg:text-left flex flex-col items-center lg:items-start">
-            <div className="h-6 mb-4">
-              {/* Spacer to keep layout balance */}
+            {/* R2P Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FAF9F5] border border-[#e8e6dc] rounded-full text-[11px] font-mono uppercase tracking-widest text-[#C04A2B] font-semibold mb-6 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B] animate-pulse"></span>
+              Research-to-Product (R2P) &bull; Deep-Tech Lab
             </div>
+
             <div className="max-w-3xl">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium tracking-tight text-[#141413] mb-6 leading-tight">
-                Quantum <span className="text-[#C04A2B]">&amp;</span> AI Lab<span className="text-[#C04A2B]">.</span>
+                Frontier Research <span className="text-[#C04A2B]">to</span> Production Systems<span className="text-[#C04A2B]">.</span>
               </h1>
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-500 leading-relaxed font-normal max-w-2xl mb-10">
-              Quantalabs is a deep-tech engineering lab pursuing unified solutions across <strong className="text-black font-medium">quantum-safe cryptography</strong>, <strong className="text-black font-medium">autonomous AI agent systems</strong>, and <strong className="text-black font-medium">computational materials discovery</strong>. From NIST-standardized lattice security to GNN surrogates for energy storage, we engineer sovereign infrastructure for the next computing era.
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-normal max-w-2xl mb-10">
+              Quantalabs is a frontier <strong className="text-[#141413] font-semibold">Research-to-Product (R2P) deep-tech lab</strong>. Our core edge is closing the gap between fundamental scientific breakthroughs and real-world industrial deployment — taking cutting-edge research across <strong className="text-[#141413] font-semibold">post-quantum cryptography</strong>, <strong className="text-[#141413] font-semibold">autonomous AI agent execution</strong>, and <strong className="text-[#141413] font-semibold">atomistic materials discovery</strong> straight from the lab into scalable production-grade products and physical technologies.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
