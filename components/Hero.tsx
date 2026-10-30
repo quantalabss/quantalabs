@@ -90,7 +90,7 @@ function AsciiWaveArt() {
 
 export default function Hero() {
   return (
-    <section className="relative bg-transparent text-[#141413] pt-32 pb-24 overflow-hidden font-sans">
+    <section className="relative bg-transparent text-[#141413] pt-28 sm:pt-32 lg:pt-36 pb-20 sm:pb-24 overflow-hidden font-sans">
       {/* Structural Grid Background - Deep Tech Light Mode */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
@@ -99,12 +99,6 @@ export default function Hero() {
 
           {/* Left: Headline & Copy */}
           <div className="w-full lg:w-[55%] text-center lg:text-left flex flex-col items-center lg:items-start">
-            {/* R2P Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FAF9F5] border border-[#e8e6dc] rounded-full text-[11px] font-mono uppercase tracking-widest text-[#C04A2B] font-semibold mb-6 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C04A2B] animate-pulse"></span>
-              Research-to-Product (R2P) &bull; Deep-Tech Lab
-            </div>
-
             <div className="max-w-3xl">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium tracking-tight text-[#141413] mb-6 leading-tight">
                 Frontier Research <span className="text-[#C04A2B]">to</span> Production Systems<span className="text-[#C04A2B]">.</span>
