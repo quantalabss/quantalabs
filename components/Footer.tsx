@@ -105,30 +105,27 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase font-mono tracking-[0.2em] text-gray-400 mb-6 font-medium">Products</h4>
             <ul className="space-y-6">
               <li>
-                <Link href="https://www.ionze.xyz" target="_blank" rel="noopener noreferrer" className="block group">
-                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1 flex items-center justify-between">
-                    <span>IONZE</span>
-                    <span className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 bg-white text-[#C04A2B] border border-[#e8e6dc] rounded-full">Live ↗</span>
-                  </div>
-                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">AI for sodium-ion hard carbon materials discovery.</div>
-                </Link>
-              </li>
-              <li>
-                <Link href="https://quantacipher.com" className="block group">
+                <Link href="https://quantacipher.com" target="_blank" rel="noopener noreferrer" className="block group">
                   <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaCipher</div>
                   <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Enterprise PQC tunneling & encryption.</div>
                 </Link>
               </li>
               <li>
-                <Link href="https://quantachain.org" className="block group">
+                <Link href="https://quantachain.org" target="_blank" rel="noopener noreferrer" className="block group">
                   <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">QuantaChain</div>
                   <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">PQC blockchain for autonomous agents & M2M AI economy.</div>
                 </Link>
               </li>
               <li>
-                <Link href="https://ornyx.xyz" className="block group">
+                <Link href="https://ornyx.xyz" target="_blank" rel="noopener noreferrer" className="block group">
                   <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">Ornyx</div>
                   <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">Decentralized AI Agent marketplace.</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.ionze.xyz" target="_blank" rel="noopener noreferrer" className="block group">
+                  <div className="text-sm text-gray-600 group-hover:text-black transition-colors font-medium mb-1">IONZE</div>
+                  <div className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-600 transition-colors">AI for sodium-ion hard carbon materials discovery.</div>
                 </Link>
               </li>
             </ul>

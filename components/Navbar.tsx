@@ -24,12 +24,6 @@ const NAV_ITEMS: NavItem[] = [
     href: "/products",
     dropdown: [
       {
-        title: "IONZE",
-        description: "AI platform for battery materials discovery",
-        href: "https://www.ionze.xyz",
-        badge: "Live",
-      },
-      {
         title: "QuantaCipher",
         description: "Zero-trust enterprise Kyber SDK",
         href: "https://quantacipher.com",
@@ -43,6 +37,11 @@ const NAV_ITEMS: NavItem[] = [
         title: "Ornyx",
         description: "Decentralized AI Agent marketplace",
         href: "https://ornyx.xyz",
+      },
+      {
+        title: "IONZE",
+        description: "AI platform for battery materials discovery",
+        href: "https://www.ionze.xyz",
       },
     ],
   },
